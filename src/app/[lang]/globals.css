@@ -1,0 +1,17 @@
+:root {
+    --bgColorA: #fbfcfe;
+    --bgColorB: #ffffff;
+    --bgColorC: #f2f2f2;
+
+    --shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+[data-theme='dark'] {
+    --bgColorA: #313133;
+    --bgColorB: #3b3b3b;
+    --bgColorC: #1d1d1f;
+}
+
+body {
+    background: var(--bgColorA);
+}
