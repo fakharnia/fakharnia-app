@@ -1,24 +1,24 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
-import { i18n } from './i18n-config'
+import { i18n } from './i18n.config'
 
 import { match as matchLocale } from '@formatjs/intl-localematcher'
 import Negotiator from 'negotiator'
 
 const getLocale = (request: NextRequest): string | undefined => {
 
-  const negotiatorHeaders: Record<string, string> = {}
+  const negotiatorHeaders: Record<string, string> = {};
 
-  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value))
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  const locales: string[] = i18n.locales
+  const locales: string[] = i18n.locales;
 
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(locales)
+  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(locales);
 
-  const locale = matchLocale(languages, locales, i18n.defaultLocale)
+  const locale = matchLocale(languages, locales, i18n.defaultLocale);
 
-  return locale
+  return locale;
 }
 
 export function middleware(request: NextRequest) {
@@ -27,9 +27,9 @@ export function middleware(request: NextRequest) {
   const publics = [
     '/manifest.json',
     '/favicon.ico',
-    '/logo.svg',
+    '/logo-light.svg',
     '/logo-dark.svg',
-    '/logoC.svg',
+    '/logoC-light.svg',
     '/logoC-dark.svg'
     // Your other files in `public`
   ];
@@ -38,10 +38,19 @@ export function middleware(request: NextRequest) {
     return;
   }
 
-  const pathnameIsMissingLocale = i18n.locales.every((locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`)
+  const pathnameIsMissingLocale = i18n.locales.every((locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`);
 
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request)
+    const locale = getLocale(request);
+
+    if (locale === i18n.defaultLocale) {
+      return NextResponse.rewrite(
+        new URL(
+          `/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`,
+          request.url
+        )
+      )
+    }
 
     return NextResponse.redirect(
       new URL(

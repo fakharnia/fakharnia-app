@@ -1,3 +1,14 @@
 {
-
+    "welcome": {
+        "title": "Welcome",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore fugit iusto perspiciatis ut. Omnis eveniet obcaecati porro quo esse eum, ab illum! Quasi culpa libero similique quisquam laborum quia suscipit.",
+        "button": "Visit"
+    },
+    "menu":["Blog", "Services", "Portfolio", "client Panel"],
+    "landing": {
+        "statusButton":"Text Me",
+        "readButton": "Read",
+        "contact": "Contacts",
+        "blog": "Latest Post on Blog"
+    }
 }

@@ -1,0 +1,363 @@
+.container {
+    background   : var(--bgColorB);
+    position     : absolute;
+    top          : 50%;
+    left         : 50%;
+    width        : 700px;
+    height       : 700px;
+    margin       : -350px 0 0 -350px;
+    box-shadow   : var(--shadow);
+    border-radius: var(--boxRadius);
+
+    display  : flex;
+    flex-flow: column wrap;
+    overflow : hidden;
+}
+
+.smartRibbon,
+.smartMenu {
+    display: none;
+}
+
+.menu {
+    position  : relative;
+    background: var(--bgColorC);
+    height    : 700px;
+    width     : 250px;
+
+    display        : flex;
+    flex-flow      : column wrap;
+    justify-content: flex-start;
+}
+
+.options {
+    height         : 200px;
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-around;
+    direction      : ltr;
+}
+
+.logo {
+    width : 100%;
+    height: 150px;
+}
+
+.nav {
+    width      : 100%;
+    display    : flex;
+    flex-flow  : column wrap;
+    align-items: center;
+    margin-top : 25px;
+}
+
+.navItem {
+    height     : 60px;
+    margin     : 10px 0;
+    line-height: 60px;
+    font-size  : 25px;
+    color      : var(--textColor);
+}
+
+.navItem:hover {
+    font-weight: bold;
+    font-style : italic;
+    transition : 50ms;
+}
+
+.copyRight {
+    position   : absolute;
+    bottom     : 0;
+    left       : 0;
+    width      : 100%;
+    height     : 40px;
+    line-height: 40px;
+    text-align : center;
+    direction  : ltr;
+}
+
+.farsiText>a {
+    font-size  : 20px;
+    font-weight: thin;
+}
+
+.root {
+    width   : 450px;
+    height  : 700px;
+    overflow: auto;
+}
+
+.dailyText {
+    background   : var(--bgColorC);
+    margin       : 10px;
+    padding      : 10px;
+    border-radius: var(--normalRadius);
+    text-align   : justify;
+    font-size    : 18px;
+    line-height  : 25px;
+}
+
+.statusBox {
+    display    : flex;
+    flex-flow  : row wrap;
+    margin     : 20px 0;
+    padding    : 0 15px;
+    align-items: center;
+}
+
+.statusBox>img {
+    background   : var(--textColor);
+    width        : 50px;
+    height       : 50px;
+    border-radius: var(--normalRadius);
+}
+
+.statusBox>div {
+    display  : flex;
+    flex-flow: row wrap;
+    height   : 50px;
+    padding  : 0 10px;
+}
+
+.statusBox>div>* {
+    width      : 100%;
+    height     : 25px;
+    line-height: 25px;
+}
+
+.contactButton {
+    min-width  : 90px;
+    height     : 40px;
+    color      : var(--textColor);
+    line-height: 40px;
+    text-align : center;
+    font-size  : 18px;
+    font-weight: bold;
+}
+
+.contactButtonFarsi {
+    font-size  : 12px;
+    font-weight: normal;
+}
+
+.contactBox {
+    display  : flex;
+    flex-flow: row wrap;
+    margin   : 10px 0;
+}
+
+.boxTitle {
+    padding    : 0 10px;
+    height     : 40px;
+    font-size  : 22px;
+    line-height: 40px;
+}
+
+.boxTitleFarsi {
+    font-size: 18px;
+}
+
+.contactList {
+    display  : flex;
+    flex-flow: row wrap;
+    width    : 100%;
+    height   : 40px;
+    margin   : 10px 0;
+    padding  : 0 10px;
+}
+
+.contactIcon {
+    background   : var(--bgColorC);
+    width        : 40px;
+    height       : 40px;
+    margin       : 0 5px;
+    box-shadow   : var(--shadowB);
+    border-radius: var(--normalRadius);
+    color        : var(--textColor);
+    text-align   : center;
+    line-height  : 40px;
+    font-size    : 25px;
+}
+
+.postBox {
+    margin: 10px auto;
+}
+
+.postItem {
+    display      : flex;
+    flex-flow    : row wrap;
+    align-items  : center;
+    margin-bottom: 10px;
+    padding      : 0 10px;
+}
+
+.postInfo {
+    width: calc(100% - 100px);
+}
+
+.postInfo>* {
+    margin: 20px 0;
+}
+
+.postInfo>h5 {
+    margin-top : 0;
+    line-height: 40px;
+    font-size  : 20px;
+    font-weight: normal;
+}
+
+.postInfo>small {
+    height   : 40px;
+    font-size: 16px;
+}
+
+.tagBox {
+    display      : flex;
+    flex-flow    : row wrap;
+    margin-bottom: 0;
+}
+
+.tagItem {
+    background   : var(--bgColorC);
+    height       : 25px;
+    padding      : 0 10px;
+    margin       : 5px 0;
+    margin-right : 5px;
+    box-shadow   : var(--shadowC);
+    border-radius: var(--normalRadius);
+    font-size    : 18px;
+    line-height  : 25px;
+    cursor       : pointer;
+}
+
+.postButton {
+    background   : var(--bgColorC);
+    width        : 90px;
+    height       : 40px;
+    box-shadow   : var(--shadowB);
+    border-radius: var(--boxRadius);
+    color        : var(--textColor);
+    line-height  : 40px;
+    text-align   : center;
+    font-size    : 16px;
+}
+
+.postButtonFarsi {
+    font-size: 14px;
+}
+
+@media(max-width: 768px) {
+    .container {
+        width        : 100%;
+        height       : 100vh;
+        margin       : 0;
+        top          : 0;
+        left         : 0;
+        box-shadow   : none;
+        border-radius: 0;
+    }
+
+    .smartRibbon {
+        background     : var(--bgColorC);
+        position       : fixed;
+        top            : 10px;
+        left           : 0;
+        display        : flex;
+        flex-flow      : row wrap;
+        width          : calc(100% - 20px);
+        margin         : 0 10px;
+        height         : 60px;
+        justify-content: space-between;
+        box-shadow     : var(--shadow);
+        border-radius  : var(--boxRadius);
+    }
+
+    .smartRibbon>h5 {
+        height     : 60px;
+        padding    : 0 10px;
+        font-size  : 18px;
+        line-height: 60px;
+        text-align : left;
+    }
+
+    .smartRibbon .logo {
+        width : auto;
+        height: 60px;
+        margin: 0 20px;
+
+    }
+
+    .smartRibbon>button {
+        width      : 80px;
+        height     : 60px;
+        line-height: 60px;
+        font-size  : 25px;
+    }
+
+    .smartMenuDisplayed {
+        background   : var(--bgColorC);
+        position     : fixed;
+        top          : 75px;
+        right        : 10px;
+        width        : 190px;
+        padding      : 10px;
+        display      : flex;
+        flex-flow    : row wrap;
+        box-shadow   : var(--shadow);
+        border-radius: var(--boxRadius);
+    }
+
+    .smartMenuDisplayedFarsi {
+        right: unset;
+        left : 10px;
+    }
+
+    .smartMenuDisplayed>* {
+        width: 100%;
+    }
+
+    .smartNav {
+        width     : 100%;
+        display   : flex;
+        flex-flow : row wrap;
+        margin-top: 10px;
+    }
+
+    .navLink {
+        width      : 100%;
+        height     : 40px;
+        text-align : center;
+        line-height: 40px;
+        text-align : left;
+        padding    : 0 10px;
+        color      : var(--textColor);
+        font-size  : 18px;
+    }
+
+    .farsiLink {
+        font-size : 16px;
+        text-align: right;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .contactIcon {
+        margin: 5px;
+    }
+
+    .root {
+        width      : 100vw;
+        height     : 100vh;
+        padding-top: 80px;
+    }
+
+    .postInfo {
+        width: 100%;
+    }
+
+    .postButton {
+        margin-top: 10px;
+    }
+}

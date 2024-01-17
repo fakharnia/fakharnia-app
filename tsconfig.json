@@ -22,6 +22,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/[lang]/contexts/themeProvider.jsx", "src/get-dictionary.js", "src/get-dictionary.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/app/[lang]/contexts/themeProvider.jsx", "src/dictionary.js"],
   "exclude": ["node_modules"]
 }

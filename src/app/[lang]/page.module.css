@@ -1,0 +1,127 @@
+.welcomeBox {
+    background     : var(--bgColorB);
+    position       : absolute;
+    top            : 50%;
+    left           : 50%;
+    display        : flex;
+    flex-flow      : row wrap;
+    width          : 700px;
+    height         : 700px;
+    margin         : -350px 0 0 -350px;
+    border-radius  : var(--boxRadius);
+    box-shadow     : var(--shadow);
+    justify-content: space-around;
+    align-items    : center;
+}
+
+.welcomeLogo {
+    width : 100%;
+    height: 200px;
+}
+
+.welcomeTextBox {
+    width     : 100%;
+    max-height: 160px;
+    display   : flex;
+    flex-flow : row wrap;
+    padding   : 0 40px;
+}
+
+.welcomeTitle {
+    width      : 100%;
+    color      : var(--textColor);
+    font-size  : 45px;
+    line-height: 40px;
+}
+
+.welcomeText {
+    margin-top : 20px;
+    color      : var(--textColor);
+    line-height: 40px;
+    text-align : justify;
+    font-size  : 22px;
+}
+
+.welcomeButton {
+    background   : var(--bgColorC);
+    width        : 150px;
+    height       : 40px;
+    color        : var(--textColor);
+    border-radius: var(--normalRadius);
+    cursor       : pointer;
+    text-align   : center;
+    line-height  : 40px;
+}
+
+.farsiTitle {
+    font-size: 35px;
+}
+
+.farsiText {
+    margin-top: 30px;
+    font-size : 18px;
+}
+
+.widgetBox {
+    width          : 300px;
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-around;
+    margin-top     : 10px;
+}
+
+.languageBox {
+    display  : flex;
+    flex-flow: row wrap;
+    direction: ltr;
+}
+
+.languageBox>a {
+    width        : 25px;
+    height       : 25px;
+    padding      : 5px;
+    border-radius: var(--normalRadius);
+    margin       : 0 5px;
+    font-size    : 16px;
+    line-height  : 25px;
+    text-align   : center;
+    color        : var(--textColor);
+}
+
+.activeLanguage {
+    background : var(--bgColorC);
+    font-weight: bold;
+}
+
+.themeButton {
+    width        : 35px;
+    height       : 35px;
+    border-radius: var(--normalRadius);
+    margin-left  : 20px;
+    line-height  : 35px;
+    font-size    : 25px;
+    cursor       : pointer;
+}
+
+@media(max-width: 768px) {
+
+    .welcomeLogo {
+        width: auto;
+    }
+
+    .welcomeBox {
+        width        : 100%;
+        height       : 100vh;
+        margin       : 0;
+        top          : 0;
+        left         : 0;
+        box-shadow   : none;
+        border-radius: 0;
+        overflow     : auto;
+    }
+
+    .welcomeTextBox {
+        max-height: unset;
+        margin    : 30px 0;
+    }
+}
