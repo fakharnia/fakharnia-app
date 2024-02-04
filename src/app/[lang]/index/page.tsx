@@ -1,6 +1,6 @@
+import { getDictionary } from "@/dictionary";
 import { Widget } from "../components/widget";
 import { Logo } from "./components/logo";
-import { getDictionary } from "@/dictionary";
 import { Menu } from "./components/menu";
 import { Post } from "./components/post";
 import { SmartRibbon } from "./components/smartRibbon";
@@ -17,11 +17,7 @@ const IndexPage = async (prop: propType) => {
     const { lang } = prop.params;
     const locale = await getDictionary(lang);
 
-    // remove this
-    const posts = [
-        { crDate: "Yesterday", views: 1200, readTime: 20, title: ".Net Core vs Node.js, when Should and when shouldn't use them?", tags: ["Angular", ".Net Core", "SQL Server", "PetaPoco"] },
-        { crDate: "Yesterday", views: 1200, readTime: 20, title: ".Net Core vs Node.js, when Should and when shouldn't use them?", tags: ["Angular", ".Net Core", "SQL Server", "PetaPoco"] }
-    ];
+    const posts: any[] = [];
 
     return (
         <div className={styles.container} style={{ direction: lang === "fa" ? "rtl" : "ltr" }}>

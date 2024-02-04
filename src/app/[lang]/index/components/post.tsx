@@ -1,8 +1,7 @@
 "use client"
-
 import Link from "next/link";
-import styles from "../page.module.css";
 import localFont from "@next/font/local";
+import styles from "../page.module.css";
 
 type propType = {
     posts: any[],
@@ -18,7 +17,7 @@ export const Post = (props: propType) => {
     return (
         <>
             <h5 className={`${styles.boxTitle} ${language === "fa" ? `${vazir.className} ${styles.boxTitleFarsi}` : ""}`}>{dictionary.landing.blog}</h5>
-            <ul className={styles.postBox}>
+            <ul className={styles.postList}>
                 {
                     posts.map((post: any, index: number) => (
                         <li key={index} className={styles.postItem}>

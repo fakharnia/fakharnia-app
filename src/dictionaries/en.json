@@ -4,11 +4,32 @@
         "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore fugit iusto perspiciatis ut. Omnis eveniet obcaecati porro quo esse eum, ab illum! Quasi culpa libero similique quisquam laborum quia suscipit.",
         "button": "Visit"
     },
-    "menu":["Blog", "Services", "Portfolio", "client Panel"],
+    "menu":[
+        {
+            "title":"Blog",
+            "link":"blog"
+        },
+        {
+            "title":"Services",
+            "link":"services"
+        },
+        {
+            "title":"Portfolio",
+            "link":"portfolio"
+        },
+        {
+            "title":"Client Panel",
+            "link":"cpl"
+        }
+    ],
     "landing": {
         "statusButton":"Text Me",
         "readButton": "Read",
         "contact": "Contacts",
         "blog": "Latest Post on Blog"
-    }
+    },
+    "service":"Services",
+    "blog": "Blog",
+    "portfolio":"Portfolio",
+    "panel":"Client Panel"
 }

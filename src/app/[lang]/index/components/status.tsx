@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../page.module.css";
 import localFont from "@next/font/local";
+import styles from "../page.module.css";
 
 type propType = {
     language: string,

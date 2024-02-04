@@ -1,0 +1,35 @@
+{
+    "welcome": {
+        "title": "Willkommen",
+        "text": "Vielen Dank für Ihren Besuch auf meiner Website. Ich hoffe, Sie bekommen, was Sie wollen",
+        "button": "Besuchen"
+    },
+    "menu":[
+        {
+            "title":"Blog",
+            "link":"blog"
+        },
+        {
+            "title":"Dienstleistungen",
+            "link":"services"
+        },
+        {
+            "title":"Portfolio",
+            "link":"portfolio"
+        },
+        {
+            "title":"Kundenpanel",
+            "link":"cpl"
+        }
+    ],
+    "landing": {
+        "statusButton":"Schreib mir",
+        "readButton": "Lesen",
+        "contact": "Kontakte",
+        "blog": "Neueste Blog-Beiträge"
+    },
+    "service":"Dienstleistungen",
+    "blog": "Blog",
+    "portfolio":"Portfolio",
+    "panel":"Kundenpanel"
+}

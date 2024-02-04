@@ -1,0 +1,238 @@
+.footer {
+    position       : relative;
+    background     : var(--bgColorC);
+    width          : 100%;
+    height         : 60px;
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+}
+
+.copyRight {
+    position         : absolute;
+    bottom           : 0;
+    left             : 50%;
+    transform        : translate(-50%, 0);
+    -moz-transform   : translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    height           : 60px;
+    line-height      : 60px;
+}
+
+
+.navList {
+    display    : flex;
+    flex-flow  : row wrap;
+    margin     : 0 10px;
+    align-items: center;
+}
+
+.navItem {
+    width        : 25px;
+    height       : 25px;
+    margin       : 0 5px;
+    border       : solid 1px var(--textColor);
+    border-radius: var(--normalRadius);
+    cursor       : pointer;
+}
+
+.activeItem {
+    background: var(--textColor);
+}
+
+.box {
+    display    : flex;
+    flex-flow  : row wrap;
+    height     : calc(100% - 120px);
+    align-items: baseline;
+    padding    : 20px;
+    overflow-y : auto;
+}
+
+.image {
+    background   : var(--textColor);
+    width        : 100%;
+    height       : 300px;
+    border-radius: var(--boxRadius);
+}
+
+.serviceTitle {
+    width      : 100%;
+    height     : 40px;
+    margin-top : 20px;
+    line-height: 40px;
+    font-size  : 25px;
+}
+
+.markdown {
+    margin-top: 20px;
+
+}
+
+.markdown h3 {
+    height       : 40px;
+    margin-bottom: 20px;
+    font-size    : 32px;
+}
+
+.markdown h4 {
+    font-size: 28px;
+    margin   : 20px 0;
+}
+
+.markdown p {
+    line-height: 25px;
+    font-size  : 20px;
+    text-align : justify;
+
+}
+
+.thumbnailListButton {
+    width    : 60px;
+    height   : 60px;
+    font-size: 25px;
+    margin   : 0 10px;
+    cursor   : pointer;
+}
+
+.thumbnailList {
+    background     : var(--bgColorC);
+    position       : absolute;
+    bottom         : 60px;
+    left           : 0;
+    width          : 700px;
+    max-height     : 0;
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+    overflow-y     : auto;
+    overflow-x     : hidden;
+    box-shadow     : var(--shadowC);
+}
+
+.hideThumbnailList {
+    animation: forwards slideOutAnimation .15s;
+}
+
+.displayThumbnailList {
+    animation: forwards slideInAnimation .15s;
+}
+
+.thumbnailItem {
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.thumbnailPhoto {
+    background   : var(--textColor);
+    width        : 300px;
+    height       : 120px;
+    border-radius: var(--boxRadius);
+
+}
+
+.thumbnailTitle {
+    width       : 100%;
+    margin      : 0 5px;
+    height      : 30px;
+    padding-left: 10px;
+    border-left : solid 2px var(--textColor);
+    opacity     : .7;
+    color       : var(--textColor);
+    line-height : 30px;
+    font-size   : 20px;
+}
+
+.thumbnailItem:hover h5 {
+    opacity          : 1;
+    border-left-width: 5px;
+}
+
+@keyframes slideInAnimation {
+    from {
+        max-height: 0;
+        padding   : 0;
+    }
+
+    to {
+        padding   : 10px 20px;
+        max-height: 300px;
+    }
+}
+
+@keyframes slideOutAnimation {
+    from {
+        max-height: 300px;
+        padding   : 10px 20px;
+    }
+
+    to {
+        max-height: 0px;
+        padding   : 0px;
+    }
+}
+
+
+@keyframes slideInAnimationSmall {
+    from {
+        height : 0;
+        padding: 0;
+    }
+
+    to {
+        padding: 10px 20px;
+        height : calc(100vh - 120px);
+    }
+}
+
+@keyframes slideOutAnimationSmall {
+    from {
+        height : calc(100vh - 120px);
+        padding: 10px 20px;
+    }
+
+    to {
+        height : 0px;
+        padding: 0px;
+    }
+}
+
+@media(max-width: 768px) {
+    .container {
+        width        : 100%;
+        height       : 100vh;
+        margin       : 0;
+        top          : 0;
+        left         : 0;
+        box-shadow   : none;
+        border-radius: 0;
+    }
+
+    .thumbnailList {
+        width     : 100%;
+        max-height: 100vh;
+    }
+
+
+    .hideThumbnailList {
+        animation: forwards slideOutAnimationSmall .15s;
+    }
+
+    .displayThumbnailList {
+        animation: forwards slideInAnimationSmall .15s;
+    }
+
+    .thumbnailItem {
+        width : 100%;
+        margin: 10px auto;
+    }
+
+    .thumbnailPhoto {
+        width        : 100%;
+        height       : auto;
+        border-radius: var(--boxRadius);
+
+    }
+
+
+}

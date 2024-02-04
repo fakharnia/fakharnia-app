@@ -1,9 +1,18 @@
 import { WelcomePage } from "./components/welcome";
 import { getDictionary } from "@/dictionary";
 
-const Page = async ({ params: { lang } }: { params: { lang: any } }) => {
+type paramType = {
+  lang: any
+}
+type propType = {
+  params: paramType,
+  searchParams: any
+}
 
-  const page = await getDictionary(lang)
+const Page = async ({ params: { lang } }: propType) => {
+  
+  const page = await getDictionary(lang);
+
   return (
     <>
       <WelcomePage locale={page} language={lang} />

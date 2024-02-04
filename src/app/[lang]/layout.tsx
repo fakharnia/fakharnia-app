@@ -20,9 +20,12 @@ export const metadata: Metadata = {
   description: 'Fakharnia Developer!',
 }
 
-const RootLayout = ({ children, params }: { children: React.ReactNode, params: { lang: any } }) => {
+type propType = {
+  children: React.ReactNode,
+  params: { lang: any }
+}
 
-  const { lang } = params;
+const RootLayout = ({ children, params }: propType) => {
 
   return (
     <html lang="en" className={genos.className}>

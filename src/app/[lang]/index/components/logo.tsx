@@ -1,13 +1,13 @@
 "use client"
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import styles from "../page.module.css";
-import { useEffect, useState } from "react";
 
 export const Logo = () => {
     const [mounted, setMounted] = useState(false);
     const { resolvedTheme } = useTheme();
-    
+
     useEffect(() => {
         setMounted(true);
     }, [])

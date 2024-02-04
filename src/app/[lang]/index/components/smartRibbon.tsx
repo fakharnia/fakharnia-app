@@ -1,9 +1,9 @@
 "use client"
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import localFont from "@next/font/local";
 import { Logo } from "./logo";
 import { Widget } from "../../components/widget";
-import localFont from "@next/font/local";
 import styles from "../page.module.css";
 
 type propType = {
@@ -41,7 +41,7 @@ export const SmartRibbon = (props: propType) => {
                     <div className={`${styles.smartNav} ${props.language === "fa" ? vazir.className : ""}`}>
                         {
                             dictionary.menu.map((menu: any, index: number) => (
-                                <Link key={index} href="/" className={`${styles.navLink} ${props.language === "fa" ? styles.farsiLink : ""}`}>{menu}</Link>
+                                <Link key={index} href={`index/${menu.link}`} className={`${styles.navLink} ${props.language === "fa" ? styles.farsiLink : ""}`}>{menu.title}</Link>
                             ))
                         }
                     </div>
