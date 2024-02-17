@@ -1,0 +1,187 @@
+.container {
+    height        : calc(700px - 60px);
+    padding       : 10px;
+    padding-bottom: 50px;
+    overflow-y    : scroll;
+}
+
+.farsiLang {
+    direction: rtl;
+}
+
+.flexBox {
+    display      : flex;
+    flex-flow    : row wrap;
+    width        : 100%;
+    margin-bottom: 30px;
+}
+
+.avatar {
+    background   : var(--bgColorC);
+    width        : 150px;
+    height       : 150px;
+    border-radius: var(--boxRadius);
+}
+
+.content {
+    display  : flex;
+    flex-flow: row wrap;
+    width    : calc(100% - 150px);
+    padding  : 0 20px;
+}
+
+.headTitle {
+    width      : 100%;
+    font-size  : 28px;
+    line-height: 40px;
+}
+
+.headParagraph {
+    width      : 100%;
+    text-align : justify;
+    line-height: 25px;
+    font-size  : 20px;
+}
+
+.headTitleFa {
+    font-size: 24px;
+}
+
+.headParagraphFa {
+    font-size: 16px;
+}
+
+
+.paragraph {
+    width        : 100%;
+    padding      : 0 10px;
+    margin-bottom: 20px;
+    text-align   : justify;
+    font-size    : 20px;
+    line-height  : 30px;
+}
+
+.paragraphFa {
+    font-size: 16px;
+}
+
+.skillBox {
+    display   : flex;
+    flex-flow : column wrap;
+    margin-top: 10px;
+    padding   : 0 10px;
+}
+
+
+.skillItem {
+    background   : var(--bgColorC);
+    display      : flex;
+    flex-flow    : row wrap;
+    align-items  : center;
+    width        : 100%;
+    margin       : 10px 0;
+    padding      : 10px;
+    border-radius: var(--boxRadius);
+}
+
+.skillRateBox {
+    display  : flex;
+    flex-flow: column wrap;
+    padding  : 10px 0px;
+}
+
+.skillRateItem {
+    background   : var(--bgColorA);
+    width        : 8px;
+    height       : 8px;
+    border       : solid 1px var(--textColor);
+    border-radius: var(--normalRadius);
+    margin       : 2px 0;
+
+}
+
+.skillRateItemActive,
+.skillRateItemActive~li {
+    background: var(--textColor);
+}
+
+.skillIcon {
+    width        : 80px;
+    height       : 80px;
+    border-radius: var(--boxRadius);
+}
+
+.skillDescription {
+    width      : calc(100% - 100px);
+    padding    : 0 5px;
+    text-align : justify;
+    font-size  : 20px;
+    line-height: 25px;
+}
+
+.skillDescriptionFa {
+    font-size: 14px;
+}
+
+.backButton {
+    background   : var(--bgColorC);
+    position     : absolute;
+    bottom       : 10px;
+    left         : 20px;
+    width        : 40px;
+    height       : 40px;
+    border-radius: var(--normalRadius);
+    box-shadow   : var(--shadowB);
+    color        : var(--textColor);
+    font-size    : 20px;
+    text-align   : center;
+    line-height  : 40px;
+}
+
+.backButtonFa {
+    left : unset;
+    right: 20px;
+}
+
+@media (max-width: 700px) or (max-height: 700px) {
+    .container {
+        height        : 100vh;
+        padding       : 80px 10px;
+        padding-bottom: 50px;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .flexBox {
+        flex-flow  : column wrap;
+        align-items: center;
+    }
+
+    .content {
+        width     : 100%;
+        margin-top: 20px;
+        padding   : 0 10px;
+    }
+
+    .skillItem {
+        flex-flow  : column wrap;
+        align-items: center;
+    }
+
+    .skillRateBox {
+        flex-flow: row wrap;
+    }
+
+    .skillRateItem {
+        margin: 0 2px;
+    }
+
+    .skillIcon {
+        margin-bottom: 10px;
+    }
+
+    .skillDescription {
+        width: 100%;
+    }
+}

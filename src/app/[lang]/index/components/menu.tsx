@@ -18,7 +18,7 @@ export const Menu = (props: propsType) => {
 
             {
                 menu.map((mn: any, index: number) => (
-                    <Link key={index} href={`index/${mn.link}`} className={`${styles.navItem} `}>{mn.title}</Link>
+                    <Link key={index} href={`/${language}/index/${mn.link}`} className={`${styles.navItem} `}>{mn.title}</Link>
                 ))
             }
         </div>

@@ -116,7 +116,13 @@
     --bgColorB : #3b3b3b;
     --bgColorC : #1d1d1f;
     --textColor: #F2F2F2;
-
+    --shadow   : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
+    --shadowB  : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
+    --shadowC  : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, #3b3b3b 0px 0px 0px 1px;
+    /* 
+    --shadow   : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(129, 129, 129, 0.3) 0px 1px 3px -1px;
+    --shadowB  : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(129, 129, 129, 0.3) 0px 1px 3px -1px;
+    --shadowC  : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(119, 127, 136, 0.15) 0px 0px 0px 1px; */
 }
 
 * {

@@ -2,6 +2,10 @@
 
 import { ThemeProvider } from 'next-themes'
 
-export function Providers({ children }) {
+type propType = {
+    children: React.ReactNode,
+}
+
+export function Providers({ children }: propType) {
     return <ThemeProvider>{children}</ThemeProvider>
 }

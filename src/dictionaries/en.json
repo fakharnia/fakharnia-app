@@ -1,7 +1,7 @@
 {
     "welcome": {
         "title": "Welcome",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore fugit iusto perspiciatis ut. Omnis eveniet obcaecati porro quo esse eum, ab illum! Quasi culpa libero similique quisquam laborum quia suscipit.",
+        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ab illum! Quasi culpa libero similique quisquam laborum quia suscipit.",
         "button": "Visit"
     },
     "menu":[
@@ -28,8 +28,23 @@
         "contact": "Contacts",
         "blog": "Latest Post on Blog"
     },
+    "portfolio":{
+        "title":"Portfolio",
+        "projectTitle": "Some of My Projects",
+        "designTitle": "Some of My Designs",
+        "moreButton":"Browse",
+        "downloadText":"Download / Read CV",
+        "project":"My Projects",
+        "design": "My Designs"
+
+    },
+    "projects": {
+        "domain": "Domain and Main Problem",
+        "tech": "About Technologies",
+        "button":"Website"
+    },
+    "resume": "About Me",
     "service":"Services",
     "blog": "Blog",
-    "portfolio":"Portfolio",
     "panel":"Client Panel"
 }

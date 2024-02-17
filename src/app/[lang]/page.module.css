@@ -103,7 +103,32 @@
     cursor       : pointer;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 700px) or (max-height: 700px) {
+    .welcomeBox {
+        width        : 100vw;
+        height       : 100vh;
+        margin       : 0;
+        top          : 0;
+        left         : 0;
+        box-shadow   : none;
+        border-radius: 0;
+        overflow     : auto;
+    }
+
+    .welcomeLogo {
+        width        : auto;
+        margin-bottom: 40px;
+    }
+
+    .welcomeTextBox {
+        padding    : 0 20px;
+        line-height: 35px;
+        max-height : unset;
+        margin     : 30px 0;
+    }
+}
+
+/* @media(max-width: 768px) {
 
     .welcomeLogo {
         width: auto;
@@ -124,4 +149,4 @@
         max-height: unset;
         margin    : 30px 0;
     }
-}
+} */

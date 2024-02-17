@@ -19,7 +19,7 @@ const Services = async (prop: propType) => {
         switch (lang) {
             case "fa": return services[0]?.fa_fileUrl;
             case "en": return services[0]?.en_fileUrl;
-            case "de": return services[0]?.deu_fileUrl;
+            case "deu": return services[0]?.deu_fileUrl;
             default: return "";
         }
     }
@@ -28,7 +28,7 @@ const Services = async (prop: propType) => {
         switch (lang) {
             case "fa": return services[0]?.fa_title;
             case "en": return services[0]?.en_title;
-            case "de": return services[0]?.deu_title;
+            case "deu": return services[0]?.deu_title;
         }
     }
 

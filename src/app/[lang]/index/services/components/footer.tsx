@@ -3,7 +3,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import styles from "../page.module.css";
-import { IService } from "@/app/[lang]/interfaces/service.interface";
+import { IService } from "@/app/interfaces/service.interface";
 
 type propType = {
     language: string,

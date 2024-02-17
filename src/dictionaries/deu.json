@@ -28,8 +28,23 @@
         "contact": "Kontakte",
         "blog": "Neueste Blog-Beiträge"
     },
+    "portfolio":{
+        "title":"Portfolio",
+        "projectTitle": "Some of My Projects",
+        "designTitle": "Some of My Designs",
+        "moreButton":"Browse",
+        "downloadText":"Download / Read CV",
+        "project":"Mein Projects",
+        "design": "Mein Designs"
+
+    },
+    "projects": {
+        "domain": "Domain and Main Problem",
+        "tech": "About Technologies",
+        "button":"Website"
+    },
+    "resume": "Über mich",
     "service":"Dienstleistungen",
     "blog": "Blog",
-    "portfolio":"Portfolio",
     "panel":"Kundenpanel"
 }

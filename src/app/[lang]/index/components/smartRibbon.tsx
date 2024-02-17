@@ -34,7 +34,6 @@ export const SmartRibbon = (props: propType) => {
         <>
             <div className={styles.smartRibbon} ref={wrapperRef}>
                 <Logo />
-                <h5>Fakharnia</h5>
                 <button className={`fakharnia-more ${styles.moreButton}`} onClick={() => { setSmartMenu(!smartMenu) }}></button>
                 <div className={`${styles.smartMenu} ${smartMenu ? `${styles.smartMenuDisplayed} ${language === "fa" ? styles.smartMenuDisplayedFarsi : ""}` : ""}`}>
                     <Widget language={props.language} />

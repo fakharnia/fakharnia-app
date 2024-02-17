@@ -46,7 +46,7 @@ export const Header = (props: propType) => {
 
     return (
         <div className={styles.header} ref={wrapperRef} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
-            <Link href={`/${language}/index`}>
+            <Link href={`/${language}/index`} className={styles.headerLogo}>
                 < Image className={styles.headerLogo} src={`/logo-${resolvedTheme ?? "light"}.svg`} alt="fakharnai.com-logo" width={100} height={100} />
             </Link>
             <h5 className={`${styles.headerTitle} ${language === "fa" ? `${vazir.className} ${styles.headerTitleFarsi}` : ""}`}>{title}</h5>
@@ -56,7 +56,7 @@ export const Header = (props: propType) => {
                 <div className={`${styles.smartNav} ${props.language === "fa" ? vazir.className : ""}`}>
                     {
                         dictionary.menu.map((menu: any, index: number) => (
-                            <Link key={index} href={`index/${menu.link}`} className={`${styles.navLink} ${props.language === "fa" ? styles.farsiLink : ""}`}>{menu.title}</Link>
+                            <Link key={index} href={`/${language}/index/${menu.link}`} className={`${styles.navLink} ${props.language === "fa" ? styles.farsiLink : ""}`}>{menu.title}</Link>
                         ))
                     }
                 </div>

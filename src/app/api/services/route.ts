@@ -1,6 +1,6 @@
 import { type NextRequest } from 'next/server'
 import { db } from '../../lib/mongodb';
-import { IService } from "@/app/[lang]/interfaces/service.interface";
+import { IService } from "@/app/interfaces/service.interface";
 
 export async function GET(request: NextRequest) {
     try {

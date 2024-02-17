@@ -1,0 +1,207 @@
+.container {
+    width   : 700px;
+    height  : calc(700px - 60px);
+    overflow: hidden;
+}
+
+.farsiLang {
+    direction: rtl;
+}
+
+.contents {
+    display  : flex;
+    flex-flow: column wrap;
+    height   : calc(100% - 60px);
+    padding  : 20px;
+    overflow : auto;
+}
+
+.header {
+    display      : flex;
+    flex-flow    : row wrap;
+    width        : 100%;
+    margin-bottom: 20px;
+}
+
+.logo {
+    background   : var(--bgColorC);
+    width        : 150px;
+    height       : 150px;
+    padding      : 15px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadowB);
+}
+
+.innerContent {
+    width    : calc(100% - 150px);
+    display  : flex;
+    flex-flow: column wrap;
+    padding  : 0 15px;
+}
+
+.title {
+    width        : 100%;
+    line-height  : 40px;
+    font-size    : 30px;
+    margin-bottom: 20px;
+}
+
+.titleFa {
+    font-size: 25px;
+}
+
+.techList {
+    display      : flex;
+    flex-flow    : row wrap;
+    margin-bottom: 10px;
+}
+
+.techItem {
+    background   : var(--bgColorC);
+    padding      : 0 10px;
+    text-align   : center;
+    margin       : 5px;
+    line-height  : 30px;
+    border-radius: var(--boxRadius);
+}
+
+.link {
+    display      : block;
+    background   : var(--bgColorC);
+    width        : 150px;
+    height       : 40px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+    color        : var(--textColor);
+    line-height  : 40px;
+    text-align   : center;
+}
+
+.content {
+    width : 100%;
+    margin: 20px 0;
+}
+
+.contentTitle {
+    width        : 100%;
+    font-size    : 28px;
+    line-height  : 40px;
+    margin-bottom: 10px;
+}
+
+.contentTitleFa {
+    font-size: 25px;
+}
+
+.contentParagraph {
+    width      : 100%;
+    line-height: 30px;
+    font-size  : 20px;
+    text-align : justify;
+}
+
+.contentParagraphFa {
+    margin-top: 20px;
+    font-size : 16px;
+}
+
+.footer {
+    background   : var(--bgColorC);
+    width        : 100%;
+    height       : 60px;
+    display      : flex;
+    flex-flow    : row wrap;
+    align-content: center;
+}
+
+.footerNav {
+    display    : flex;
+    flex-flow  : row wrap;
+    margin     : 0 auto;
+    padding    : 0 10px;
+    align-items: center;
+}
+
+.navItem {
+    background     : var(--bgColorB);
+    display        : flex;
+    flex-flow      : row wrap;
+    align-items    : center;
+    justify-content: space-around;
+    border-radius  : var(--normalRadius);
+    width          : 40px;
+    height         : 40px;
+    margin         : 0 10px;
+}
+
+.navItemActive {
+    border: solid 1px var(--textColor);
+}
+
+.navImage {
+    width : 30px;
+    height: 30px;
+}
+
+.backButton {
+    background   : var(--bgColorC);
+    position     : absolute;
+    bottom       : 70px;
+    left         : 20px;
+    width        : 40px;
+    height       : 40px;
+    border-radius: var(--normalRadius);
+    box-shadow   : var(--shadowB);
+    color        : var(--textColor);
+    font-size    : 20px;
+    text-align   : center;
+    line-height  : 40px;
+}
+
+.backButtonFa {
+    left : unset;
+    right: 20px;
+}
+
+@media (max-width: 700px) or (max-height: 700px) {
+    .container {
+        width      : 100%;
+        padding-top: 80px;
+    }
+
+    .contents {
+        flex-flow     : row wrap;
+        width         : 100%;
+        height        : calc(100% - 60px);
+        padding       : 0 10px;
+        padding-bottom: 60px;
+    }
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .innerContent {
+        width  : 100%;
+        padding: 0;
+    }
+
+    .title {
+        text-align: center;
+        margin    : 20px 0;
+    }
+
+    .link {
+        margin: 10px auto;
+    }
+
+    .navItem {
+        margin: 0 5px;
+    }
+
+    .footerNav {
+        height  : 40px;
+        overflow: hidden;
+    }
+
+}

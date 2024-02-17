@@ -1,0 +1,297 @@
+.container {
+    position  : relative;
+    width     : 100%;
+    height    : calc(100% - 60px);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index   : 0;
+}
+
+.box {
+    display  : flex;
+    flex-flow: row wrap;
+    width    : 100%;
+    padding  : 0px 10px;
+    margin   : 15px 0;
+}
+
+.boxIn {
+    display   : flex;
+    flex-flow : row wrap;
+    width     : 100%;
+    max-height: calc(700px - 60px);
+    padding   : 10px;
+    overflow  : auto;
+}
+
+.boxTitle {
+    width      : 100%;
+    line-height: 40px;
+    font-size  : 25px;
+}
+
+.squareBox,
+.rectangleBox {
+    width   : 100%;
+    overflow: hidden;
+}
+
+.squareList,
+.rectangleList {
+    position : relative;
+    display  : flex;
+    flex-flow: row wrap;
+    width    : 100%;
+    margin   : 10px 0;
+}
+
+.squareListIn,
+.rectangleListIn {
+    padding-bottom: 50px;
+}
+
+.squareItem,
+.squareItemIn {
+    background     : var(--bgColorC);
+    display        : flex;
+    flex-flow      : row wrap;
+    align-items    : center;
+    justify-content: space-around;
+    width          : 100px;
+    height         : 100px;
+    margin         : 10px;
+    border-radius  : var(--boxRadius);
+    box-shadow     : var(--shadowB);
+}
+
+.squareItemIn {
+    width          : calc(calc(100% / 2) - 20px);
+    justify-content: space-between;
+}
+
+.squareItemInTitle {
+    width      : calc(100% - 100px);
+    padding    : 0 10px;
+    color      : var(--textColor);
+    font-size  : 22px;
+    line-height: 40px;
+}
+
+.squareItemInTitleFa {
+    font-size: 18px;
+}
+
+.squareImage {
+    width : 90px;
+    height: 90px;
+}
+
+.squareImageIn {
+    background   : var(--bgColorA);
+    width        : 100px;
+    height       : 100px;
+    padding      : 10px;
+    border-radius: var(--boxRadius) 0 0 var(--boxRadius);
+}
+
+.squareImageInFa {
+    border-radius: 0 var(--boxRadius) var(--boxRadius) 0;
+}
+
+.rectangleItem {
+    margin: 10px;
+}
+
+.rectangleImage {
+    background   : var(--bgColorC);
+    width        : 300px;
+    height       : 168px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadowB);
+}
+
+.rectangleItemIn {
+    background   : var(--bgColorC);
+    display      : flex;
+    flex-flow    : row wrap;
+    align-items  : center;
+    width        : calc(100% - 20px);
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadowB);
+}
+
+.rectangleImageIn {
+    width        : 400px;
+    height       : auto;
+    border-radius: var(--boxRadius) 0 0 var(--boxRadius);
+}
+
+.rectangleImageInFa {
+    border-radius: 0 var(--boxRadius) var(--boxRadius) 0;
+}
+
+.rectangleItemInTitle {
+    width      : calc(100% - 400px);
+    padding    : 0 10px;
+    line-height: 40px;
+    color      : var(--textColor);
+    font-size  : 22px;
+}
+
+.rectangleItemInTitleFa {
+    font-size: 18px;
+}
+
+.moreButton {
+    background   : var(--bgColorC);
+    width        : 120px;
+    height       : 40px;
+    margin       : 0 10px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+    color        : var(--textColor);
+    font-family  : var(--font-genos);
+    font-size    : 16px;
+    text-align   : center;
+    line-height  : 40px;
+}
+
+.downloadBox {
+    background     : var(--bgColorC);
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+    align-items    : center;
+    width          : auto;
+    height         : 60px;
+    padding        : 0 20px;
+    margin         : 15px;
+    border-radius  : var(--boxRadius);
+    box-shadow     : var(--shadowB);
+}
+
+.downloadText {
+    flex-grow  : 1;
+    height     : 40px;
+    line-height: 40px;
+    font-size  : 22px;
+}
+
+.dowloadButons {
+    display        : flex;
+    flex-flow      : row wrap;
+    width          : 100px;
+    justify-content: space-between;
+
+}
+
+.downloadButton {
+    width      : 40px;
+    height     : 40px;
+    color      : var(--textColor);
+    line-height: 40px;
+    font-size  : 25px;
+    text-align : center;
+}
+
+.backButton {
+    background   : var(--bgColorC);
+    position     : absolute;
+    bottom       : 20px;
+    left         : 20px;
+    width        : 40px;
+    height       : 40px;
+    border-radius: var(--normalRadius);
+    box-shadow   : var(--shadowB);
+    color        : var(--textColor);
+    font-size    : 20px;
+    text-align   : center;
+    line-height  : 40px;
+}
+
+.backButtonFa {
+    left : unset;
+    right: 20px;
+}
+
+.farsiLang {
+    direction: rtl;
+}
+
+.boxTitleFa {
+    font-size: 22px;
+}
+
+.moreButtonFa {
+    font-size: 14px;
+}
+
+.downloadTextFa {
+    font-size: 20px;
+}
+
+a.farsiIconButton {
+    font-size: 25px;
+}
+
+@media (max-width: 700px) {
+
+    .squareItem {
+        flex-grow: 1;
+    }
+}
+
+@media (max-width: 700px) or (max-height: 700px) {
+
+    .container {
+        height        : 100vh;
+        padding       : 70px 0;
+        padding-bottom: 0;
+    }
+
+    .box {
+        margin       : 0;
+        margin-bottom: 20px;
+    }
+
+    .boxIn {
+        max-height : 100vh;
+        padding-top: 70px;
+        margin     : 0;
+    }
+
+    .rectangleList,
+    .rectangleListIn {
+        justify-content: space-around;
+    }
+
+
+    .squareItemIn,
+    .rectangleItemIn {
+        width: calc(100% - 20px);
+    }
+
+    .rectangleItem {
+        width : 100%;
+        height: auto;
+    }
+
+    .rectangleImage {
+        width : 100%;
+        height: auto;
+    }
+
+    .rectangleImage {
+        border-radius: var(--boxRadius);
+    }
+
+    .rectangleImageIn {
+        border-radius: var(--boxRadius) var(--boxRadius) 0 0;
+    }
+
+    .rectangleItemInTitle {
+        width      : 100%;
+        padding    : 0 10px;
+        line-height: 50px;
+    }
+}

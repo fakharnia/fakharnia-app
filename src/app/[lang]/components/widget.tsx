@@ -48,7 +48,7 @@ export const Widget = (props: propType) => {
                 )
             }
             )}
-            <button className={`${resolvedTheme === "dark" ? "fakharnia-night" : "fakharnia-day"} ${styles.themeButton}`} onClick={() => { changeTheme() }}></button>
+            <button className={`${resolvedTheme === "dark" ? "fakharnia-day" : "fakharnia-night"} ${styles.themeButton}`} onClick={() => { changeTheme() }}></button>
         </div>
     );
 }
