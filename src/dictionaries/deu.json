@@ -7,7 +7,7 @@
     "menu":[
         {
             "title":"Blog",
-            "link":"blog"
+            "link":"blog?page=1&perPage=5"
         },
         {
             "title":"Dienstleistungen",
@@ -45,6 +45,29 @@
     },
     "resume": "Über mich",
     "service":"Dienstleistungen",
-    "blog": "Blog",
+    "blog": {
+        "title": "Blog",
+        "tag": "Etikett",
+        "search": "Suchen",  
+        "view": "sicht",
+        "time": "minute gelesen",     
+        "sorts": {
+            "title": {
+                    "key": "Title",
+                    "value": "deu_title"
+            },
+            "view": {
+                "key": "Sicht",
+                "value": "views"
+            },
+            "date": {
+                "key": "Datum",
+                "value": "createdAt"
+            }
+        },
+        "page":"Seite",
+        "counter":"Article",
+        "read": "Lesen"
+    },
     "panel":"Kundenpanel"
 }

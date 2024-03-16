@@ -6,6 +6,7 @@ import { Widget } from "./widget";
 import Link from "next/link";
 import styles from "../page.module.css";
 import localFont from "@next/font/local";
+import { GenerateClass } from "../utils";
 
 type propType = {
     locale: any,
@@ -19,6 +20,7 @@ export const WelcomePage = (props: propType) => {
     const [mounted, setMounted] = useState(false);
     const { resolvedTheme } = useTheme();
     const { locale, language } = props;
+    const getClasses = GenerateClass(language, styles);
 
     useEffect(() => {
         setMounted(true);
@@ -29,7 +31,7 @@ export const WelcomePage = (props: propType) => {
     }
 
     return (
-        <div className={styles.welcomeBox} >
+        <div className={`${styles.welcomeBox} ${language === "fa" ? vazir.className : ""}`} >
             <div className={styles.widgetBox}>
                 <Image
                     src={`/logoC-${resolvedTheme ?? "light"}.svg`}
@@ -41,12 +43,12 @@ export const WelcomePage = (props: propType) => {
                 <Widget language={language} />
             </div>
 
-            <div className={`${styles.welcomeTextBox} ${language === "fa" ? vazir.className : ""}`} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
-                <h5 className={`${styles.welcomeTitle} ${language === "fa" ? styles.farsiTitle : ""}`}>{locale.welcome.title}</h5>
-                <p className={`${styles.welcomeText} ${language === "fa" ? styles.farsiText : ""}`}>{locale.welcome.text}</p>
-            </div>
+            <div className={styles.welcomeTextBox} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
+                <h5 className={getClasses("welcomeTitle")}>{locale.welcome.title}</h5>
+                <p className={getClasses("welcomeText")}>{locale.welcome.text}</p>
+            </div >
 
-            <Link className={`${styles.welcomeButton} ${language === "fa" ? vazir.className : ""}`} href={`${language}/index`}>{locale.welcome.button}</Link>
+            <Link className={getClasses("welcomeButton")} href={`${language}/index`}>{locale.welcome.button}</Link>
         </div >
     );
 }

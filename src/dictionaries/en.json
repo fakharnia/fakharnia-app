@@ -7,7 +7,7 @@
     "menu":[
         {
             "title":"Blog",
-            "link":"blog"
+            "link":"blog?page=1&perPage=5"
         },
         {
             "title":"Services",
@@ -26,7 +26,7 @@
         "statusButton":"Text Me",
         "readButton": "Read",
         "contact": "Contacts",
-        "blog": "Latest Post on Blog"
+        "blog": "Recent Post on Blog"
     },
     "portfolio":{
         "title":"Portfolio",
@@ -45,6 +45,29 @@
     },
     "resume": "About Me",
     "service":"Services",
-    "blog": "Blog",
+    "blog": {
+        "title": "Blog",
+        "tag": "Tags",
+        "search": "Search",
+        "view": "views",
+        "time": "minutes read",
+        "sorts": {
+            "title": {
+                    "key": "Title",
+                    "value": "en_title"
+            },
+            "view": {
+                "key": "View",
+                "value": "views"
+            },
+            "date": {
+                "key": "Date",
+                "value": "createdAt"
+            }
+        },
+        "page":"Pages",
+        "counter":"Posts",
+        "read": "Read"
+    },
     "panel":"Client Panel"
 }

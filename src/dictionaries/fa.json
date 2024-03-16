@@ -7,7 +7,7 @@
     "menu":[
         {
             "title":"بلاگ",
-            "link":"blog"
+            "link":"blog?page=1&perPage=5"
         },
         {
             "title":"فعالیت ها",
@@ -26,7 +26,7 @@
         "statusButton":"ارسال پیام",
         "readButton": "مطالعه",
         "contact": "کانال های ارتباطی",
-        "blog": "آخرین پست های بلاگ"
+        "blog": "پست جدید در بلاگ"
     },
     "portfolio":{
         "title":"درباره من",
@@ -45,6 +45,30 @@
     },
     "resume": "درباره من",
     "service":"فعالیت ها",
-    "blog": "بلاگ",
+    "blog": {
+        "title": "بلاگ",
+        "tag": "تگ ها",
+        "search": "جست و جو",
+        "sort": "مرتب سازی",
+        "view": "بازدید",
+        "time": "دقیقه",
+        "sorts": {
+            "title": {
+                    "key": "عنوان",
+                    "value": "fa_title"
+            },
+            "view": {
+                "key": "بازدید",
+                "value": "views"
+            },
+            "date": {
+                "key": "تاریخ",
+                "value": "createdAt"
+            }
+        },
+        "page":"صفحه",
+        "counter":"مقاله",
+        "read": "مطالعه"
+    },
     "panel":"پنل مشتریان"
 }

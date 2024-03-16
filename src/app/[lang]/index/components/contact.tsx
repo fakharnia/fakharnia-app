@@ -2,10 +2,11 @@
 import Link from "next/link";
 import localFont from "@next/font/local";
 import styles from "../page.module.css";
+import { IContact } from "@/app/interfaces/resume.interface";
 
 type propType = {
     language: string,
-    contacts: any[],
+    data: IContact[],
     dictionary: any
 }
 
@@ -13,19 +14,18 @@ const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
 
 export const Contact = (props: propType) => {
 
-    const { contacts, dictionary, language } = props;
+    const { data, dictionary, language } = props;
 
     return (
         <>
             <h5 className={`${styles.boxTitle} ${language === "fa" ? `${vazir.className} ${styles.boxTitleFarsi}` : ""}`}>{dictionary.landing.contact}</h5>
             <div className={styles.contactList}>
-                <Link href="/" className={`fakharnia-linkedin ${styles.contactIcon}`}></Link>
-                <Link href="/" className={`fakharnia-github ${styles.contactIcon}`}></Link>
-                <Link href="/" className={`fakharnia-mail ${styles.contactIcon}`}></Link>
-                <Link href="/" className={`fakharnia-telegram ${styles.contactIcon}`}></Link>
-                <Link href="/" className={`fakharnia-x ${styles.contactIcon}`}></Link>
-                <Link href="/" className={`fakharnia-instagram ${styles.contactIcon}`}></Link>
-                <Link href="/" className={`fakharnia-threads ${styles.contactIcon}`}></Link>
+                {
+                    data.sort((a, b) => a.priority - b.priority).map((contact: IContact, index: number) => (
+                        <Link key={index} href={contact.link} className={`${contact.fileAlt} ${styles.contactIcon}`} target="_blank"></Link>
+                    )
+                    )
+                }
             </div>
         </>
     )

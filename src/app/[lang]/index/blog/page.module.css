@@ -1,0 +1,511 @@
+.container {
+    width : 700px;
+    height: calc(700px - 60px);
+}
+
+.content {
+    height        : calc(700px - 120px);
+    padding       : 20px;
+    padding-bottom: 20px;
+
+    overflow-y: auto;
+}
+
+.tagBox {
+    display  : flex;
+    flex-flow: row wrap;
+
+    margin-bottom: 20px;
+}
+
+.tagTitle {
+    width        : 100%;
+    margin-bottom: 10px;
+
+    font-size  : 28px;
+    line-height: 40px;
+}
+
+.tagTitleFa {
+    font-size: 22px;
+}
+
+.tagList {
+    display  : flex;
+    flex-flow: row wrap;
+
+    width: 100%;
+}
+
+.tagItemCheckbox {
+    display  : flex;
+    flex-flow: row wrap;
+}
+
+.tagItemCheckboxTitle {
+    background   : var(--bgColorC);
+    padding      : 0 10px;
+    margin       : 2px;
+    border-radius: var(--normalRadius);
+
+    line-height: 30px;
+
+    cursor: pointer;
+}
+
+.tagItemCheckboxTitleFa {
+    font-size: 12px;
+}
+
+.tagItemCheckboxTitle:hover,
+input:checked~.tagItemCheckboxTitle {
+    background: var(--bgColorA);
+    box-shadow: var(--shadowB);
+}
+
+.searchBox {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+
+    margin-bottom: 20px;
+}
+
+.searchForm {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+
+    width        : calc(100% - 224px);
+    padding-right: 40px;
+}
+
+.searchFormFa {
+    padding-left : 40px;
+    padding-right: 0;
+}
+
+.searchInput {
+    background   : var(--bgColorC);
+    width        : calc(100% - 100px);
+    height       : 40px;
+    padding      : 0 5px;
+    border       : solid 1px var(--bgColorB);
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+    outline      : none;
+
+    font-family: var(--font-genos);
+    font-size  : 16px;
+}
+
+.searchInputFa {
+    font-size: 14px;
+}
+
+.searchInput:focus {
+    border-color: var(--textColor);
+}
+
+.searchInput::placeholder,
+.searchInput::-moz-placeholder {
+    padding: 0 10px;
+}
+
+.searchButton {
+    background   : var(--bgColorC);
+    width        : 90px;
+    height       : 40px;
+    margin-left  : 10px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+
+    font-family: var(--font-genos);
+    font-size  : 16px;
+
+    cursor: pointer;
+}
+
+.searchButtonFa {
+    font-size: 12px;
+}
+
+.sortBox {
+    display  : flex;
+    flex-flow: row wrap;
+
+    position: relative;
+    width   : 224px;
+}
+
+.sortButtons {
+    display  : flex;
+    flex-flow: row wrap;
+
+    width: 96px;
+}
+
+.sortButton {
+    background   : var(--bgColorC);
+    width        : 40px;
+    height       : 40px;
+    margin       : 0 4px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+
+    cursor: pointer;
+}
+
+.sortButtonActive {
+    background: var(--bgColorA);
+}
+
+.sortController {
+    position: relative;
+    width   : 120px;
+    margin  : 0 4px;
+}
+
+.sortText {
+    background   : var(--bgColorC);
+    width        : 100%;
+    height       : 40px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+
+    line-height: 40px;
+    text-align : center;
+    font-size  : 18px;
+    cursor     : pointer;
+}
+
+.sortTextFa {
+    font-size: 14px;
+}
+
+.sortItems {
+    display: none;
+
+    position: absolute;
+    top     : 45px;
+    left    : 0;
+    width   : 120px;
+    z-index : 1;
+}
+
+.sortItemsActive {
+    display  : flex;
+    flex-flow: row wrap;
+
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+    overflow     : hidden;
+}
+
+.sortItem {
+    background: var(--bgColorC);
+    width     : 100%;
+    height    : 40px;
+    padding   : 0 10px;
+
+    line-height: 40px;
+    font-size  : 18px;
+    text-align : center;
+
+    cursor: pointer;
+}
+
+.sortItemFa {
+    font-size: 14px;
+}
+
+.sortItem:hover {
+    background: var(--bgColorA);
+}
+
+.checkboxText {
+    font-size: 18px;
+}
+
+.checkboxTextFa {
+    font-size: 14px;
+}
+
+.checkbox {
+    display: none;
+}
+
+.blogPosts {
+    display  : flex;
+    flex-flow: row wrap;
+    width    : 100%;
+}
+
+.post {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+
+    position: relative;
+    width   : 100%;
+    margin  : 10px 0;
+    color   : var(--textColor);
+}
+
+.postOptions {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+
+    width  : 100%;
+    padding: 10px 0;
+}
+
+.postReadButton {
+    background   : var(--bgColorC);
+    width        : 100px;
+    height       : 40px;
+    margin       : 0 10px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+    cursor       : pointer;
+}
+
+.postReadButtonFa {
+    font-size: 12px;
+}
+
+.postInfo {
+    padding: 0 10px;
+
+    line-height: 40px;
+    font-size  : 18px;
+}
+
+.postInfoFa {
+    font-size: 12px;
+}
+
+
+.postCover {
+    background   : var(--bgColorC);
+    width        : 320px;
+    height       : 180px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadowB);
+}
+
+.postDetail {
+    display        : flex;
+    flex-flow      : column wrap;
+    justify-content: start;
+
+    width  : calc(100% - 320px);
+    padding: 0 10px;
+}
+
+.postTitle {
+    width        : 100%;
+    padding      : 0 10px;
+    margin-bottom: 20px;
+
+    line-height: 40px;
+    font-size  : 26px;
+}
+
+.postTitleFa {
+    font-size  : 18px;
+    font-weight: normal;
+}
+
+.postTags {
+    display  : flex;
+    flex-flow: row wrap;
+
+    width  : 100%;
+    padding: 0 10px;
+}
+
+.postTag {
+    background   : var(--bgColorC);
+    margin       : 2px;
+    padding      : 0 10px;
+    border-radius: var(--normalRadius);
+
+    color      : var(--textColor);
+    line-height: 25px;
+    text-align : center;
+}
+
+.postTagFa {
+    font-size: 12px;
+}
+
+.footer {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+    align-items    : center;
+
+    background: var(--bgColorC);
+    height    : 60px;
+    padding   : 0 10px;
+}
+
+.pagination {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-around;
+}
+
+.page,
+.pageAmount,
+.pageCounter,
+.smartButton {
+    width        : 25px;
+    height       : 25px;
+    margin       : 0 5px;
+    border       : solid 1px var(--textColor);
+    border-radius: var(--normalRadius);
+
+    font-family: var(--font-genos);
+    font-size  : 16px;
+    text-align : center;
+    line-height: 25px;
+
+    cursor: pointer;
+}
+
+.pageFa,
+.pageAmountFa,
+.pageCounterFa,
+.smartButtonFa {
+    font-size: 12px;
+}
+
+.pageCounter {
+    width  : auto;
+    padding: 0 10px;
+}
+
+.pageCounter {
+    background: var(--bgColorA);
+    border    : none;
+}
+
+.pageActive {
+    background: var(--textColor);
+    color     : var(--bgColorC);
+}
+
+.smartButton {
+    display: none;
+
+    border: none;
+
+    font-size: 25px;
+}
+
+.smartPaginationBox {
+    display: none;
+}
+
+.farsiLang {
+    direction: rtl;
+}
+
+@media (max-width: 700px) or (max-height: 700px) {
+    .container {
+        width         : 100%;
+        height        : 100vh;
+        padding       : 60px 0;
+        padding-bottom: 0;
+    }
+
+    .content {
+        width : 100%;
+        height: calc(100vh - 120px);
+    }
+
+
+}
+
+@media (max-width: 700px) {
+    .searchForm {
+        width        : 100%;
+        margin-bottom: 20px;
+    }
+
+    .postCover {
+        width: 100%;
+    }
+
+    .postDetail {
+        width  : 100%;
+        padding: 10px 0;
+    }
+
+
+    .postInfo {
+        width        : 100%;
+        margin-bottom: 10px;
+    }
+
+    .postReadButton {
+        width : 100%;
+        margin: 0;
+    }
+}
+
+@media (max-width: 400px) {
+
+    .footer {
+        justify-content: flex-start;
+
+        position: relative;
+    }
+
+    .pageAmountBox,
+    .pageCounterBox {
+        display: none;
+    }
+
+    .smartButton {
+        display: block;
+    }
+
+    .smartButtonTextDown {
+        display: none;
+    }
+
+    input:checked~.smartButtonTextUp {
+        display: none;
+    }
+
+    input:checked~.smartButtonTextDown {
+        display: block;
+    }
+
+    .pagination {
+        margin-right: auto;
+    }
+
+    .smartPaginationBox {
+        justify-content: space-between;
+        align-items    : center;
+
+        background: var(--bgColorC);
+        position  : absolute;
+        bottom    : 100%;
+        left      : 0;
+        width     : 100%;
+        height    : 60px;
+        padding   : 0 10px;
+
+    }
+
+    input:checked~.smartPaginationBox {
+        display  : flex;
+        flex-flow: row wrap;
+    }
+}

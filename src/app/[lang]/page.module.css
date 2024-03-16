@@ -54,11 +54,15 @@
     line-height  : 40px;
 }
 
-.farsiTitle {
+.welcomeButtonFa {
+    font-size: 14px;
+}
+
+.welcomeTitleFa {
     font-size: 35px;
 }
 
-.farsiText {
+.welcomeTextFa {
     margin-top: 30px;
     font-size : 18px;
 }
@@ -77,7 +81,7 @@
     direction: ltr;
 }
 
-.languageBox>a {
+.languageLink {
     width        : 35px;
     height       : 35px;
     border-radius: var(--normalRadius);
@@ -86,6 +90,10 @@
     line-height  : 35px;
     text-align   : center;
     color        : var(--textColor);
+}
+
+.languageLinkFa {
+    font-size: 12px;
 }
 
 .activeLanguage {
@@ -127,26 +135,3 @@
         margin     : 30px 0;
     }
 }
-
-/* @media(max-width: 768px) {
-
-    .welcomeLogo {
-        width: auto;
-    }
-
-    .welcomeBox {
-        width        : 100%;
-        height       : 100vh;
-        margin       : 0;
-        top          : 0;
-        left         : 0;
-        box-shadow   : none;
-        border-radius: 0;
-        overflow     : auto;
-    }
-
-    .welcomeTextBox {
-        max-height: unset;
-        margin    : 30px 0;
-    }
-} */

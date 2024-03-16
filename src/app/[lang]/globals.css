@@ -156,3 +156,18 @@ form {
     box-shadow     : unset;
     list-style     : none;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bgColorB);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bgColorA);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--bgColorC);
+}

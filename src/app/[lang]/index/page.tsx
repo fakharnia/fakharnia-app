@@ -5,40 +5,49 @@ import { Menu } from "./components/menu";
 import { Post } from "./components/post";
 import { SmartRibbon } from "./components/smartRibbon";
 import { Contact } from "./components/contact";
-import { Status } from "./components/status";
 import styles from "./page.module.css";
+import { getBlogRecent, getContacts, getStatus } from "@/app/lib/home.lib";
+import { IPost } from "@/app/interfaces/post.interface";
+import { getResume } from "@/app/lib/portfolio.lib";
+import localFont from "@next/font/local";
+import { GenerateClass } from "../utils";
 
 type propType = {
     params: { lang: any }
 }
+
+const vazir = localFont({ src: "../../fonts/vazir.woff2" });
 
 const IndexPage = async (prop: propType) => {
 
     const { lang } = prop.params;
     const locale = await getDictionary(lang);
 
-    const posts: any[] = [];
+    const posts: IPost[] = await getBlogRecent();
+
+    const status = await getStatus();
+
+    const resume = await getResume();
+
+    const getClasses = GenerateClass(lang, styles);
 
     return (
-        <div className={styles.container} style={{ direction: lang === "fa" ? "rtl" : "ltr" }}>
+        <div className={`${lang === "fa" ? vazir.className : ""} ${styles.container}`} style={{ direction: lang === "fa" ? "rtl" : "ltr" }}>
             <div className={styles.menu}>
                 <div className={styles.options}>
                     <Logo />
                     <Widget language={lang} />
                 </div>
                 <Menu language={lang} menu={locale.menu} />
-                <p className={styles.copyRight}>© Fakharnia.com {new Date().getFullYear()}</p>
+                <p className={getClasses("copyRight")}>© Fakharnia.com {new Date().getFullYear()}</p>
             </div>
             <SmartRibbon language={lang} dictionary={locale} />
             <div className={styles.root}>
-                <p className={styles.dailyText}>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ex illum tempora, nisi sit ipsum necessitatibus. Ex voluptatem veritatis necessitatibus, earum sapiente
+                <p className={getClasses("dailyText")}>
+                    {status[`${lang}_text`]}
                 </p>
-                <div className={styles.statusBox}>
-                    <Status language={lang} dictionary={locale} />
-                </div>
                 <div className={styles.contactBox}>
-                    <Contact dictionary={locale} contacts={[]} language={lang} />
+                    <Contact dictionary={locale} language={lang} data={resume.contacts} />
                 </div>
 
                 <div className={styles.blogBox}>

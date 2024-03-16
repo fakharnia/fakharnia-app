@@ -5,9 +5,10 @@ import { i18n } from "@/i18n.config";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import styles from "../page.module.css";
+import { GenerateClass } from "../utils";
 
 type propType = {
-    language: String
+    language: string
 }
 
 export const Widget = (props: propType) => {
@@ -17,6 +18,8 @@ export const Widget = (props: propType) => {
     const { resolvedTheme, setTheme } = useTheme();
 
     const pathName = usePathname()
+
+    const getClasses = GenerateClass(language, styles);
 
 
     useEffect(() => {
@@ -44,7 +47,7 @@ export const Widget = (props: propType) => {
         <div className={styles.languageBox}>
             {i18n.locales.map((locale, index) => {
                 return (
-                    <Link key={index} className={locale === language ? styles.activeLanguage : ""} href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
+                    <Link key={index} className={`${locale === language ? styles.activeLanguage : ""} ${getClasses("languageLink")}`} href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
                 )
             }
             )}
