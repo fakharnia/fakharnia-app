@@ -2,10 +2,17 @@ import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 import { getServices } from "@/app/lib/service.lib";
 import styles from "./page.module.css";
+import { GenerateClass } from "../blog/utils";
+import localFont from "@next/font/local";
+import { IService } from "@/app/interfaces/service.interface";
+import Link from "next/link";
 
 type propType = {
     params: { lang: any }
 }
+
+const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
+
 
 const Services = async (prop: propType) => {
 
@@ -13,7 +20,9 @@ const Services = async (prop: propType) => {
 
     const { lang } = prop.params;
 
-    let services: any[] = await getServices() || [];
+    const getClasses = GenerateClass(lang, styles);
+
+    const services: any[] = await getServices() || [];
 
     const getContent = () => {
         switch (lang) {
@@ -24,19 +33,27 @@ const Services = async (prop: propType) => {
         }
     }
 
-    const getTitle = () => {
+    const getTitle = (service: IService) => {
         switch (lang) {
-            case "fa": return services[0]?.fa_title;
-            case "en": return services[0]?.en_title;
-            case "deu": return services[0]?.deu_title;
+            case "fa": return service?.fa_title;
+            case "en": return service?.en_title;
+            case "deu": return service?.deu_title;
         }
     }
 
     return (
-        <div className={styles.box}>
-            <Image className={styles.image} src={`${URL}/service/${services[0]?.coverUrl}`} alt={services[0]?.coverAlt} width={200} height={200} />
-            <h5 className={styles.serviceTitle}>{getTitle() || undefined}</h5>
-            <ReactMarkdown className={styles.markdown}>{getContent() || undefined}</ReactMarkdown>
+        <div className={`${getClasses("box")} ${lang === "fa" ? vazir.className : ""}`}>
+            {
+                services.map((service: IService, index: number) => (
+                    <Link
+                        href={`/${lang}/index/services/${service._id}`}
+                        className={styles.serviceLink}
+                        key={index} >
+                        <Image className={styles.serviceImage} src={`${URL}/service/${service.coverUrl}`} alt={service.coverAlt} width={800} height={420} />
+                        <h5 className={getClasses("serviceTitle")}>{getTitle(service)}</h5>
+                    </Link >
+                ))
+            }
         </div>
     )
 }

@@ -14,7 +14,6 @@
 [class*=" fakharnia-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family   : 'fakharnia' !important;
-    speak         : never;
     font-style    : normal;
     font-weight   : normal;
     font-variant  : normal;
@@ -100,6 +99,8 @@
     --bgColorB : #ffffff;
     --bgColorC : #f2f2f2;
     --textColor: #343A40;
+    --transTextColor: #343a40ad;
+    --transBgColorC: #f2f2f294;
     --shadow   : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     --shadowB  : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     --shadowC  : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
@@ -116,6 +117,8 @@
     --bgColorB : #3b3b3b;
     --bgColorC : #1d1d1f;
     --textColor: #F2F2F2;
+    --transTextColor: #f2f2f29c;
+    --transBgColorC: #1d1d1f98;
     --shadow   : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
     --shadowB  : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
     --shadowC  : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, #3b3b3b 0px 0px 0px 1px;

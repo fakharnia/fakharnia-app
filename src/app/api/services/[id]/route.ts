@@ -5,7 +5,6 @@ export async function GET(request: Request, { params }: { params: { id: string }
     try {
         const { id } = params;
         const service = await db.collection('services').findOne({ _id: new ObjectId(id) });
-        console.log(service);
         if (service) {
             service.fa_fileUrl = await getMarkdownContent(service.fa_fileUrl);
             service.en_fileUrl = await getMarkdownContent(service.en_fileUrl);
