@@ -59,6 +59,7 @@
     text-align   : justify;
     font-size    : 20px;
     line-height  : 30px;
+    white-space  : pre-line;
 }
 
 .paragraphFa {
@@ -66,8 +67,10 @@
 }
 
 .skillBox {
-    display   : flex;
-    flex-flow : column wrap;
+    display  : flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
     margin-top: 10px;
     padding   : 0 10px;
 }
@@ -78,37 +81,52 @@
     display      : flex;
     flex-flow    : row wrap;
     align-items  : center;
-    width        : 100%;
-    margin       : 10px 0;
-    padding      : 10px;
+    width        : 100px;
+    height       : 100px;
+    margin       : 10px 5px;
+    padding      : 0 10px;
     border-radius: var(--boxRadius);
 }
 
+.skillItemBox {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-around;
+}
+
+
+.skillIcon {
+    width        : 60px;
+    height       : 60px;
+    margin-bottom: 10px;
+    border-radius: var(--boxRadius);
+}
+
+
 .skillRateBox {
-    display  : flex;
-    flex-flow: column wrap;
-    padding  : 10px 0px;
+    display    : flex;
+    flex-flow  : row wrap;
+    align-items: center;
+
+    width    : 70px;
+    height   : 10px;
+    padding  : 0 10px;
+    direction: rtl;
 }
 
 .skillRateItem {
     background   : var(--bgColorA);
-    width        : 8px;
-    height       : 8px;
+    width        : 6px;
+    height       : 6px;
+    margin       : 0 2px;
     border       : solid 1px var(--textColor);
     border-radius: var(--normalRadius);
-    margin       : 2px 0;
 
 }
 
 .skillRateItemActive,
 .skillRateItemActive~li {
     background: var(--textColor);
-}
-
-.skillIcon {
-    width        : 80px;
-    height       : 80px;
-    border-radius: var(--boxRadius);
 }
 
 .skillDescription {

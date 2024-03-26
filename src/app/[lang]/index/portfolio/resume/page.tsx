@@ -60,15 +60,17 @@ const Resume = async ({ params: { lang } }: propType) => {
                     {
                         resume.skills.map((skill: ISkill, index: number) => (
                             <div key={index} className={styles.skillItem}>
-                                <ul className={styles.skillRateBox}>
-                                    <li className={`${styles.skillRateItem} ${skill.rate === 5 ? styles.skillRateItemActive : ""}`}></li>
-                                    <li className={`${styles.skillRateItem} ${skill.rate === 4 ? styles.skillRateItemActive : ""}`}></li>
-                                    <li className={`${styles.skillRateItem} ${skill.rate === 3 ? styles.skillRateItemActive : ""}`}></li>
-                                    <li className={`${styles.skillRateItem} ${skill.rate === 2 ? styles.skillRateItemActive : ""}`}></li>
-                                    <li className={`${styles.skillRateItem} ${skill.rate === 1 ? styles.skillRateItemActive : ""}`}></li>
-                                </ul>
-                                <Image className={styles.skillIcon} src={`${URL}/resume/${skill.fileUrl}`} alt={skill.fileAlt} width={100} height={100} />
-                                <p className={`${styles.skillDescription} ${lang === "fa" ? styles.skillDescriptionFa : ""}`}>{getSkillDescription(skill)}</p>
+                                <div className={styles.skillItemBox}>
+                                    <Image className={styles.skillIcon} src={`${URL}/resume/${skill.fileUrl}`} alt={skill.fileAlt} width={100} height={100} />
+                                    <ul className={styles.skillRateBox}>
+                                        <li className={`${styles.skillRateItem} ${skill.rate === 5 ? styles.skillRateItemActive : ""}`}></li>
+                                        <li className={`${styles.skillRateItem} ${skill.rate === 4 ? styles.skillRateItemActive : ""}`}></li>
+                                        <li className={`${styles.skillRateItem} ${skill.rate === 3 ? styles.skillRateItemActive : ""}`}></li>
+                                        <li className={`${styles.skillRateItem} ${skill.rate === 2 ? styles.skillRateItemActive : ""}`}></li>
+                                        <li className={`${styles.skillRateItem} ${skill.rate === 1 ? styles.skillRateItemActive : ""}`}></li>
+                                    </ul>
+                                </div>
+                                {/* <p className={`${styles.skillDescription} ${lang === "fa" ? styles.skillDescriptionFa : ""}`}>{getSkillDescription(skill)}</p> */}
                             </div>
                         ))
                     }

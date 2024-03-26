@@ -180,7 +180,6 @@
 .dowloadButons {
     display        : flex;
     flex-flow      : row wrap;
-    width          : 100px;
     justify-content: space-between;
 
 }

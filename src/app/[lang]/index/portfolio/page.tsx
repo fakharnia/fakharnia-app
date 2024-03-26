@@ -63,7 +63,6 @@ const Portfolio = async ({ params: { lang } }: propType) => {
                 <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.downloadBox}`}>
                     <p className={`${styles.downloadText} ${lang === "fa" ? styles.downloadTextFa : ""}`}>{portfolio.downloadText}</p>
                     <div className={styles.dowloadButons}>
-                        <Link href={`${URL}/resume/${resume.fileUrl}`} className={`fakharnia-download ${styles.downloadButton} ${lang === "fa" ? styles.farsiIconButton : ""}`} target="_blank"></Link>
                         <Link href={`/${lang}/index/portfolio/resume`} className={`fakharnia-more ${styles.downloadButton} ${lang === "fa" ? styles.farsiIconButton : ""}`}></Link>
                     </div>
                 </div>
