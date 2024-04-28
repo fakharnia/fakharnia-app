@@ -14,7 +14,7 @@ export const GET = async (request: NextRequest) => {
         }
 
     } catch (error: any) {
-        console.log("We incounter the error...!");
+        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }

@@ -8,12 +8,11 @@ export async function GET(request: NextRequest) {
         if (projects) {
             return Response.json(projects);
         } else {
-            console.log("I don't have the Project!");
             return Response.json({});
         }
 
     } catch (error: any) {
-        console.log("We incounter the error...!");
+        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }

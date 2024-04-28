@@ -34,6 +34,7 @@ const Portfolio = async ({ params: { lang } }: propType) => {
 
     return (
         <>
+            <title>Fakharnia Dev | Portfolio</title>
             <div className={styles.container}>
                 <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.box}`}>
                     <h5 className={`${styles.boxTitle} ${lang === "fa" ? styles.boxTitleFa : ""}`}>{portfolio.projectTitle}</h5>

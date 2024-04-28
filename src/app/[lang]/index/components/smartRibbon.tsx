@@ -5,6 +5,7 @@ import localFont from "@next/font/local";
 import { Logo } from "./logo";
 import { Widget } from "../../components/widget";
 import styles from "../page.module.css";
+import { GenerateClass } from "../../utils";
 
 type propType = {
     language: string,
@@ -17,6 +18,7 @@ export const SmartRibbon = (props: propType) => {
     const { language, dictionary } = props;
     const [smartMenu, setSmartMenu] = useState(false);
     const wrapperRef = useRef<HTMLDivElement>(null);;
+    const getClasses = GenerateClass(language, styles);
 
     useEffect(() => {
         const handleClickOutside = (event: any) => {
@@ -30,6 +32,14 @@ export const SmartRibbon = (props: propType) => {
         return
     }, []);
 
+    const getLink = (index: number, menuItem: any) => {
+        if (menuItem.isActive) {
+            return <Link key={index} href={`/${language}/index/${menuItem.link}`} className={`${getClasses("navLink")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}>{menuItem.title}</Link>
+        } else {
+            return <p key={index} className={`${getClasses("navLink")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}>{menuItem.title}</p>;
+        }
+    }
+
     return (
         <>
             <div className={styles.smartRibbon} ref={wrapperRef}>
@@ -39,9 +49,7 @@ export const SmartRibbon = (props: propType) => {
                     <Widget language={props.language} />
                     <div className={`${styles.smartNav} ${props.language === "fa" ? vazir.className : ""}`}>
                         {
-                            dictionary.menu.map((menu: any, index: number) => (
-                                <Link key={index} href={`index/${menu.link}`} className={`${styles.navLink} ${props.language === "fa" ? styles.farsiLink : ""}`}>{menu.title}</Link>
-                            ))
+                            dictionary.menu.map((mn: any, index: number) => getLink(index, mn))
                         }
                     </div>
                 </div>

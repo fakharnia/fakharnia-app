@@ -16,7 +16,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
         }
 
     } catch (error: any) {
-        console.log("We incounter the error...!");
+        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }

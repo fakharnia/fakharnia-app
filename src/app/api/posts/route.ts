@@ -65,6 +65,7 @@ export const GET = async (request: NextRequest) => {
             sortStage[sort] = sortFlow;
         }
 
+        pipeline.push({ $match: { deletedAt: { $eq: null } } });
         pipeline.push({ $sort: sortStage });
 
         pipeline.push({ $skip: (page - 1) * perPage });

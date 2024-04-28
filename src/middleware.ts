@@ -30,7 +30,9 @@ export function middleware(request: NextRequest) {
     '/logo-light.svg',
     '/logo-dark.svg',
     '/logoC-light.svg',
-    '/logoC-dark.svg'
+    '/logoC-dark.svg',
+    "/loading-dark.svg",
+    "/loading-light.svg"
     // Your other files in `public`
   ];
 

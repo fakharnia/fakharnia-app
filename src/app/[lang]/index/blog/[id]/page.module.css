@@ -114,6 +114,7 @@
     margin       : 5px;
     border-radius: var(--normalRadius);
 
+    color: var(--textColor);
     font-size: 22px;
 }
 

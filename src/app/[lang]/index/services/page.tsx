@@ -13,7 +13,6 @@ type propType = {
 
 const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
 
-
 const Services = async (prop: propType) => {
 
     const URL = process.env.NEXT_PUBLIC_SERVER_URI;
@@ -24,14 +23,6 @@ const Services = async (prop: propType) => {
 
     const services: any[] = await getServices() || [];
 
-    const getContent = () => {
-        switch (lang) {
-            case "fa": return services[0]?.fa_fileUrl;
-            case "en": return services[0]?.en_fileUrl;
-            case "deu": return services[0]?.deu_fileUrl;
-            default: return "";
-        }
-    }
 
     const getTitle = (service: IService) => {
         switch (lang) {
@@ -42,19 +33,22 @@ const Services = async (prop: propType) => {
     }
 
     return (
-        <div className={`${getClasses("box")} ${lang === "fa" ? vazir.className : ""}`}>
-            {
-                services.map((service: IService, index: number) => (
-                    <Link
-                        href={`/${lang}/index/services/${service._id}`}
-                        className={styles.serviceLink}
-                        key={index} >
-                        <Image className={styles.serviceImage} src={`${URL}/service/${service.coverUrl}`} alt={service.coverAlt} width={800} height={420} />
-                        <h5 className={getClasses("serviceTitle")}>{getTitle(service)}</h5>
-                    </Link >
-                ))
-            }
-        </div>
+        <>
+            <title>Fakharnia Dev | Services</title>
+            <div className={`${getClasses("box")} ${lang === "fa" ? vazir.className : ""}`}>
+                {
+                    services.map((service: IService, index: number) => (
+                        <Link
+                            href={`/${lang}/index/services/${service._id}`}
+                            className={styles.serviceLink}
+                            key={index} >
+                            <Image className={styles.serviceImage} src={`${URL}/service/${service.coverUrl}`} alt={service.coverAlt} width={800} height={420} />
+                            <h5 className={getClasses("serviceTitle")}>{getTitle(service)}</h5>
+                        </Link >
+                    ))
+                }
+            </div>
+        </>
     )
 }
 

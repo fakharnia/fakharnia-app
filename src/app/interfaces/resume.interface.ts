@@ -20,9 +20,8 @@ export interface IResume {
 
 export interface IContact {
     link: string;
-    fileAlt: string;
-    fileUrl: string;
     priority: number;
+    iconClass: string;
 }
 
 export interface ILanguage {

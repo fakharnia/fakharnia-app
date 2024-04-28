@@ -1,25 +1,29 @@
 {
     "welcome": {
-        "title": "Welcome",
-        "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore ab illum! Quasi culpa libero similique quisquam laborum quia suscipit.",
+        "title": "Hi!",
+        "text": "Welcome to Mohammad Mahdi Fakharnia's Web Development Hub! Explore my portfolio and discover innovative web solutions crafted with passion and expertise. Let's connect and turn your ideas into digital realities!",
         "button": "Visit"
     },
     "menu":[
         {
             "title":"Blog",
-            "link":"blog?page=1&perPage=5"
+            "link":"blog?page=1&perPage=5",
+            "isActive": true
         },
         {
             "title":"Services",
-            "link":"services"
+            "link":"services",
+            "isActive": true
         },
         {
             "title":"Portfolio",
-            "link":"portfolio"
+            "link":"portfolio",
+            "isActive": true
         },
         {
-            "title":"Client Panel",
-            "link":"cpl"
+            "title":"Clients Panel",
+            "link":"clientpanel",
+            "isActive": false
         }
     ],
     "landing": {

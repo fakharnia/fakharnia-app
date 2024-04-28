@@ -7,6 +7,7 @@ import localFont from "@next/font/local";
 import { useTheme } from "next-themes";
 import { Widget } from "../../components/widget";
 import styles from "../page.module.css";
+import { GenerateClass } from "../../utils";
 
 type propType = {
     language: string,
@@ -44,6 +45,16 @@ export const Header = (props: propType) => {
         return null;
     }
 
+    const getClasses = GenerateClass(language, styles);
+
+    const getLink = (index: number, menuItem: any) => {
+        if (menuItem.isActive) {
+            return <Link key={index} href={`/${language}/index/${menuItem.link}`} className={`${getClasses("navLink")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}>{menuItem.title}</Link>
+        } else {
+            return <p key={index} className={`${getClasses("navLink")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}>{menuItem.title}</p>;
+        }
+    }
+
     return (
         <div className={styles.header} ref={wrapperRef} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
             <Link href={`/${language}/index`} className={styles.headerLogo}>
@@ -55,9 +66,7 @@ export const Header = (props: propType) => {
                 <Widget language={props.language} />
                 <div className={`${styles.smartNav} ${props.language === "fa" ? vazir.className : ""}`}>
                     {
-                        dictionary.menu.map((menu: any, index: number) => (
-                            <Link key={index} href={`/${language}/index/${menu.link}`} className={`${styles.navLink} ${props.language === "fa" ? styles.farsiLink : ""}`}>{menu.title}</Link>
-                        ))
+                        dictionary.menu.map((menu: any, index: number) => getLink(index, menu))
                     }
                 </div>
             </div>

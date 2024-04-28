@@ -58,11 +58,22 @@
     line-height: 60px;
     font-size  : 25px;
     color      : var(--textColor);
+    cursor     : pointer;
 }
 
 .navItem:hover {
     font-weight: bold;
     transition : 50ms;
+}
+
+.navItemDeactive {
+    opacity: .3;
+    cursor : help;
+}
+
+.navItemFa {
+    font-size  : 20px;
+    font-weight: normal;
 }
 
 .copyRight {
@@ -78,11 +89,6 @@
 
 .copyRightFa {
     font-size: 12px;
-}
-
-.farsiText>a {
-    font-size  : 20px;
-    font-weight: normal;
 }
 
 .root {
@@ -327,7 +333,7 @@
     font-size  : 18px;
 }
 
-.farsiLink {
+.navLinkFa{
     font-size : 16px;
     text-align: right;
 }

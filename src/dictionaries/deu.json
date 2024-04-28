@@ -7,19 +7,23 @@
     "menu":[
         {
             "title":"Blog",
-            "link":"blog?page=1&perPage=5"
+            "link":"blog?page=1&perPage=5",
+            "isActive": true
         },
         {
             "title":"Dienstleistungen",
-            "link":"services"
+            "link":"services",
+            "isActive": true
         },
         {
             "title":"Portfolio",
-            "link":"portfolio"
+            "link":"portfolio",
+            "isActive": true
         },
         {
             "title":"Kundenpanel",
-            "link":"cpl"
+            "link":"clientpanel",
+            "isActive": false
         }
     ],
     "landing": {

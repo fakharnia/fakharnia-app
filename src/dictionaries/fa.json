@@ -1,25 +1,29 @@
 {
     "welcome": {
-        "title": "خوش آمدید",
-        "text": "بسیار خوشحالم که شمارو در به عنوان بازدید کننده وب سایت خودم دارم. برای بازدید از وب سایت من روی کلمه بازدید کلیک نید.",
+        "title": "خوش آمدید!",
+        "text": "شما در وبسایت محمد مهدی فخارنیا هستید. ممنون بابت حضورتون. لطفا از قسمت های مختلف دیدن فرمایید، اگر تمایل به همکاری داشتید و یا سوالی دارید  میتونید از طریق کانال های ارتباطی با هم در تماس باشیم.",
         "button": "بازدید"
     },
     "menu":[
         {
             "title":"بلاگ",
-            "link":"blog?page=1&perPage=5"
+            "link":"blog?page=1&perPage=5",
+            "isActive": true
         },
         {
             "title":"خدمات",
-            "link":"services"
+            "link":"services",
+            "isActive": true
         },
         {
             "title":"درباره من",
-            "link":"portfolio"
+            "link":"portfolio",
+            "isActive": true
         },
         {
             "title":"پنل مشتریان",
-            "link":"cpl"
+            "link":"clientpanel",
+            "isActive": false
         }
     ],
     "landing": {

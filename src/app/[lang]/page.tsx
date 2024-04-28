@@ -10,11 +10,12 @@ type propType = {
 }
 
 const Page = async ({ params: { lang } }: propType) => {
-  
+
   const page = await getDictionary(lang);
 
   return (
     <>
+      <title>Fakharnia Dev | Welcome</title>
       <WelcomePage locale={page} language={lang} />
     </>
   )

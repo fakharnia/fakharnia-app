@@ -32,29 +32,32 @@ const IndexPage = async (prop: propType) => {
     const getClasses = GenerateClass(lang, styles);
 
     return (
-        <div className={`${lang === "fa" ? vazir.className : ""} ${styles.container}`} style={{ direction: lang === "fa" ? "rtl" : "ltr" }}>
-            <div className={styles.menu}>
-                <div className={styles.options}>
-                    <Logo />
-                    <Widget language={lang} />
+        <>
+            <title>Fakharnia Dev | Home</title>
+            <div className={`${lang === "fa" ? vazir.className : ""} ${styles.container}`} style={{ direction: lang === "fa" ? "rtl" : "ltr" }}>
+                <div className={styles.menu}>
+                    <div className={styles.options}>
+                        <Logo />
+                        <Widget language={lang} />
+                    </div>
+                    <Menu language={lang} menu={locale.menu} />
+                    <p className={getClasses("copyRight")}>© Fakharnia.com {new Date().getFullYear()}</p>
                 </div>
-                <Menu language={lang} menu={locale.menu} />
-                <p className={getClasses("copyRight")}>© Fakharnia.com {new Date().getFullYear()}</p>
-            </div>
-            <SmartRibbon language={lang} dictionary={locale} />
-            <div className={styles.root}>
-                <p className={getClasses("dailyText")}>
-                    {status[`${lang}_text`]}
-                </p>
-                <div className={styles.contactBox}>
-                    <Contact dictionary={locale} language={lang} data={resume.contacts} />
-                </div>
+                <SmartRibbon language={lang} dictionary={locale} />
+                <div className={styles.root}>
+                    <p className={getClasses("dailyText")}>
+                        {status[`${lang}_text`]}
+                    </p>
+                    <div className={styles.contactBox}>
+                        <Contact dictionary={locale} language={lang} data={resume.contacts} />
+                    </div>
 
-                <div className={styles.blogBox}>
-                    <Post posts={posts} dictionary={locale} language={lang} />
+                    <div className={styles.blogBox}>
+                        <Post posts={posts} dictionary={locale} language={lang} />
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

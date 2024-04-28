@@ -13,4 +13,4 @@ if (!clientPromise) {
     clientPromise = client.connect();
 }
 
-export const db = client.db('fakharniaTestDB');
+export const db = client.db(process.env.DATABASE);

@@ -8,6 +8,7 @@ export const GET = async (request: NextRequest) => {
 
         pipeline.push({ $sort: { createdAt: -1 } });
 
+        pipeline.push({ $match: { deletedAt: { $eq: null } } });
         pipeline.push({ $skip: 0 });
         pipeline.push({ $limit: 1 });
 

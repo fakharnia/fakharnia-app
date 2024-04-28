@@ -36,17 +36,9 @@ const Resume = async ({ params: { lang } }: propType) => {
         }
     }
 
-    const getSkillDescription = (skill: ISkill) => {
-        switch (lang) {
-            case "fa": return skill.fa_description;
-            case "en": return skill.en_description;
-            case "deu": return skill.deu_description;
-            default: return skill.en_description;
-        }
-    }
-
     return (
         <>
+            <title>Fakharnia Dev | CV</title>
             <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.container}`}>
                 <div className={styles.flexBox}>
                     <Image className={styles.avatar} src={`${URL}/resume/${resume.avatarUrl}`} width={100} height={100} alt="avatar" />
@@ -58,7 +50,7 @@ const Resume = async ({ params: { lang } }: propType) => {
                 <p className={`${styles.paragraph} ${lang === "fa" ? styles.paragraphFa : ""}`}>{getText()}</p>
                 <div className={styles.skillBox}>
                     {
-                        resume.skills.map((skill: ISkill, index: number) => (
+                        resume?.skills?.map((skill: ISkill, index: number) => (
                             <div key={index} className={styles.skillItem}>
                                 <div className={styles.skillItemBox}>
                                     <Image className={styles.skillIcon} src={`${URL}/resume/${skill.fileUrl}`} alt={skill.fileAlt} width={100} height={100} />
@@ -70,7 +62,6 @@ const Resume = async ({ params: { lang } }: propType) => {
                                         <li className={`${styles.skillRateItem} ${skill.rate === 1 ? styles.skillRateItemActive : ""}`}></li>
                                     </ul>
                                 </div>
-                                {/* <p className={`${styles.skillDescription} ${lang === "fa" ? styles.skillDescriptionFa : ""}`}>{getSkillDescription(skill)}</p> */}
                             </div>
                         ))
                     }

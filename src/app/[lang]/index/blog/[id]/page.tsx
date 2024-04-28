@@ -74,8 +74,8 @@ const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPro
                 <ul className={styles.tagList}>
                     {
                         post.tags.map((tag: string, index: number) => (
-                            <li className={getClasses("tag")} key={index}>{tag}</li>
-
+                            // <li className={getClasses("tag")} key={index}>{tag}</li>
+                            <Link href={`/${lang}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={getClasses("tag")}>{tag}</Link>
                         ))
                     }
                 </ul>

@@ -90,7 +90,7 @@ const Page = async (props: propType) => {
             <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""}  ${styles.container}`} >
                 <div className={styles.contents}>
                     <div className={styles.header}>
-                        <Image className={styles.logo} src={`${URL}/project/${project.logoUrl}`} alt={project.logoAlt} width={100} height={100} />
+                        <Logo project={project} classes={`${styles.logo} ${styles.squareImageIn} ${lang === "fa" ? styles.squareImageInFa : ""}`} />
                         <div className={styles.innerContent}>
                             <p className={`${lang === "fa" ? styles.titleFa : ""}  ${styles.title}`}>{getLang("name")}</p>
                             <ul className={styles.techList}>

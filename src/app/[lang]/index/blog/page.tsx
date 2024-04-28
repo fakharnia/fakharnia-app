@@ -47,6 +47,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
     return (
 
         <>
+            <title>Fakharnia Dev | Blog</title>
             <div className={styles.container}>
                 <div id="content" className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.content}`}>
                     <Wrapper dic={blog} lang={lang} tags={tags} params={searchParams} />
