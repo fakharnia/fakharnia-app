@@ -1,6 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import styles from "../page.module.css";
 import { getDictionary } from "@/dictionary";
 import { getProject, getProjects } from "@/app/lib/portfolio.lib";
@@ -100,7 +99,7 @@ const Page = async (props: propType) => {
                                     ))
                                 }
                             </ul>
-                            <Link className={styles.link} href={project.url}>{dic.projects.button}</Link>
+                            {project.url ? <Link className={styles.link} href={project.url} target="_blank">{dic.projects.button}</Link> : null}
                         </div>
                     </div>
                     <div className={styles.content}>

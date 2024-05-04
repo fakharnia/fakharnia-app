@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "../page.module.css";
 import { IService } from "@/app/interfaces/service.interface";
 import { GenerateClass } from "../../blog/utils";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 
 type propType = {
     language: string,

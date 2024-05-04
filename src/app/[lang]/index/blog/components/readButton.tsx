@@ -1,6 +1,5 @@
 "use client"
 import { IPost } from "@/app/interfaces/post.interface";
-import styles from "../page.module.css";
 import { useRouter } from 'next/navigation';
 
 export const ReadButton = (prop: readButtonPropType) => {

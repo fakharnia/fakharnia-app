@@ -99,15 +99,22 @@
 }
 
 .rectangleItem {
-    margin: 10px;
+    position     : relative;
+    margin       : 10px;
+    border-radius: var(--boxRadius);
+    overflow     : hidden;
+
+    /* Test this */
+    box-shadow: var(--shadowB);
+    display   : flex;
+    flex-flow : row wrap;
 }
 
 .rectangleImage {
     background   : var(--bgColorC);
     width        : 300px;
     height       : 168px;
-    border-radius: var(--boxRadius);
-    box-shadow   : var(--shadowB);
+    /* box-shadow: var(--shadowB); */
 }
 
 .rectangleItemIn {
@@ -121,7 +128,7 @@
 }
 
 .rectangleImageIn {
-    width        : 400px;
+    width        : 100%;
     height       : auto;
     border-radius: var(--boxRadius) 0 0 var(--boxRadius);
 }
@@ -131,15 +138,26 @@
 }
 
 .rectangleItemInTitle {
-    width      : calc(100% - 400px);
-    padding    : 0 10px;
-    line-height: 40px;
-    color      : var(--textColor);
-    font-size  : 22px;
+    background       : var(--transBgColorC);
+    /* position      : absolute;
+    bottom           : 0;
+    left             : 0; */
+    width            : 100%;
+    border-radius    : 0 0 var(--normalRadius) var(--normalRadius);
+    /* width         : calc(100% - 400px); */
+    padding          : 0 10px;
+    line-height      : 60px;
+    color            : var(--textColor);
+    font-size        : 22px;
 }
 
 .rectangleItemInTitleFa {
     font-size: 18px;
+}
+
+.rectangleItem:hover .rectangleItemInTitle,
+.rectangleItem:hover .rectangleItemInTitleFa {
+    background: var(--bgColorC);
 }
 
 .moreButton {
@@ -286,11 +304,13 @@ a.farsiIconButton {
 
     .rectangleImageIn {
         border-radius: var(--boxRadius) var(--boxRadius) 0 0;
+        box-shadow   : none;
     }
 
     .rectangleItemInTitle {
+        position   : relative;
         width      : 100%;
-        padding    : 0 10px;
-        line-height: 50px;
+        padding    : 10px;
+        line-height: 30px;
     }
 }

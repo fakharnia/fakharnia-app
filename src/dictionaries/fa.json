@@ -11,7 +11,7 @@
             "isActive": true
         },
         {
-            "title":"خدمات",
+            "title":"فعالیت ها",
             "link":"services",
             "isActive": true
         },
@@ -27,6 +27,7 @@
         }
     ],
     "landing": {
+        "home":"سلام :)",
         "statusButton":"ارسال پیام",
         "readButton": "مطالعه",
         "contact": "کانال های ارتباطی",
@@ -37,7 +38,7 @@
         "projectTitle": "برخی از پروژه های من",
         "designTitle": "برخی از طراحی های من",
         "moreButton":"نمایش همه",
-        "downloadText":"مشاهده رزومه",
+        "downloadText":"درباره من",
         "project":"پروژه ها",
         "design": "طراحی ها"
 

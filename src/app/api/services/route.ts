@@ -34,7 +34,6 @@ export async function GET(request: NextRequest) {
         }
 
     } catch (error: any) {
-        console.log("We incounter the error...!");
         return Response.json({ "DB": error });
     }
 }
@@ -47,7 +46,6 @@ const getMarkdownContent = async (id: string) => {
         });
         return fileContents.text();
     } catch (error) {
-        console.error('Error fetching Markdown content:', error);
         return '';
     }
 }

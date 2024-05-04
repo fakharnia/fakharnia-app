@@ -1,10 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import styles from "../page.module.css"
 import { getDictionary } from "@/dictionary";
 import { getDesigns } from "@/app/lib/portfolio.lib";
 import { IDesign } from "@/app/interfaces/design.interface";
+import { GenerateClass } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: any }
@@ -30,6 +31,8 @@ const Designs = async ({ params: { lang } }: propType) => {
     const dic = await getDictionary(lang);
     const portfolio: portfolioDicType = dic["portfolio"];
 
+    const generateClass = GenerateClass(lang, styles);
+
     const getTitle = (design: IDesign) => {
         switch (lang) {
             case "fa": return design.fa_title;
@@ -48,12 +51,12 @@ const Designs = async ({ params: { lang } }: propType) => {
                     {
                         designs.map((design: IDesign, index: number) => (
                             <Link href={`/${lang}/index/portfolio/designs/${design.key}`} key={index} className={`${styles.rectangleItem} ${styles.rectangleItemIn}`}>
-                                <Image className={`${styles.rectangleImage} ${styles.rectangleImageIn} ${lang === "fa" ? styles.rectangleImageInFa : ""}`} src={`${URL}/design/${design.coverUrl}`} alt={design.coverAlt} width={300} height={150}></Image>
-                                <h5 className={`${styles.rectangleItemInTitle} ${lang === "fa" ? styles.rectangleItemInTitleFa : ""}`}>{getTitle(design)}</h5>
+                                <Image className={`${styles.rectangleImage} ${generateClass("rectangleImageIn")}`} src={`${URL}/design/${design.coverUrl}`} alt={design.coverAlt} width={1920} height={1080}></Image>
+                                <h5 className={generateClass("rectangleItemInTitle")}>{getTitle(design)}</h5>
                             </Link>))
                     }
                 </div>
-                <Link href={`/${lang}/index/portfolio`} className={`${lang === "fa" ? "fakharnia-arrow-right" : "fakharnia-arrow-left"} ${styles.backButton}`}></Link>
+                <Link href={`/${lang}/index/portfolio`} className={`${lang === "fa" ? "fakharnia-arrow-right" : "fakharnia-arrow-left"} ${generateClass("backButton")}`}></Link>
             </div>
         </>
     )

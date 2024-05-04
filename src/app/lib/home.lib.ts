@@ -4,7 +4,6 @@ const SERVER_URL = process.env.SERVER_URI;
 
 export const getStatus = async () => {
     try {
-        console.log("THIS IS API URL: ", API_URL);
         const response = await fetch(`${API_URL}/status`, {
             cache: "no-cache"
         });

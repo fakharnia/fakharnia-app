@@ -15,7 +15,7 @@
 }
 
 .welcomeLogo {
-    width : auto;
+    width : 100%;
     height: 100px;
     margin: 30px 0;
 }
@@ -105,7 +105,7 @@
     width        : 35px;
     height       : 35px;
     border-radius: var(--normalRadius);
-    margin-left  : 20px;
+    margin-left  : auto;
     line-height  : 35px;
     font-size    : 25px;
     cursor       : pointer;
@@ -134,7 +134,6 @@
     }
 
     .welcomeLogo {
-        width        : auto;
         margin-bottom: 40px;
     }
 

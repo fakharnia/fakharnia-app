@@ -47,7 +47,7 @@ export const Widget = (props: propType) => {
         <div className={styles.languageBox}>
             {i18n.locales.map((locale, index) => {
                 return (
-                    <Link key={index} className={`${locale === language ? styles.activeLanguage : ""} ${getClasses("languageLink")}`} href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
+                    <Link key={index} className={`${locale === language ? styles.activeLanguage : ""} ${styles.languageLink}`} href={redirectedPathName(locale)}>{locale.toUpperCase()}</Link>
                 )
             }
             )}

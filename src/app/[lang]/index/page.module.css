@@ -91,6 +91,7 @@
     font-size: 12px;
 }
 
+
 .root {
     width   : 450px;
     height  : 700px;
@@ -232,7 +233,7 @@
 .postDetail {
     display        : flex;
     flex-flow      : column wrap;
-    justify-content: start;
+    justify-content: flex-start;
 
     width     : 100%;
     margin-top: 10px;
@@ -333,7 +334,7 @@
     font-size  : 18px;
 }
 
-.navLinkFa{
+.navLinkFa {
     font-size : 16px;
     text-align: right;
 }
@@ -402,12 +403,16 @@
         border-radius  : var(--boxRadius);
     }
 
-    .smartRibbon>h5 {
+    .homeTitle {
         height     : 60px;
         padding    : 0 10px;
-        font-size  : 18px;
+        font-size  : 22px;
         line-height: 60px;
         text-align : left;
+    }
+
+    .homeTitleFa {
+        font-size: 16px;
     }
 
     .smartRibbon .logo {

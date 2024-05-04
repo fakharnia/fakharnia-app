@@ -24,20 +24,12 @@ const getLocale = (request: NextRequest): string | undefined => {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const publics = [
-    '/manifest.json',
-    '/test.md',
-    '/favicon.ico',
-    '/logo-light.svg',
-    '/logo-dark.svg',
-    '/logoC-light.svg',
-    '/logoC-dark.svg',
-    "/loading-dark.svg",
-    "/loading-light.svg"
-    // Your other files in `public`
+    /\.svg$/,
+    /\.ico$/
   ];
+  const isPublic = publics.some((pattern) => pattern.test(pathname));
 
-
-  if (publics.includes(pathname)) {
+  if (isPublic) {
     return;
   }
 

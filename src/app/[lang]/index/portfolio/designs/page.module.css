@@ -85,6 +85,10 @@
     width    : 100%;
 }
 
+.slideshowItemsFa {
+    direction: rtl;
+}
+
 .slideshowItem {
     width        : auto;
     height       : 80px;
@@ -143,10 +147,10 @@
 }
 
 .navItem {
-    width        : 25px;
-    height       : 25px;
+    width        : 16px;
+    height       : 16px;
     border       : solid var(--textColor) 1px;
-    border-radius: var(--normalRadius);
+    border-radius: 5px;
     margin       : 0 10px;
 }
 
@@ -208,11 +212,11 @@
     }
 
     .slideshowNavItem {
-        width        : 25px;
-        height       : 25px;
+        width        : 10px;
+        height       : 10px;
         margin       : 0 5px;
         border       : solid 2px var(--textColor);
-        border-radius: var(--normalRadius);
+        border-radius: 5px;
         cursor       : pointer;
     }
 

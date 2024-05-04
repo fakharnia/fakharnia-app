@@ -10,90 +10,78 @@
     font-display: block;
 }
 
-[class^="fakharnia-"],
-[class*=" fakharnia-"] {
+[class^="fakharnia-"], [class*=" fakharnia-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
-    font-family   : 'fakharnia' !important;
-    font-style    : normal;
-    font-weight   : normal;
-    font-variant  : normal;
+    font-family: 'fakharnia' !important;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
     text-transform: none;
-    line-height   : 1;
-
+    line-height: 1;
+  
     /* Better Font Rendering =========== */
-    -webkit-font-smoothing : antialiased;
+    -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-.fakharnia-download:before {
-    content: "\e909";
-}
-
-.fakharnia-github:before {
-    content: "\e90a";
-}
-
-.fakharnia-instagram:before {
-    content: "\e90b";
-}
-
-.fakharnia-linkedin:before {
-    content: "\e90c";
-}
-
-.fakharnia-mail:before {
-    content: "\e90d";
-}
-
-.fakharnia-more:before {
-    content: "\e90e";
-}
-
-.fakharnia-telegram:before {
-    content: "\e90f";
-}
-
-.fakharnia-threads:before {
-    content: "\e910";
-}
-
-.fakharnia-x:before {
+  }
+  
+  .fakharnia-twitter:before {
     content: "\e911";
-}
-
-.fakharnia-arrow-down:before {
+  }
+  .fakharnia-x:before {
+    content: "\e912";
+  }
+  .fakharnia-download:before {
+    content: "\e909";
+  }
+  .fakharnia-github:before {
+    content: "\e90a";
+  }
+  .fakharnia-instagram:before {
+    content: "\e90b";
+  }
+  .fakharnia-linkedin:before {
+    content: "\e90c";
+  }
+  .fakharnia-mail:before {
+    content: "\e90d";
+  }
+  .fakharnia-more:before {
+    content: "\e90e";
+  }
+  .fakharnia-telegram:before {
+    content: "\e90f";
+  }
+  .fakharnia-threads:before {
+    content: "\e910";
+  }
+  .fakharnia-arrow-down:before {
     content: "\e900";
-}
-
-.fakharnia-arrow-left:before {
+  }
+  .fakharnia-arrow-left:before {
     content: "\e901";
-}
-
-.fakharnia-arrow-right:before {
+  }
+  .fakharnia-arrow-right:before {
     content: "\e902";
-}
-
-.fakharnia-arrow-up:before {
+  }
+  .fakharnia-arrow-up:before {
     content: "\e903";
-}
-
-.fakharnia-chat:before {
+  }
+  .fakharnia-chat:before {
     content: "\e904";
-}
-
-.fakharnia-logout:before {
+  }
+  .fakharnia-logout:before {
     content: "\e905";
-}
-
-.fakharnia-night:before {
+  }
+  .fakharnia-mail-15-svgrepo-com:before {
+    content: "\e906";
+  }
+  .fakharnia-night:before {
     content: "\e907";
-}
-
-.fakharnia-day:before {
+  }
+  .fakharnia-day:before {
     content: "\e908";
-}
-
-
+  }
+  
 :root {
     --bgColorA : #fbfcfe;
     --bgColorB : #ffffff;

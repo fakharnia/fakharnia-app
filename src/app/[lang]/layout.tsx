@@ -3,7 +3,7 @@ import { i18n } from '../../i18n.config'
 import { Providers } from "./contexts/themeProvider"
 import './globals.css'
 
-import { Genos } from "@next/font/google";
+import { Genos } from "next/font/google";
 
 const genos = Genos({
   subsets: ["latin"],

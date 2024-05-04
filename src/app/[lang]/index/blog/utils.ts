@@ -29,7 +29,7 @@ export const RelativeFormatDate = (date: Date, language: string): string => {
     const weeks = Math.floor(days / 7);
 
     if (seconds < 60) {
-        return "Just Now";
+        return getRelativeFormatDate(seconds, "now", language);
     } else if (minutes < 60) {
         return getRelativeFormatDate(minutes, "minute", language);
     } else if (hours < 24) {
@@ -52,7 +52,7 @@ const getRelativeFormatDate = (value: number, type: string, language: string): s
                 case "en": return "Just Now";
                 case "fa": return "چند لحظه قبل";
                 case "deu": return "Jetzt";
-                default: return "Just Now";
+                default: return "";
             }
         case "minute":
             switch (language) {

@@ -6,10 +6,10 @@ import { Post } from "./components/post";
 import { SmartRibbon } from "./components/smartRibbon";
 import { Contact } from "./components/contact";
 import styles from "./page.module.css";
-import { getBlogRecent, getContacts, getStatus } from "@/app/lib/home.lib";
+import { getBlogRecent, getStatus } from "@/app/lib/home.lib";
 import { IPost } from "@/app/interfaces/post.interface";
 import { getResume } from "@/app/lib/portfolio.lib";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import { GenerateClass } from "../utils";
 
 type propType = {
@@ -34,29 +34,29 @@ const IndexPage = async (prop: propType) => {
     return (
         <>
             <title>Fakharnia Dev | Home</title>
-            <div className={`${lang === "fa" ? vazir.className : ""} ${styles.container}`} style={{ direction: lang === "fa" ? "rtl" : "ltr" }}>
+            <div className={`${styles.container}`} style={{ direction: lang === "fa" ? "rtl" : "ltr" }}>
                 <div className={styles.menu}>
                     <div className={styles.options}>
                         <Logo />
                         <Widget language={lang} />
                     </div>
                     <Menu language={lang} menu={locale.menu} />
-                    <p className={getClasses("copyRight")}>© Fakharnia.com {new Date().getFullYear()}</p>
+                    <p className={styles.copyRight}>© Fakharnia.com {new Date().getFullYear()}</p>
                 </div>
                 <SmartRibbon language={lang} dictionary={locale} />
                 <div className={styles.root}>
-                    <p className={getClasses("dailyText")}>
-                        {status[`${lang}_text`]}
+                    <p className={`${lang === "fa" ? vazir.className : ""} ${getClasses("dailyText")}`}>
+                        {status ? status[`${lang}_text`] : ""}
                     </p>
                     <div className={styles.contactBox}>
-                        <Contact dictionary={locale} language={lang} data={resume.contacts} />
+                        <Contact dictionary={locale} language={lang} data={resume?.contacts} />
                     </div>
 
                     <div className={styles.blogBox}>
                         <Post posts={posts} dictionary={locale} language={lang} />
                     </div>
                 </div>
-            </div>
+            </div >
         </>
     )
 }

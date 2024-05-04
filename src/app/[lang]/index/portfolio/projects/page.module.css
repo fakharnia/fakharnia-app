@@ -9,11 +9,12 @@
 }
 
 .contents {
-    display  : flex;
-    flex-flow: column wrap;
-    height   : calc(100% - 60px);
-    padding  : 20px;
-    overflow : auto;
+    display       : flex;
+    flex-flow     : row wrap;
+    height        : calc(100% - 60px);
+    padding       : 20px;
+    padding-bottom: 40px;
+    overflow      : auto;
 }
 
 .header {
@@ -123,7 +124,7 @@
 }
 
 .navItem {
-    background     : var(--bgColorB);
+    /* background     : var(--bgColorB); */
     display        : flex;
     flex-flow      : row wrap;
     align-items    : center;
@@ -166,6 +167,7 @@
 @media (max-width: 700px) or (max-height: 700px) {
     .container {
         width      : 100%;
+        height     : 100vh;
         padding-top: 80px;
     }
 

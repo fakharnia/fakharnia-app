@@ -12,7 +12,6 @@ export async function GET(request: NextRequest) {
         }
 
     } catch (error: any) {
-        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }

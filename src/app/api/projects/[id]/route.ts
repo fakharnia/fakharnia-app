@@ -12,7 +12,6 @@ export const GET = async (request: Request, { params }: { params: { id: string }
         }
 
     } catch (error: any) {
-        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }

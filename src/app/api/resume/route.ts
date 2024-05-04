@@ -9,12 +9,10 @@ export const GET = async (request: NextRequest) => {
         if (resume) {
             return Response.json(resume);
         } else {
-            console.log("I don't have the Project!");
             return Response.json({});
         }
 
     } catch (error: any) {
-        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }

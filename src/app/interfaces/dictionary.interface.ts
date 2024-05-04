@@ -22,6 +22,7 @@ export interface IMenuDictionary {
 }
 
 export interface ILandingDictionary {
+    home: string;
     statusButton: string;
     readButton: string;
     contact: string;

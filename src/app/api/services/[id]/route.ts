@@ -11,12 +11,10 @@ export async function GET(request: Request, { params }: { params: { id: string }
             service.deu_fileUrl = await getMarkdownContent(service.deu_fileUrl);
             return Response.json(service);
         } else {
-            console.log("I don't have the Service!");
             return Response.json({});
         }
 
     } catch (error: any) {
-        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }
@@ -29,7 +27,6 @@ const getMarkdownContent = async (id: string) => {
         });
         return fileContents.text();
     } catch (error) {
-        console.error('Error fetching Markdown content:', error);
         return '';
     }
 }

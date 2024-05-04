@@ -1,5 +1,5 @@
 import Link from "next/link";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import styles from "../page.module.css";
 import { SlideShow } from "./slideshow";
 import { getDesign, getDesigns } from "@/app/lib/portfolio.lib";
@@ -74,7 +74,7 @@ const DesignDetail = async (props: propType) => {
                         }
                     </div>
                 </div>
-                <Link href={`/${lang}/index/portfolio`} className={`${lang === "fa" ? `fakharnia-arrow-right ${styles.backButtonFa}` : "fakharnia-arrow-left"} ${styles.backButton}`}></Link>
+                <Link href={`/${lang}/index/portfolio/designs`} className={`${lang === "fa" ? `fakharnia-arrow-right ${styles.backButtonFa}` : "fakharnia-arrow-left"} ${styles.backButton}`}></Link>
             </div >
         </>
     )

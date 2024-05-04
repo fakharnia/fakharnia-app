@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import styles from "../page.module.css";
 import { IPost } from "@/app/interfaces/post.interface";
 import { GenerateClass, RelativeFormatDate } from "../../utils";
@@ -48,14 +48,14 @@ export const Post = (props: propType) => {
             <div className={styles.blogPosts}>
                 {
 
-                    posts.map((post: IPost, index: number) => (
-                        <div className={`${styles.post} ${language === "fa" ? vazir.className : ""}`}>
+                    posts?.map((post: IPost, index: number) => (
+                        <div className={`${styles.post} ${language === "fa" ? vazir.className : ""}`} key={index}>
                             <Image className={styles.postCover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={300} height={180} />
                             <div className={styles.postDetail}>
                                 <h5 className={genClass("postTitle")}>{getTitle(post)}</h5>
                                 <div className={styles.postTags}>
                                     {
-                                        post.tags.map((tag: string, index: number) => (
+                                        post?.tags?.map((tag: string, index: number) => (
                                             <Link href={`/${language}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={genClass("postTag")}>{tag}</Link>
                                         ))
                                     }

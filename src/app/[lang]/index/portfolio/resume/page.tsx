@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import styles from "./page.module.css";
 import { getDictionary } from "@/dictionary";
 import { getResume } from "@/app/lib/portfolio.lib";
 import { IResume, ISkill } from "@/app/interfaces/resume.interface";
+import { GenerateClass } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: any }
@@ -17,6 +18,8 @@ const Resume = async ({ params: { lang } }: propType) => {
     const resume: IResume = await getResume();
     const URL = process.env.SERVER_URI;
     const dic = await getDictionary(lang);
+
+    const getClasses = GenerateClass(lang, styles);
 
     const getAboutMe = () => {
         switch (lang) {
@@ -66,7 +69,7 @@ const Resume = async ({ params: { lang } }: propType) => {
                         ))
                     }
                 </div>
-                <Link href={`/${lang}/index/portfolio`} className={`${lang === "fa" ? "fakharnia-arrow-right" : "fakharnia-arrow-left"} ${styles.backButton}`}></Link>
+                <Link href={`/${lang}/index/portfolio`} className={`${lang === "fa" ? "fakharnia-arrow-right" : "fakharnia-arrow-left"} ${getClasses("backButton")}`}></Link>
             </div>
         </>
     )

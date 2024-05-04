@@ -1,6 +1,6 @@
 import Link from "next/link";
 import styles from "../page.module.css"
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import { getDictionary } from "@/dictionary";
 import { getProjects } from "@/app/lib/portfolio.lib";
 import { Logo } from "../components/logo";

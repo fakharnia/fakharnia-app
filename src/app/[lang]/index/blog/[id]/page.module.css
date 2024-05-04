@@ -21,11 +21,11 @@
 .title {
     width: 100%;
 
-    line-height: 40px;
+    line-height: 60px;
 }
 
 .titleFa {
-    font-size: 25px;
+    font-size: 30px;
 }
 
 .info {
@@ -62,44 +62,87 @@
     right: 20px;
 }
 
-.markdown {
-    font-size: 22px;
+.markdown,
+.markdownFa {
+    PADDING: 10PX;
+
 }
 
 .markdown h1,
 .markdown h2,
 .markdown h3,
 .markdown h4,
-.markdown h5 {
-    margin-bottom: 20px;
-
+.markdown h5,
+.markdownFa h1,
+.markdownFa h2,
+.markdownFa h3,
+.markdownFa h4,
+.markdownFa h5 {
+    margin     : 30px 0 10px 0;
     line-height: 40px;
 }
 
+.markdown h1 {
+    font-size: 42px;
+}
+
+.markdown h2 {
+    font-size: 36px;
+}
+
+.markdown h3 {
+    font-size: 30px;
+}
+
+.markdown h4 {
+    font-size: 26px;
+}
+
 .markdown p {
+    font-size  : 22px;
+    line-height: 35px;
     text-align : justify;
-    line-height: 30px;
+}
+
+.markdown ul {
+    padding: 0 30px;
+}
+
+.markdown ul li {
+    margin: 15px 0;
+
 }
 
 .markdownFa h1 {
-    font-size: 25px;
+    font-size: 34px;
 }
 
 .markdownFa h2 {
-    font-size: 23px;
+    font-size: 28px;
 }
 
 .markdownFa h3 {
-    font-size: 20px;
+    font-size: 24px;
 }
 
 .markdownFa h4 {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 .markdownFa h5 {
-    font-size: 16px;
+    font-size: 18px;
 }
+
+
+.markdownFa strong {
+    font-weight: bold;
+}
+
+.markdownFa p {
+    font-size: 16px;
+    font-weight: normal;
+}
+
 
 .tagList {
     display  : flex;

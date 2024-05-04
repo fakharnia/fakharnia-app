@@ -6,6 +6,7 @@ export const GET = async (request: NextRequest) => {
     try {
         const postsCollection = db.collection('posts');
         const distinctTags = await postsCollection.aggregate([
+            { $match: { deletedAt: { $eq: null } } },
             { $project: { tags: 1 } },
             { $unwind: '$tags' },
             {

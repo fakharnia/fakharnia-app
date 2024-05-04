@@ -28,11 +28,11 @@
 }
 
 .navItem {
-    width        : 25px;
-    height       : 25px;
+    width        : 16px;
+    height       : 16px;
     margin       : 0 5px;
     border       : solid 1px var(--textColor);
-    border-radius: var(--normalRadius);
+    border-radius: 5px;
     cursor       : pointer;
 }
 
@@ -57,12 +57,15 @@
 }
 
 .serviceLink {
-    display  : flex;
-    flex-flow: row wrap;
-    position : relative;
-    width    : calc(100% - 10px);
-    margin   : 10px 5px;
-    padding  : 0;
+    background   : var(--bgColorA);
+    display      : flex;
+    flex-flow    : row wrap;
+    position     : relative;
+    width        : calc(100% - 10px);
+    margin       : 10px 5px;
+    padding      : 0;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadowB);
 }
 
 .serviceImage {
@@ -73,22 +76,19 @@
 
 .serviceTitle {
     background   : var(--transBgColorC);
-    position     : absolute;
-    bottom       : 0;
-    left         : 0;
     width        : 100%;
-    padding      : 20px;
+    padding      : 0 10px;
     border-radius: 0 0 var(--boxRadius) var(--boxRadius);
 
     color      : var(--textColor);
-    line-height: 40px;
-    font-size  : 30px;
+    line-height: 60px;
+    font-size  : 22px;
 }
 
 .serviceTitleFa {
     border-left: unset;
 
-    font-size  : 20px;
+    font-size  : 18px;
     font-weight: normal;
 }
 
@@ -104,6 +104,7 @@
     align-items    : baseline;
     justify-content: space-between;
 
+    position: relative;
     height        : calc(100% - 120px);
     padding       : 20px 10px;
     padding-bottom: 0;
@@ -130,46 +131,95 @@
 }
 
 .image {
-    background   : var(--textColor);
+    background   : var(--bgColorA);
     width        : 100%;
     height       : 300px;
+    border       : solid 1px var(--bgColorA);
     border-radius: var(--boxRadius);
+    box-shadow: var(--shadowB);
 }
 
-.markdown {
-    PADDING: 10PX 0;
+.markdown,
+.markdownFa {
+    PADDING: 10PX;
 
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5,
+.markdownFa h1,
+.markdownFa h2,
+.markdownFa h3,
+.markdownFa h4,
+.markdownFa h5 {
+    margin     : 30px 0 10px 0;
+    line-height: 40px;
+}
+
+.markdown h1 {
+    font-size: 42px;
+}
+
+.markdown h2 {
+    font-size: 36px;
 }
 
 .markdown h3 {
-    height       : 40px;
-    margin-bottom: 20px;
-    font-size    : 32px;
+    font-size: 30px;
+}
+
+.markdown h4 {
+    font-size: 26px;
+}
+
+.markdown p {
+    font-size  : 22px;
+    line-height: 35px;
+    text-align : justify;
+}
+
+.markdown ul {
+    padding: 0 30px;
+}
+
+.markdown ul li {
+    margin: 15px 0;
+
+}
+
+.markdownFa h1 {
+    font-size: 34px;
+}
+
+.markdownFa h2 {
+    font-size: 28px;
 }
 
 .markdownFa h3 {
     font-size: 24px;
 }
 
-.markdown h4 {
-    font-size: 28px;
-    margin   : 20px 0;
-}
-
 .markdownFa h4 {
-    font-size: 20px;
+    font-size: 22px;
 }
 
-.markdown p {
-    line-height: 25px;
-    font-size  : 20px;
-    text-align : justify;
+.markdownFa h5 {
+    font-size: 18px;
+}
 
+
+.markdownFa strong {
+    font-weight: bold;
 }
 
 .markdownFa p {
-    font-size: 18px;
+    font-size  : 16px;
+    font-weight: normal;
 }
+
 
 .thumbnailListButton {
     width    : 60px;
@@ -216,7 +266,7 @@
 }
 
 .thumbnailPhoto {
-    background   : var(--textColor);
+    background   : var(--bgColorA);
     width        : 300px;
     height       : auto;
     border-radius: var(--boxRadius);
@@ -225,11 +275,11 @@
 .thumbnailTitle {
     background: var(--transBgColorC);
 
-    position: absolute;
-    bottom  : 0;
-    left    : 0;
-    width   : 100%;
-    padding : 10px;
+    position     : absolute;
+    bottom       : 0;
+    left         : 0;
+    width        : 100%;
+    padding      : 10px;
     border-radius: 0 0 var(--boxRadius) var(--boxRadius);
 
     color      : var(--textColor);
@@ -243,7 +293,27 @@
 }
 
 .thumbnailItem:hover .thumbnailTitle {
-    background       : var(--bgColorB);
+    background: var(--bgColorB);
+}
+
+.backButton {
+    background   : var(--bgColorC);
+    position     : sticky;
+    bottom       : 20px;
+    left         : 20px;
+    width        : 40px;
+    height       : 40px;
+    border-radius: var(--normalRadius);
+    box-shadow   : var(--shadowB);
+    color        : var(--textColor);
+    font-size    : 20px;
+    text-align   : center;
+    line-height  : 40px;
+}
+
+.backButtonFa {
+    left : unset;
+    right: 20px;
 }
 
 @keyframes slideInAnimation {
@@ -311,9 +381,16 @@
     }
 
     .box {
-        /* height         : 100vh; */
+        height        : auto;
         padding       : 70px 10px;
         padding-bottom: 0px;
+    }
+
+    .innerBox {
+        height           : calc(100% - 60px);
+        padding-top      : 80px;
+        padding-bottom   : 20px;
+        /* padding       : 20px 10px; */
     }
 
     .thumbnailList {
@@ -340,6 +417,17 @@
         height       : auto;
         border-radius: var(--boxRadius);
 
+    }
+
+    .serviceLink {
+        width      : 100%;
+        margin     : 10px;
+        align-items: center;
+    }
+
+    .serviceTitle {
+        padding    : 10px;
+        line-height: 30px;
     }
 
 

@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import { useTheme } from "next-themes";
 import { Widget } from "../../components/widget";
 import styles from "../page.module.css";
@@ -66,7 +66,7 @@ export const Header = (props: propType) => {
                 <Widget language={props.language} />
                 <div className={`${styles.smartNav} ${props.language === "fa" ? vazir.className : ""}`}>
                     {
-                        dictionary.menu.map((menu: any, index: number) => getLink(index, menu))
+                        dictionary?.menu?.map((menu: any, index: number) => getLink(index, menu))
                     }
                 </div>
             </div>

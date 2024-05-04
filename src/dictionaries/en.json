@@ -27,6 +27,7 @@
         }
     ],
     "landing": {
+        "home":"Hi :)",
         "statusButton":"Text Me",
         "readButton": "Read",
         "contact": "Contacts",
@@ -37,7 +38,7 @@
         "projectTitle": "Some of My Projects",
         "designTitle": "Some of My Designs",
         "moreButton":"Browse",
-        "downloadText":"Read CV",
+        "downloadText":"About Me",
         "project":"My Projects",
         "design": "My Designs"
 

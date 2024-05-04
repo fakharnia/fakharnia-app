@@ -26,12 +26,10 @@ export async function GET(request: NextRequest) {
         if (designs) {
             return Response.json(designsToReturn);
         } else {
-            console.log("I don't have the Design!");
             return Response.json({});
         }
 
     } catch (error: any) {
-        console.log("We incounter the error...!", error);
         return Response.json({ "DB": error });
     }
 }

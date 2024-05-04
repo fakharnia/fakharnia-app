@@ -21,12 +21,10 @@ export const GET = async (request: Request, { params }: { params: { id: string }
             }
             return Response.json(designs[0]);
         } else {
-            console.log("I don't have the Design!");
             return Response.json({});
         }
 
     } catch (error: any) {
-        console.log("We incounter the error...!");
         return Response.json({ "DB": error });
     }
 }

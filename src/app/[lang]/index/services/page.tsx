@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 import { getServices } from "@/app/lib/service.lib";
 import styles from "./page.module.css";
 import { GenerateClass } from "../blog/utils";
-import localFont from "@next/font/local";
+import localFont from "next/font/local";
 import { IService } from "@/app/interfaces/service.interface";
 import Link from "next/link";
 

@@ -4,15 +4,12 @@ import { IStatus } from "@/app/interfaces/status.interface";
 
 export async function GET(request: NextRequest) {
     try {
-        console.log(db);
         const status: IStatus[] = await db.collection('status').find().toArray();
-        console.log("This is status data: ", status);
         if (status && status.length > 0) {
             return Response.json(status[0]);
         }
         return Response.json({});
     } catch (error: any) {
-        console.log("We encounter the error...!");
         return Response.json({ "DB": error });
     }
 }
@@ -25,7 +22,6 @@ const getMarkdownContent = async (id: string) => {
         });
         return fileContents.text();
     } catch (error) {
-        console.error('Error fetching Markdown content:', error);
         return '';
     }
 }
