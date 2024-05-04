@@ -1,11 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
-import localFont from "next/font/local";
 import styles from "../page.module.css"
 import { getDictionary } from "@/dictionary";
 import { getDesigns } from "@/app/lib/portfolio.lib";
 import { IDesign } from "@/app/interfaces/design.interface";
-import { GenerateClass } from "@/app/[lang]/utils";
+import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: any }
@@ -20,9 +19,6 @@ type portfolioDicType = {
     project: string,
     design: string
 }
-
-const vazir = localFont({ src: "../../../../fonts/vazir.woff2" });
-
 
 const Designs = async ({ params: { lang } }: propType) => {
 
@@ -45,7 +41,7 @@ const Designs = async ({ params: { lang } }: propType) => {
     return (
         <>
             <title>Fakharnia Dev | Designs</title>
-            <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.boxIn}`}>
+            <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.boxIn}`}>
                 <h5 className={styles.boxTitle}>{portfolio.design}</h5>
                 <div className={`${styles.rectangleList} ${styles.rectangleListIn}`}>
                     {

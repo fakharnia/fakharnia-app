@@ -4,16 +4,15 @@ import ReactMarkdown from 'react-markdown';
 import { getService, getServices } from "@/app/lib/service.lib";
 import { Footer } from "../components/footer";
 import { GenerateClass } from "../../blog/utils";
-import localFont from "next/font/local";
 import { IService } from "@/app/interfaces/service.interface";
 import Link from "next/link";
+import { VazirFont } from "@/app/[lang]/utils";
 
 type propsType = {
     params: { lang: string, id: string }
 }
 
 const URL = process.env.NEXT_PUBLIC_SERVER_URI;
-const vazir = localFont({ src: "../../../../fonts/vazir.woff2" });
 
 const ServiceComponent = async (props: propsType) => {
 
@@ -34,7 +33,7 @@ const ServiceComponent = async (props: propsType) => {
 
     return (
         <>
-            <div className={`${getClasses("innerBox")} ${lang === "fa" ? vazir.className : ""}`}>
+            <div className={`${getClasses("innerBox")} ${lang === "fa" ? VazirFont.className : ""}`}>
                 <Image className={styles.image} src={`${URL}/service/${service?.coverUrl}`} alt={service?.coverAlt} width={800} height={420} />
                 <ReactMarkdown className={getClasses("markdown")}>{getContent() || undefined}</ReactMarkdown>
                 <Link href={`/${lang}/index/services`} className={`${lang === "fa" ? `fakharnia-arrow-right ${styles.backButtonFa}` : "fakharnia-arrow-left"} ${styles.backButton}`}></Link>

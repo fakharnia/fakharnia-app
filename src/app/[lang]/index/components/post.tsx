@@ -1,9 +1,8 @@
 "use client"
 import Link from "next/link";
-import localFont from "next/font/local";
 import styles from "../page.module.css";
 import { IPost } from "@/app/interfaces/post.interface";
-import { GenerateClass, RelativeFormatDate } from "../../utils";
+import { GenerateClass, RelativeFormatDate, VazirFont } from "../../utils";
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import Image from "next/image";
 
@@ -13,7 +12,6 @@ type propType = {
     dictionary: any,
     language: string
 }
-const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
 
 export const Post = (props: propType) => {
 
@@ -44,12 +42,12 @@ export const Post = (props: propType) => {
 
     return (
         <>
-            <h5 className={`${styles.boxTitle} ${language === "fa" ? `${vazir.className} ${styles.boxTitleFarsi}` : ""}`}>{dictionary.landing.blog}</h5>
+            <h5 className={`${styles.boxTitle} ${language === "fa" ? `${VazirFont.className} ${styles.boxTitleFarsi}` : ""}`}>{dictionary.landing.blog}</h5>
             <div className={styles.blogPosts}>
                 {
 
                     posts?.map((post: IPost, index: number) => (
-                        <div className={`${styles.post} ${language === "fa" ? vazir.className : ""}`} key={index}>
+                        <div className={`${styles.post} ${language === "fa" ? VazirFont.className : ""}`} key={index}>
                             <Image className={styles.postCover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={300} height={180} />
                             <div className={styles.postDetail}>
                                 <h5 className={genClass("postTitle")}>{getTitle(post)}</h5>

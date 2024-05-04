@@ -1,10 +1,7 @@
 "use client"
 import Link from "next/link"
-import localFont from "next/font/local";
 import styles from "../page.module.css";
-import { GenerateClass } from "../../utils";
-
-const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
+import { GenerateClass, VazirFont } from "../../utils";
 
 type propsType = {
     language: string,
@@ -25,7 +22,7 @@ export const Menu = (props: propsType) => {
     }
 
     return (
-        <div className={`${styles.nav} ${language === "fa" ? vazir.className + " " + styles.farsiText : ""}`}>
+        <div className={`${styles.nav} ${language === "fa" ? VazirFont.className + " " + styles.farsiText : ""}`}>
 
             {
                 menu?.map((mn: any, index: number) => getLink(index, mn))

@@ -5,15 +5,13 @@ import Image from "next/image";
 import { Widget } from "./widget";
 import Link from "next/link";
 import styles from "../page.module.css";
-import localFont from "next/font/local";
 import { GenerateClass } from "../utils";
+import { VazirFont } from "../utils";
 
 type propType = {
     locale: any,
     language: string
 }
-
-const vazir = localFont({ src: "../../fonts/vazir.woff2" });
 
 export const WelcomePage = (props: propType) => {
 
@@ -43,12 +41,12 @@ export const WelcomePage = (props: propType) => {
                 <Widget language={language} />
             </div>
 
-            <div className={`${styles.welcomeTextBox}  ${language === "fa" ? vazir.className : ""}`} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
+            <div className={`${styles.welcomeTextBox}  ${language === "fa" ? VazirFont.className : ""}`} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
                 <h5 className={getClasses("welcomeTitle")}>{locale.welcome.title}</h5>
                 <p className={getClasses("welcomeText")}>{locale.welcome.text}</p>
             </div >
 
-            <Link className={`${getClasses("welcomeButton")}  ${language === "fa" ? vazir.className : ""}`} href={`${language}/index`}>{locale.welcome.button}</Link>
+            <Link className={`${getClasses("welcomeButton")}  ${language === "fa" ? VazirFont.className : ""}`} href={`${language}/index`}>{locale.welcome.button}</Link>
         </div >
     );
 }

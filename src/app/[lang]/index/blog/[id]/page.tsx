@@ -8,9 +8,7 @@ import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import { IPost } from "@/app/interfaces/post.interface";
 import { GenerateClass, RelativeFormatDate } from "../utils";
 import { env } from "process";
-import localFont from "next/font/local";
-
-const vazir = localFont({ src: "../../../../fonts/vazir.woff2" });
+import { VazirFont } from "@/app/[lang]/utils";
 
 const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPropType) => {
 
@@ -67,7 +65,7 @@ const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPro
     return (
         <>
             <title>Fakharnia Dev | Post</title>
-            <div className={`${getClasses("container")} ${lang === "fa" ? vazir.className : ""}`}>
+            <div className={`${getClasses("container")} ${lang === "fa" ? VazirFont.className : ""}`}>
                 <Image className={styles.cover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={600} height={337.50} />
                 <h1 className={getClasses("title")}>{getTitle()}</h1>
                 <p className={getClasses("info")}>{getDate(post)} / {post.Views?.length ?? 0} {blog.view} / {post.estimateTimeInMinutes} {blog.time}</p>

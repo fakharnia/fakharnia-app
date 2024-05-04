@@ -1,3 +1,5 @@
+import localFont from "next/font/local";
+
 export const GenerateClass = (lang: string, styles: { [key: string]: string }) => (...cssClasses: string[]) => {
     let classes = ``;
     for (const cssClass of cssClasses) {
@@ -87,3 +89,4 @@ const getRelativeFormatDate = (value: number, type: string, language: string): s
     }
 }
 
+export const VazirFont = localFont({ src: "../fonts/vazir.woff2" });

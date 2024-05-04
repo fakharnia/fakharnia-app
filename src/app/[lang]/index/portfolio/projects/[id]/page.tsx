@@ -1,12 +1,10 @@
 import Link from "next/link";
-import localFont from "next/font/local";
 import styles from "../page.module.css";
 import { getDictionary } from "@/dictionary";
 import { getProject, getProjects } from "@/app/lib/portfolio.lib";
 import { Logo } from "../../components/logo";
 import { IProject } from "@/app/interfaces/project.interface";
-
-const vazir = localFont({ src: "../../../../../fonts/vazir.woff2" });
+import { VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: string, id: string }, searchParams: {}
@@ -86,7 +84,7 @@ const Page = async (props: propType) => {
 
     return (
         <>
-            <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""}  ${styles.container}`} >
+            <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""}  ${styles.container}`} >
                 <div className={styles.contents}>
                     <div className={styles.header}>
                         <Logo project={project} classes={`${styles.logo} ${styles.squareImageIn} ${lang === "fa" ? styles.squareImageInFa : ""}`} />

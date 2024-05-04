@@ -3,15 +3,13 @@ import ReactMarkdown from 'react-markdown';
 import { getServices } from "@/app/lib/service.lib";
 import styles from "./page.module.css";
 import { GenerateClass } from "../blog/utils";
-import localFont from "next/font/local";
 import { IService } from "@/app/interfaces/service.interface";
 import Link from "next/link";
+import { VazirFont } from "../../utils";
 
 type propType = {
     params: { lang: any }
 }
-
-const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
 
 const Services = async (prop: propType) => {
 
@@ -35,7 +33,7 @@ const Services = async (prop: propType) => {
     return (
         <>
             <title>Fakharnia Dev | Services</title>
-            <div className={`${getClasses("box")} ${lang === "fa" ? vazir.className : ""}`}>
+            <div className={`${getClasses("box")} ${lang === "fa" ? VazirFont.className : ""}`}>
                 {
                     services.map((service: IService, index: number) => (
                         <Link

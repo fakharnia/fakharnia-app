@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import localFont from "next/font/local";
 import styles from "./page.module.css"
 import { getDictionary } from "@/dictionary";
 import { getDesigns, getProjects, getResume } from "@/app/lib/portfolio.lib";
@@ -8,6 +7,7 @@ import { Logo } from "./components/logo";
 import { IDesign } from "@/app/interfaces/design.interface";
 import { IProject } from "@/app/interfaces/project.interface";
 import { IResume } from "@/app/interfaces/resume.interface";
+import { VazirFont } from "../../utils";
 
 type propType = {
     params: { lang: any }
@@ -21,7 +21,6 @@ type portfolioDicType = {
     downloadText: string
 }
 
-const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
 
 const Portfolio = async ({ params: { lang } }: propType) => {
 
@@ -36,7 +35,7 @@ const Portfolio = async ({ params: { lang } }: propType) => {
         <>
             <title>Fakharnia Dev | Portfolio</title>
             <div className={styles.container}>
-                <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.box}`}>
+                <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.box}`}>
                     <h5 className={`${styles.boxTitle} ${lang === "fa" ? styles.boxTitleFa : ""}`}>{portfolio.projectTitle}</h5>
                     <div className={styles.squareList}>
                         {
@@ -48,7 +47,7 @@ const Portfolio = async ({ params: { lang } }: propType) => {
                     </div>
                     <Link href={`/${lang}/index/portfolio/projects`} className={`${styles.moreButton} ${lang === "fa" ? styles.moreButtonFa : ""}`}>{portfolio.moreButton}</Link>
                 </div>
-                <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.box}`}>
+                <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.box}`}>
                     <h5 className={`${styles.boxTitle} ${lang === "fa" ? styles.boxTitleFa : ""}`}>{portfolio.designTitle}</h5>
                     <div className={styles.rectangleList}>
                         {
@@ -61,7 +60,7 @@ const Portfolio = async ({ params: { lang } }: propType) => {
                     </div>
                     <Link href={`/${lang}/index/portfolio/designs`} className={`${styles.moreButton} ${lang === "fa" ? styles.moreButtonFa : ""}`}>{portfolio.moreButton}</Link>
                 </div>
-                <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.downloadBox}`}>
+                <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.downloadBox}`}>
                     <p className={`${styles.downloadText} ${lang === "fa" ? styles.downloadTextFa : ""}`}>{portfolio.downloadText}</p>
                     <div className={styles.dowloadButons}>
                         <Link href={`/${lang}/index/portfolio/resume`} className={`fakharnia-more ${styles.downloadButton} ${lang === "fa" ? styles.farsiIconButton : ""}`}></Link>

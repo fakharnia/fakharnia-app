@@ -1,17 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import localFont from "next/font/local";
 import styles from "./page.module.css";
 import { getDictionary } from "@/dictionary";
 import { getResume } from "@/app/lib/portfolio.lib";
 import { IResume, ISkill } from "@/app/interfaces/resume.interface";
-import { GenerateClass } from "@/app/[lang]/utils";
+import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: any }
 }
-
-const vazir = localFont({ src: "../../../../fonts/vazir.woff2" });
 
 const Resume = async ({ params: { lang } }: propType) => {
 
@@ -42,7 +39,7 @@ const Resume = async ({ params: { lang } }: propType) => {
     return (
         <>
             <title>Fakharnia Dev | CV</title>
-            <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.container}`}>
+            <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.container}`}>
                 <div className={styles.flexBox}>
                     <Image className={styles.avatar} src={`${URL}/resume/${resume?.avatarUrl}`} width={100} height={100} alt="avatar" />
                     <div className={styles.content}>

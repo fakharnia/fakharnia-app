@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from "../page.module.css";
 import { IService } from "@/app/interfaces/service.interface";
 import { GenerateClass } from "../../blog/utils";
-import localFont from "next/font/local";
+import { VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     language: string,
@@ -13,7 +13,6 @@ type propType = {
     activeService: IService
 }
 
-const vazir = localFont({ src: "../../../../fonts/vazir.woff2" });
 
 export const Footer = (params: propType) => {
 
@@ -40,7 +39,7 @@ export const Footer = (params: propType) => {
 
     return (
         <>
-            <div className={`${language === "fa" ? vazir.className : ""} ${styles.thumbnailList} ${navState ? styles.displayThumbnailList : (navState === false ? styles.hideThumbnailList : "")}`}>
+            <div className={`${language === "fa" ? VazirFont.className : ""} ${styles.thumbnailList} ${navState ? styles.displayThumbnailList : (navState === false ? styles.hideThumbnailList : "")}`}>
                 {
                     services.map((service: IService, index: number) => (
                         <Link

@@ -9,14 +9,12 @@ import styles from "./page.module.css";
 import { getBlogRecent, getStatus } from "@/app/lib/home.lib";
 import { IPost } from "@/app/interfaces/post.interface";
 import { getResume } from "@/app/lib/portfolio.lib";
-import localFont from "next/font/local";
-import { GenerateClass } from "../utils";
+import { GenerateClass, VazirFont } from "../utils";
 
 type propType = {
     params: { lang: any }
 }
 
-const vazir = localFont({ src: "../../fonts/vazir.woff2" });
 
 const IndexPage = async (prop: propType) => {
 
@@ -45,7 +43,7 @@ const IndexPage = async (prop: propType) => {
                 </div>
                 <SmartRibbon language={lang} dictionary={locale} />
                 <div className={styles.root}>
-                    <p className={`${lang === "fa" ? vazir.className : ""} ${getClasses("dailyText")}`}>
+                    <p className={`${lang === "fa" ? VazirFont.className : ""} ${getClasses("dailyText")}`}>
                         {status ? status[`${lang}_text`] : ""}
                     </p>
                     <div className={styles.contactBox}>

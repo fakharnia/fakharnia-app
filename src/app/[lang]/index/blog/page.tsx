@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css"
-import localFont from "next/font/local";
 import { getDictionary } from "@/dictionary";
 import { getPosts, getTags } from "@/app/lib/blog.lib";
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
@@ -10,8 +9,8 @@ import { GenerateClass, RelativeFormatDate } from "./utils";
 import { Wrapper } from "./components/wrapper";
 import { Pagination } from "./components/pagination";
 import { ReadButton } from "./components/readButton";
+import { VazirFont } from "../../utils";
 
-const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
 
 const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropType) => {
 
@@ -42,7 +41,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
         <>
             <title>Fakharnia Dev | Blog</title>
             <div className={styles.container}>
-                <div id="content" className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.content}`}>
+                <div id="content" className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.content}`}>
                     <Wrapper dic={blog} lang={lang} tags={tags} params={searchParams} />
                     <div className={styles.blogPosts}>
                         {
@@ -62,7 +61,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
                                     </div>
                                     <div className={styles.postOptions}>
                                         <p className={getClasses("postInfo")}>{RelativeFormatDate(post.createdAt, lang)} / {post.Views?.length ?? 0} {blog.view} / {post.estimateTimeInMinutes} {blog.time}</p>
-                                        <ReadButton lang={lang} post={post} cssClasses={`${getClasses("postReadButton")} ${lang === "fa" ? vazir.className : ""} `} searchParams={searchParams} text={blog.read} />
+                                        <ReadButton lang={lang} post={post} cssClasses={`${getClasses("postReadButton")} ${lang === "fa" ? VazirFont.className : ""} `} searchParams={searchParams} text={blog.read} />
                                     </div>
                                 </div>
 
@@ -70,7 +69,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
                         }
                     </div>
                 </div>
-                <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.footer}`}>
+                <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.footer}`}>
                     <Pagination dic={blog} lang={lang} pages={postsData.pages} perPage={postsData.perPage} activePage={postsData.activePage} total={postsData.total} params={searchParams} />
                 </div>
             </div>

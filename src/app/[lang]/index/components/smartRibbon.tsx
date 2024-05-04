@@ -1,17 +1,15 @@
 "use client"
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
-import localFont from "next/font/local";
 import { Logo } from "./logo";
 import { Widget } from "../../components/widget";
 import styles from "../page.module.css";
-import { GenerateClass } from "../../utils";
+import { GenerateClass, VazirFont } from "../../utils";
 
 type propType = {
     language: string,
     dictionary: any
 }
-const vazir = localFont({ src: "../../../fonts/vazir.woff2" });
 
 export const SmartRibbon = (props: propType) => {
 
@@ -44,11 +42,11 @@ export const SmartRibbon = (props: propType) => {
         <>
             <div className={styles.smartRibbon} ref={wrapperRef}>
                 <Logo />
-                <h5 className={`${getClasses("homeTitle")} ${props.language === "fa" ? vazir.className : ""}`}>{dictionary.landing.home}</h5>
+                <h5 className={`${getClasses("homeTitle")} ${props.language === "fa" ? VazirFont.className : ""}`}>{dictionary.landing.home}</h5>
                 <button className={`fakharnia-more ${styles.moreButton}`} onClick={() => { setSmartMenu(!smartMenu) }}></button>
                 <div className={`${styles.smartMenu} ${smartMenu ? `${styles.smartMenuDisplayed} ${language === "fa" ? styles.smartMenuDisplayedFarsi : ""}` : ""}`}>
                     <Widget language={props.language} />
-                    <div className={`${styles.smartNav} ${props.language === "fa" ? vazir.className : ""}`}>
+                    <div className={`${styles.smartNav} ${props.language === "fa" ? VazirFont.className : ""}`}>
                         {
                             dictionary?.menu?.map((mn: any, index: number) => getLink(index, mn))
                         }

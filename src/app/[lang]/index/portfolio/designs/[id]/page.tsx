@@ -1,14 +1,13 @@
 import Link from "next/link";
-import localFont from "next/font/local";
 import styles from "../page.module.css";
 import { SlideShow } from "./slideshow";
 import { getDesign, getDesigns } from "@/app/lib/portfolio.lib";
 import { IDesign } from "@/app/interfaces/design.interface";
+import { VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: string, id: string }, searchParams: {}
 }
-const vazir = localFont({ src: "../../../../../fonts/vazir.woff2" });
 
 const DesignDetail = async (props: propType) => {
 
@@ -56,7 +55,7 @@ const DesignDetail = async (props: propType) => {
 
     return (
         <>
-            <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""}  ${styles.container}`}>
+            <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""}  ${styles.container}`}>
                 <div className={styles.content}>
                     <SlideShow lang={lang} design={design} />
                     <h5 className={`${styles.title} ${lang === "fa" ? styles.titleFa : ""}`}>{getTitle()}</h5>
