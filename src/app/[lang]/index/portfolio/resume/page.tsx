@@ -23,19 +23,19 @@ const Resume = async ({ params: { lang } }: propType) => {
 
     const getAboutMe = () => {
         switch (lang) {
-            case "fa": return resume.fa_aboutMe;
-            case "en": return resume.en_aboutMe;
-            case "deu": return resume.deu_aboutMe;
-            default: return resume.en_aboutMe;
+            case "fa": return resume?.fa_aboutMe;
+            case "en": return resume?.en_aboutMe;
+            case "deu": return resume?.deu_aboutMe;
+            default: return resume?.en_aboutMe;
         }
     }
 
     const getText = () => {
         switch (lang) {
-            case "fa": return resume.fa_text;
-            case "en": return resume.en_text;
-            case "deu": return resume.deu_text;
-            default: return resume.en_text;
+            case "fa": return resume?.fa_text;
+            case "en": return resume?.en_text;
+            case "deu": return resume?.deu_text;
+            default: return resume?.en_text;
         }
     }
 
@@ -44,7 +44,7 @@ const Resume = async ({ params: { lang } }: propType) => {
             <title>Fakharnia Dev | CV</title>
             <div className={`${lang === "fa" ? `${styles.farsiLang} ${vazir.className}` : ""} ${styles.container}`}>
                 <div className={styles.flexBox}>
-                    <Image className={styles.avatar} src={`${URL}/resume/${resume.avatarUrl}`} width={100} height={100} alt="avatar" />
+                    <Image className={styles.avatar} src={`${URL}/resume/${resume?.avatarUrl}`} width={100} height={100} alt="avatar" />
                     <div className={styles.content}>
                         <h5 className={`${styles.headTitle}  ${lang === "fa" ? styles.headTitleFa : ""}`}>{dic["resume"]}</h5>
                         <p className={`${styles.headParagraph} ${lang === "fa" ? styles.headParagraphFa : ""}`}>{getAboutMe()}</p>

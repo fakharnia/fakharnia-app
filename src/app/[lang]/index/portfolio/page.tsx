@@ -28,8 +28,8 @@ const Portfolio = async ({ params: { lang } }: propType) => {
     const URL = process.env.SERVER_URI;
     const dic = await getDictionary(lang);
     const portfolio: portfolioDicType = dic["portfolio"];
-    const projects: IProject[] = (await getProjects() as Array<any>).slice(0, 5) || [];
-    const designs: IDesign[] = (await getDesigns() as Array<any>).slice(0, 2) || [];
+    const projects: IProject[] = (await getProjects() as Array<any>)?.slice(0, 5) || [];
+    const designs: IDesign[] = (await getDesigns() as Array<any>)?.slice(0, 2) || [];
     const resume: IResume = await getResume();
 
     return (
