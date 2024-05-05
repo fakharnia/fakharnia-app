@@ -1,6 +1,4 @@
 const API_URL = process.env.API_URL
-const CLIENT_API_URL = process.env.NEXT_PUBLIC_API_URL;
-const SERVER_URL = process.env.SERVER_URI;
 
 export const getStatus = async () => {
     try {

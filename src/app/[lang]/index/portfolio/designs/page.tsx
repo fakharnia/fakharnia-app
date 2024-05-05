@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../page.module.css"
 import { getDictionary } from "@/dictionary";
-import { getDesigns } from "@/app/lib/portfolio.lib";
+import { getDesigns } from "@/lib/portfolio.lib";
 import { IDesign } from "@/app/interfaces/design.interface";
 import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
 

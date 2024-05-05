@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { db } from '../../../lib/mongodb';
+import { db } from '../../../../lib/mongodb';
 import { ObjectId } from "mongodb";
 
 export const POST = async (request: NextRequest, { params }: { params: { id: string } }) => {

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 import { SlideShow } from "./slideshow";
-import { getDesign, getDesigns } from "@/app/lib/portfolio.lib";
+import { getDesign, getDesigns } from "@/lib/portfolio.lib";
 import { IDesign } from "@/app/interfaces/design.interface";
 import { VazirFont } from "@/app/[lang]/utils";
 

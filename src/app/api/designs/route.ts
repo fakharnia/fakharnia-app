@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server'
-import { db } from '../../lib/mongodb';
+import { db } from '../../../lib/mongodb';
 import { IDesign, IUiImage } from "@/app/interfaces/design.interface";
 
 export async function GET(request: NextRequest) {

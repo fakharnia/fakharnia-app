@@ -1,5 +1,5 @@
 import { NextRequest } from "next/server";
-import { db } from '../../lib/mongodb';
+import { db } from '../../../lib/mongodb';
 import { IPost } from "@/app/interfaces/post.interface";
 
 interface PipelineStage {

@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 import styles from "./page.module.css";
-import { getPost, getPostContent, postView } from "@/app/lib/blog.lib";
+import { getPost, getPostContent, postView } from "@/lib/blog.lib";
 import { getDictionary } from "@/dictionary";
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import { IPost } from "@/app/interfaces/post.interface";

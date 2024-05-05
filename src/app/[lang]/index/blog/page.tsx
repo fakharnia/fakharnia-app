@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css"
 import { getDictionary } from "@/dictionary";
-import { getPosts, getTags } from "@/app/lib/blog.lib";
+import { getPosts, getTags } from "@/lib/blog.lib";
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import { IPost } from "@/app/interfaces/post.interface";
 import { GenerateClass, RelativeFormatDate } from "./utils";

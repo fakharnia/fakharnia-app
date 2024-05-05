@@ -1,5 +1,5 @@
 import { type NextRequest } from 'next/server'
-import { db } from '../../lib/mongodb';
+import { db } from '../../../lib/mongodb';
 import { IResume } from "@/app/interfaces/resume.interface";
 
 export const GET = async (request: NextRequest) => {

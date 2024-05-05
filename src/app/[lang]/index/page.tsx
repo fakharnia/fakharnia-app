@@ -6,9 +6,9 @@ import { Post } from "./components/post";
 import { SmartRibbon } from "./components/smartRibbon";
 import { Contact } from "./components/contact";
 import styles from "./page.module.css";
-import { getBlogRecent, getStatus } from "@/app/lib/home.lib";
+import { getBlogRecent, getStatus } from "@/lib/home.lib";
 import { IPost } from "@/app/interfaces/post.interface";
-import { getResume } from "@/app/lib/portfolio.lib";
+import { getResume } from "@/lib/portfolio.lib";
 import { GenerateClass, VazirFont } from "../utils";
 
 type propType = {

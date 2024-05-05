@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css";
 import { getDictionary } from "@/dictionary";
-import { getResume } from "@/app/lib/portfolio.lib";
+import { getResume } from "@/lib/portfolio.lib";
 import { IResume, ISkill } from "@/app/interfaces/resume.interface";
 import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
 

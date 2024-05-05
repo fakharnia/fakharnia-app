@@ -1,6 +1,6 @@
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
-import { getServices } from "@/app/lib/service.lib";
+import { getServices } from "@/lib/service.lib";
 import styles from "./page.module.css";
 import { GenerateClass } from "../blog/utils";
 import { IService } from "@/app/interfaces/service.interface";

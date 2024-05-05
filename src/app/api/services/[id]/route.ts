@@ -1,5 +1,5 @@
 import { ObjectId } from "mongodb";
-import { db } from '../../../lib/mongodb';
+import { db } from '../../../../lib/mongodb';
 
 export async function GET(request: Request, { params }: { params: { id: string } }) {
     try {

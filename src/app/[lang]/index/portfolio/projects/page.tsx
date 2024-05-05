@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "../page.module.css"
 import { getDictionary } from "@/dictionary";
-import { getProjects } from "@/app/lib/portfolio.lib";
+import { getProjects } from "@/lib/portfolio.lib";
 import { Logo } from "../components/logo";
 import { IProject } from "@/app/interfaces/project.interface";
 import { VazirFont } from "@/app/[lang]/utils";

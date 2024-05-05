@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "../page.module.css";
 import ReactMarkdown from 'react-markdown';
-import { getService, getServices } from "@/app/lib/service.lib";
+import { getService, getServices } from "@/lib/service.lib";
 import { Footer } from "../components/footer";
 import { GenerateClass } from "../../blog/utils";
 import { IService } from "@/app/interfaces/service.interface";

@@ -1,5 +1,5 @@
 import { IDesign } from "@/app/interfaces/design.interface";
-import { db } from "@/app/lib/mongodb";
+import { db } from "@/lib/mongodb";
 
 export const GET = async (request: Request, { params }: { params: { id: string } }) => {
     try {

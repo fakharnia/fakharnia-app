@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "./page.module.css"
 import { getDictionary } from "@/dictionary";
-import { getDesigns, getProjects, getResume } from "@/app/lib/portfolio.lib";
+import { getDesigns, getProjects, getResume } from "@/lib/portfolio.lib";
 import { Logo } from "./components/logo";
 import { IDesign } from "@/app/interfaces/design.interface";
 import { IProject } from "@/app/interfaces/project.interface";

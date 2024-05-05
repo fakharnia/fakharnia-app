@@ -1,5 +1,5 @@
 import { IProject } from "@/app/interfaces/project.interface";
-import { db } from "@/app/lib/mongodb";
+import { db } from "@/lib/mongodb";
 
 export const GET = async (request: Request, { params }: { params: { id: string } }) => {
     try {
