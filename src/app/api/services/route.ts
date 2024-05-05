@@ -49,3 +49,6 @@ const getMarkdownContent = async (id: string) => {
         return '';
     }
 }
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";

@@ -31,3 +31,6 @@ export const POST = async (request: NextRequest, { params }: { params: { id: str
     }
 
 }
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";

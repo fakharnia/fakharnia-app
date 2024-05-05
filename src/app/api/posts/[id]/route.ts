@@ -19,3 +19,6 @@ export const GET = async (request: NextRequest, { params }: { params: { id: stri
     }
 
 }
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";

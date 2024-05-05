@@ -14,16 +14,5 @@ export async function GET(request: NextRequest) {
         return Response.json({ "DB": error });
     }
 }
-
-const getMarkdownContent = async (id: string) => {
-    try {
-        const serverUrl = `${process.env.SERVER_URI}/service/${id}`;
-        const fileContents = await fetch(serverUrl, {
-            cache: "no-cache"
-        });
-        return fileContents.text();
-    } catch (error) {
-        console.error('Error fetching Markdown content:', error);
-        return '';
-    }
-}
+export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";

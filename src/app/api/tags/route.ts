@@ -23,3 +23,6 @@ export const GET = async (request: NextRequest) => {
         return Response.json(error);
     }
 }
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";

@@ -15,3 +15,6 @@ export const GET = async (request: Request, { params }: { params: { id: string }
         return Response.json({ "DB": error });
     }
 }
+
+export const dynamic = "force-dynamic";
+export const fetchCache = "default-no-store";
