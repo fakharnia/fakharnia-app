@@ -104,7 +104,7 @@
     align-items    : baseline;
     justify-content: space-between;
 
-    position: relative;
+    position      : relative;
     height        : calc(100% - 120px);
     padding       : 20px 10px;
     padding-bottom: 0;
@@ -133,16 +133,10 @@
 .image {
     background   : var(--bgColorA);
     width        : 100%;
-    height       : 300px;
+    height       : auto;
     border       : solid 1px var(--bgColorA);
     border-radius: var(--boxRadius);
-    box-shadow: var(--shadowB);
-}
-
-.markdown,
-.markdownFa {
-    PADDING: 10PX;
-
+    box-shadow   : var(--shadowB);
 }
 
 .markdown h1,
@@ -230,18 +224,23 @@
 }
 
 .thumbnailList {
-    background     : var(--bgColorC);
-    position       : absolute;
-    bottom         : 60px;
-    left           : 0;
-    width          : 700px;
-    max-height     : 0;
     display        : flex;
     flex-flow      : row wrap;
     justify-content: space-between;
-    overflow-y     : auto;
-    overflow-x     : hidden;
-    box-shadow     : var(--shadowC);
+    align-items    : self-start;
+
+
+    background: var(--bgColorC);
+    position  : absolute;
+    bottom    : 60px;
+    left      : 0;
+
+    width     : 700px;
+    max-height: 0;
+    
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: var(--shadowC);
 }
 
 .hideThumbnailList {
@@ -257,6 +256,7 @@
     flex-flow: row wrap;
 
     position: relative;
+    width   : calc(50% - 10px);
     margin  : 5px 0;
     cursor  : pointer;
 }
@@ -267,7 +267,7 @@
 
 .thumbnailPhoto {
     background   : var(--bgColorA);
-    width        : 300px;
+    width        : 100%;
     height       : auto;
     border-radius: var(--boxRadius);
 }
@@ -350,15 +350,15 @@
 
     to {
         padding   : 10px 20px;
-        height    : calc(100vh - 130px);
-        max-height: calc(100vh - 130px);
+        height    : calc(100vh - 140px);
+        max-height: calc(100vh - 140px);
     }
 }
 
 @keyframes slideOutAnimationSmall {
     from {
-        height    : calc(100vh - 130px);
-        max-height: calc(100vh - 130px);
+        height    : calc(100vh - 140px);
+        max-height: calc(100vh - 140px);
         padding   : 10px 20px;
     }
 
@@ -382,20 +382,23 @@
 
     .box {
         height        : auto;
-        padding       : 70px 10px;
+        padding       : 80px 15px;
         padding-bottom: 0px;
     }
 
     .innerBox {
-        height           : calc(100% - 60px);
-        padding-top      : 80px;
-        padding-bottom   : 20px;
-        /* padding       : 20px 10px; */
+        height        : calc(100% - 60px);
+        padding-top   : 80px;
+        padding-bottom: 20px;
     }
 
     .thumbnailList {
+        flex-flow: column wrap;
+        justify-content: start;
+
         width : 100%;
         height: 0;
+
     }
 
 
@@ -421,7 +424,7 @@
 
     .serviceLink {
         width      : 100%;
-        margin     : 10px;
+        margin     : 10px 0;
         align-items: center;
     }
 

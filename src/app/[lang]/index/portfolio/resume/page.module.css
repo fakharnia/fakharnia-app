@@ -27,7 +27,7 @@
     display  : flex;
     flex-flow: row wrap;
     width    : calc(100% - 150px);
-    padding  : 0 20px;
+    /* padding  : 0 20px; */
 }
 
 .headTitle {
@@ -67,8 +67,8 @@
 }
 
 .skillBox {
-    display  : flex;
-    flex-flow: row wrap;
+    display        : flex;
+    flex-flow      : row wrap;
     justify-content: center;
 
     margin-top: 10px;
@@ -84,7 +84,7 @@
     width        : 100px;
     height       : 100px;
     margin       : 10px 5px;
-    padding      : 0 10px;
+    padding      : 10px;
     border-radius: var(--boxRadius);
 }
 
@@ -164,8 +164,12 @@
 @media (max-width: 700px) or (max-height: 700px) {
     .container {
         height        : 100vh;
-        padding       : 80px 10px;
+        padding       : 80px 15px;
         padding-bottom: 50px;
+    }
+
+    .avatar {
+        margin-top: 20px;
     }
 
 }
@@ -179,7 +183,6 @@
     .content {
         width     : 100%;
         margin-top: 20px;
-        padding   : 0 10px;
     }
 
     .skillItem {

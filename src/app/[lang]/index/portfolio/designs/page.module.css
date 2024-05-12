@@ -5,7 +5,7 @@
 .content {
     height    : calc(700px - 120px);
     overflow-y: auto;
-    padding   : 0 10px;
+    padding   : 20px 15px;
 }
 
 .slideshow {
@@ -13,7 +13,6 @@
     display      : flex;
     flex-flow    : row wrap;
     width        : 100%;
-    padding      : 10px;
     margin-bottom: 20px;
 }
 
@@ -105,7 +104,6 @@
 .title {
     width        : 100%;
     margin-bottom: 20px;
-    padding      : 0 10px;
     line-height  : 40px;
     font-size    : 28px;
 }
@@ -117,7 +115,6 @@
 
 .paragraph {
     width         : 100%;
-    padding       : 0 10px;
     padding-bottom: 60px;
     text-align    : justify;
     line-height   : 30px;

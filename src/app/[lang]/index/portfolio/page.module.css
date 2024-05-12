@@ -11,7 +11,7 @@
     display  : flex;
     flex-flow: row wrap;
     width    : 100%;
-    padding  : 0px 10px;
+    padding  : 0px 15px;
     margin   : 15px 0;
 }
 
@@ -20,12 +20,13 @@
     flex-flow : row wrap;
     width     : 100%;
     max-height: calc(700px - 60px);
-    padding   : 10px;
+    padding   : 10px 15px;
     overflow  : auto;
 }
 
 .boxTitle {
     width      : 100%;
+    margin-top : 10px;
     line-height: 40px;
     font-size  : 25px;
 }
@@ -52,13 +53,14 @@
 
 .squareItem,
 .squareItemIn {
-    background     : var(--bgColorC);
     display        : flex;
     flex-flow      : row wrap;
     align-items    : center;
     justify-content: space-around;
+
+    background     : var(--bgColorC);
     width          : 100px;
-    height         : 100px;
+    min-height         : 100px;
     margin         : 10px;
     border-radius  : var(--boxRadius);
     box-shadow     : var(--shadowB);
@@ -75,6 +77,7 @@
     color      : var(--textColor);
     font-size  : 22px;
     line-height: 40px;
+    line-break:anywhere;
 }
 
 .squareItemInTitleFa {
@@ -123,6 +126,7 @@
     flex-flow    : row wrap;
     align-items  : center;
     width        : calc(100% - 20px);
+    margin       : 10px 0;
     border-radius: var(--boxRadius);
     box-shadow   : var(--shadowB);
 }
@@ -285,7 +289,8 @@ a.farsiIconButton {
 
     .squareItemIn,
     .rectangleItemIn {
-        width: calc(100% - 20px);
+        width: 100%;
+        margin: 10px 0;
     }
 
     .rectangleItem {
