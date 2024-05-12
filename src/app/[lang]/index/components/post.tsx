@@ -2,7 +2,7 @@
 import Link from "next/link";
 import styles from "../page.module.css";
 import { IPost } from "@/app/interfaces/post.interface";
-import { GenerateClass, RelativeFormatDate, VazirFont } from "../../utils";
+import { GenerateClass, GenosFont, RelativeFormatDate, VazirFont } from "../../utils";
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import Image from "next/image";
 
@@ -54,7 +54,7 @@ export const Post = (props: propType) => {
                                 <div className={styles.postTags}>
                                     {
                                         post?.tags?.map((tag: string, index: number) => (
-                                            <Link href={`/${language}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={genClass("postTag")}>{tag}</Link>
+                                            <Link href={`/${language}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={`${genClass("postTag")} ${GenosFont.className}`}>{tag}</Link>
                                         ))
                                     }
                                 </div>

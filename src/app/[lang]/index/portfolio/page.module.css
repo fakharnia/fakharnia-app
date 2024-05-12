@@ -75,13 +75,13 @@
     width      : calc(100% - 100px);
     padding    : 0 10px;
     color      : var(--textColor);
-    font-size  : 22px;
+    font-size  : 20px;
     line-height: 40px;
     line-break:anywhere;
 }
 
 .squareItemInTitleFa {
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .squareImage {

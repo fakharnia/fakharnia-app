@@ -35,8 +35,8 @@
     },
     "portfolio":{
         "title":"Portfolio",
-        "projectTitle": "Some of My Projects",
-        "designTitle": "Some of My Designs",
+        "projectTitle": "My Projects",
+        "designTitle": "My Designs",
         "moreButton":"Browse",
         "downloadText":"About Me",
         "project":"My Projects",
@@ -44,9 +44,9 @@
 
     },
     "projects": {
-        "domain": "Domain and Main Problem",
+        "domain": "About Domain and Solution",
         "tech": "About Technologies",
-        "button":"Website"
+        "button":"Visit"
     },
     "resume": "About Me",
     "service":"Services",

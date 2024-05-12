@@ -3,6 +3,7 @@ import { ChangeEvent, FormEvent, MouseEvent, useEffect, useRef, useState } from 
 import { GenerateClass } from "../utils";
 import styles from "../page.module.css"
 import { useRouter } from "next/navigation";
+import { GenosFont } from "@/app/[lang]/utils";
 
 export const Wrapper = (props: wrapperPropType) => {
 
@@ -153,7 +154,7 @@ export const Wrapper = (props: wrapperPropType) => {
                             <li key={index} className={genClass("tagItem")} >
                                 <label className={genClass("tagItemCheckbox")}>
                                     <input type="checkbox" className={styles.checkbox} checked={isChecked(tag)} onChange={(e) => { onSelectTag(tag, e) }} />
-                                    <p className={genClass("tagItemCheckboxTitle")}>{tag}</p>
+                                    <p className={`${genClass("tagItemCheckboxTitle")} ${GenosFont.className}`}>{tag}</p>
                                 </label>
                             </li>
                         ))
@@ -183,7 +184,6 @@ export const Wrapper = (props: wrapperPropType) => {
                                 <p className={genClass("checkboxText")}>{dic.sorts.date.key}</p>
                             </label>
                         </div>
-
                     </label>
                     <div className={styles.sortButtons}>
                         <button className={`fakharnia-arrow-up ${styles.sortButton} ${sortFlow === "asc" ? styles.sortButtonActive : ""}`} onClick={(e) => { onChangeSortFlow("asc", e) }}></button>

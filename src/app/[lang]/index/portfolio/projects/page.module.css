@@ -4,8 +4,9 @@
     overflow: hidden;
 }
 
-.farsiLang {
+.containerFa {
     direction: rtl;
+
 }
 
 .contents {
@@ -45,10 +46,11 @@
     line-height  : 40px;
     font-size    : 30px;
     margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .titleFa {
-    font-size: 25px;
+    font-size: 24px;
 }
 
 .techList {
@@ -78,6 +80,10 @@
     text-align   : center;
 }
 
+.linkOff {
+    opacity: .5;
+}
+
 .content {
     width : 100%;
     margin: 20px 0;
@@ -88,10 +94,11 @@
     font-size    : 28px;
     line-height  : 40px;
     margin-bottom: 10px;
+    font-weight: normal;
 }
 
 .contentTitleFa {
-    font-size: 25px;
+    font-size: 22px;
 }
 
 .contentParagraph {
@@ -99,6 +106,7 @@
     line-height: 30px;
     font-size  : 20px;
     text-align : justify;
+    white-space: pre-line;
 }
 
 .contentParagraphFa {
@@ -172,7 +180,6 @@
     }
 
     .contents {
-        flex-flow     : row wrap;
         width         : 100%;
         height        : calc(100% - 60px);
         padding       : 20px 15px;

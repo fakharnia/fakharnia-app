@@ -3,7 +3,7 @@ import styles from "../page.module.css";
 import { SlideShow } from "./slideshow";
 import { getDesign, getDesigns } from "@/lib/portfolio.lib";
 import { IDesign } from "@/app/interfaces/design.interface";
-import { VazirFont } from "@/app/[lang]/utils";
+import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: string, id: string }, searchParams: {}
@@ -14,6 +14,8 @@ const DesignDetail = async (props: propType) => {
     const { lang, id } = props.params;
     const design: IDesign = await getDesign(id);
     const designs: IDesign[] = await getDesigns();
+
+    const generateClass = GenerateClass(lang, styles);
 
     const getTitle = () => {
         switch (lang) {
@@ -45,7 +47,11 @@ const DesignDetail = async (props: propType) => {
             }
 
             if (index === designs.length - 1) {
-                return designs.slice(index - 2, index + 1);
+                if ((index - 2) >= 0) {
+                    return designs.slice(index - 2, index + 1);
+                } else {
+                    return designs.slice(0, index + 1);
+                }
             }
         }
         return designs.slice(0, 3);
@@ -55,11 +61,12 @@ const DesignDetail = async (props: propType) => {
 
     return (
         <>
-            <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""}  ${styles.container}`}>
+            <title>Fakharnia Dev | Design</title>
+            <div className={`${lang === "fa" ? `${VazirFont.className}` : ""}  ${styles.container}`}>
                 <div className={styles.content}>
                     <SlideShow lang={lang} design={design} />
-                    <h5 className={`${styles.title} ${lang === "fa" ? styles.titleFa : ""}`}>{getTitle()}</h5>
-                    <p className={`${styles.paragraph} ${lang === "fa" ? styles.paragraphFa : ""}`}>{getDescription()}</p>
+                    <h5 className={generateClass("title")}>{getTitle()}</h5>
+                    <p className={generateClass("paragraph")}>{getDescription()}</p>
                 </div>
                 <div className={styles.footer}>
                     <div className={styles.nvaList}>
@@ -73,7 +80,7 @@ const DesignDetail = async (props: propType) => {
                         }
                     </div>
                 </div>
-                <Link href={`/${lang}/index/portfolio/designs`} className={`${lang === "fa" ? `fakharnia-arrow-right ${styles.backButtonFa}` : "fakharnia-arrow-left"} ${styles.backButton}`}></Link>
+                <Link href={`/${lang}/index/portfolio/designs`} className={`${lang === "fa" ? `fakharnia-arrow-right` : "fakharnia-arrow-left"} ${generateClass("backButton")}`}></Link>
             </div >
         </>
     )

@@ -1,4 +1,5 @@
 import localFont from "next/font/local";
+import { Genos } from "next/font/google";
 
 export const GenerateClass = (lang: string, styles: { [key: string]: string }) => (...cssClasses: string[]) => {
     let classes = ``;
@@ -90,3 +91,9 @@ const getRelativeFormatDate = (value: number, type: string, language: string): s
 }
 
 export const VazirFont = localFont({ src: "../fonts/vazir.woff2" });
+
+export const GenosFont = Genos({
+    subsets: ["latin"],
+    variable: "--font-genos"
+  });
+  

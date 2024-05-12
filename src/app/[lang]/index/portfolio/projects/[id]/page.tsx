@@ -4,7 +4,7 @@ import { getDictionary } from "@/dictionary";
 import { getProject, getProjects } from "@/lib/portfolio.lib";
 import { Logo } from "../../components/logo";
 import { IProject } from "@/app/interfaces/project.interface";
-import { VazirFont } from "@/app/[lang]/utils";
+import { GenerateClass, GenosFont, VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     params: { lang: string, id: string }, searchParams: {}
@@ -18,6 +18,8 @@ const Page = async (props: propType) => {
     const project = await getProject(id);
     const projects = await getProjects();
 
+    const generateClass = GenerateClass(lang, styles);
+
     const projectPagination = () => {
         const index = projects.findIndex((prj: IProject) => prj.key === id);
         if (index !== -1) {
@@ -30,7 +32,11 @@ const Page = async (props: propType) => {
             }
 
             if (index === projects.length - 1) {
-                return projects.slice(index - 2, index + 1);
+                if ((index - 2) >= 0) {
+                    return projects.slice(index - 2, index + 1);
+                } else {
+                    return projects.slice(0, index + 1);
+                }
             }
         }
         return projects.slice(0, 3);
@@ -84,29 +90,31 @@ const Page = async (props: propType) => {
 
     return (
         <>
-            <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""}  ${styles.container}`} >
+            <title>Fakharnia Dev | Project</title>
+            <div className={`${lang === "fa" ? `${VazirFont.className}` : ""}  ${generateClass("container")}`} >
                 <div className={styles.contents}>
                     <div className={styles.header}>
-                        <Logo project={project} classes={`${styles.logo} ${styles.squareImageIn} ${lang === "fa" ? styles.squareImageInFa : ""}`} />
+                        <Logo project={project} classes={`${styles.logo} ${generateClass("squareImageIn")}`} />
                         <div className={styles.innerContent}>
-                            <p className={`${lang === "fa" ? styles.titleFa : ""}  ${styles.title}`}>{getLang("name")}</p>
+                            <p className={generateClass("title")}>{getLang("name")}</p>
                             <ul className={styles.techList}>
                                 {
                                     project.technologies.map((tech: any, index: number) => (
-                                        <li key={index} className={styles.techItem}>{tech.name}</li>
+                                        <li key={index} className={`${generateClass("techItem")} ${GenosFont.className}`}>{tech.name}</li>
                                     ))
                                 }
                             </ul>
-                            {project.url ? <Link className={styles.link} href={project.url} target="_blank">{dic.projects.button}</Link> : null}
+                            {project.url ? <Link className={styles.link} href={project.url} target="_blank">{dic.projects.button}</Link> :
+                                <span className={`${styles.link} ${styles.linkOff}`} >{dic.projects.button}</span>}
                         </div>
                     </div>
                     <div className={styles.content}>
-                        <h5 className={`${lang === "fa" ? styles.contentTitleFa : ""} ${styles.contentTitle}`}>{dic.projects.domain}</h5>
-                        <p className={`${lang === "fa" ? styles.contentParagraphFa : ""} ${styles.contentParagraph}`}>{getLang("description")}</p>
+                        <h5 className={generateClass("contentTitle")}>{dic.projects.domain}</h5>
+                        <p className={generateClass("contentParagraph")}>{getLang("description")}</p>
                     </div>
                     <div className={styles.content}>
-                        <h5 className={styles.contentTitle}>{dic.projects.tech}</h5>
-                        <p className={`${lang === "fa" ? styles.contentParagraphFa : ""} ${styles.contentParagraph}`}>{getLang("tech")}</p>
+                        <h5 className={generateClass("contentTitle")}>{dic.projects.tech}</h5>
+                        <p className={generateClass("contentParagraph")}>{getLang("tech")}</p>
                     </div>
                 </div>
                 <div className={styles.footer}>

@@ -2,13 +2,8 @@ import type { Metadata } from 'next'
 import { i18n } from '../../i18n.config'
 import { Providers } from "./contexts/themeProvider"
 import './globals.css'
+import { GenosFont } from "./utils"
 
-import { Genos } from "next/font/google";
-
-const genos = Genos({
-  subsets: ["latin"],
-  variable: "--font-genos"
-});
 
 
 export async function generateStaticParams() {
@@ -28,7 +23,7 @@ type propType = {
 const RootLayout = ({ children, params }: propType) => {
 
   return (
-    <html lang="en" className={genos.className}>
+    <html lang="en" className={GenosFont.className}>
       <body>
         <Providers>
           {children}

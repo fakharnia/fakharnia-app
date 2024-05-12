@@ -20,14 +20,15 @@
     background   : var(--bgColorC);
     width        : 150px;
     height       : 150px;
+    margin       : 0 10px;
     border-radius: var(--boxRadius);
 }
 
 .content {
     display  : flex;
     flex-flow: row wrap;
-    width    : calc(100% - 150px);
-    /* padding  : 0 20px; */
+    width    : calc(100% - 170px);
+    padding  : 0 10px;
 }
 
 .headTitle {

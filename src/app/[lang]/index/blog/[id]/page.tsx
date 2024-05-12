@@ -8,7 +8,7 @@ import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import { IPost } from "@/app/interfaces/post.interface";
 import { GenerateClass, RelativeFormatDate } from "../utils";
 import { env } from "process";
-import { VazirFont } from "@/app/[lang]/utils";
+import { GenosFont, VazirFont } from "@/app/[lang]/utils";
 
 const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPropType) => {
 
@@ -74,7 +74,7 @@ const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPro
                     {
                         post.tags.map((tag: string, index: number) => (
                             // <li className={getClasses("tag")} key={index}>{tag}</li>
-                            <Link href={`/${lang}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={getClasses("tag")}>{tag}</Link>
+                            <Link href={`/${lang}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={`${getClasses("tag")} ${GenosFont.className}`}>{tag}</Link>
                         ))
                     }
                 </ul>

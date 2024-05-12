@@ -41,7 +41,7 @@ const Designs = async ({ params: { lang } }: propType) => {
     return (
         <>
             <title>Fakharnia Dev | Designs</title>
-            <div className={`${lang === "fa" ? `${styles.farsiLang} ${VazirFont.className}` : ""} ${styles.boxIn}`}>
+            <div className={`${lang === "fa" ? `${VazirFont.className}` : ""} ${generateClass("boxIn")}`}>
                 <h5 className={styles.boxTitle}>{portfolio.design}</h5>
                 <div className={`${styles.rectangleList} ${styles.rectangleListIn}`}>
                     {

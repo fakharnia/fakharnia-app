@@ -54,9 +54,8 @@
 }
 
 .tagItemCheckboxTitleFa {
-    font-size: 12px;
+    direction: ltr;
 }
-
 
 input:checked~.tagItemCheckboxTitle {
     background: var(--bgColorA);
@@ -340,7 +339,7 @@ input:checked~.tagItemCheckboxTitle {
 }
 
 .postTagFa {
-    font-size: 12px;
+    direction: ltr;
 }
 
 .footer {

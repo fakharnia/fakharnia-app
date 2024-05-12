@@ -35,8 +35,8 @@
     },
     "portfolio":{
         "title":"درباره من",
-        "projectTitle": "برخی از پروژه های من",
-        "designTitle": "برخی از طراحی های من",
+        "projectTitle": "پروژه های من",
+        "designTitle": "طراحی های من",
         "moreButton":"نمایش همه",
         "downloadText":"درباره من",
         "project":"پروژه ها",
@@ -44,9 +44,9 @@
 
     },
     "projects": {
-        "domain": "توضیحات مربوط به پروژه",
-        "tech": "تکنولوژی های بکار رفته",
-        "button": "وب سایت"
+        "domain": "توضیحات مسئله و راه حل",
+        "tech": "تکنولوژی ها",
+        "button": "بازدید"
     },
     "resume": "درباره من",
     "service":"فعالیت ها",

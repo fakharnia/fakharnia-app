@@ -9,7 +9,7 @@ import { GenerateClass, RelativeFormatDate } from "./utils";
 import { Wrapper } from "./components/wrapper";
 import { Pagination } from "./components/pagination";
 import { ReadButton } from "./components/readButton";
-import { VazirFont } from "../../utils";
+import { GenosFont, VazirFont } from "../../utils";
 
 
 const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropType) => {
@@ -54,7 +54,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
                                         <div className={styles.postTags}>
                                             {
                                                 post.tags.map((tag: string, index: number) => (
-                                                    <Link href={`/${lang}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={getClasses("postTag")}>{tag}</Link>
+                                                    <Link href={`/${lang}/index/blog?page=1&perPage=5&tags=${tag}`} key={index} className={`${getClasses("postTag")} ${GenosFont.className}`}>{tag}</Link>
                                                 ))
                                             }
                                         </div>
