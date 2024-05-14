@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata, ResolvingMetadata } from 'next'
 import Image from "next/image";
 import ReactMarkdown from 'react-markdown';
 import styles from "./page.module.css";
@@ -9,6 +10,22 @@ import { IPost } from "@/app/interfaces/post.interface";
 import { GenerateClass, RelativeFormatDate } from "../utils";
 import { env } from "process";
 import { GenosFont, VazirFont } from "@/app/[lang]/utils";
+
+export async function generateMetadata(
+    { params, searchParams }: ssrPropType,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+    const id = params.id
+
+    // fetch data
+    const post = await getPost(id);
+
+    return {
+        title: post[`${params.lang}_title`],
+        description: post[`${params.lang}_title`]
+    }
+}
 
 const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPropType) => {
 

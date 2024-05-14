@@ -1,3 +1,4 @@
+import type { Metadata, ResolvingMetadata } from 'next'
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./page.module.css"
@@ -11,6 +12,18 @@ import { Pagination } from "./components/pagination";
 import { ReadButton } from "./components/readButton";
 import { GenosFont, VazirFont } from "../../utils";
 
+export const generateMetadata = async (
+    { params, searchParams }: ssrPropType,
+    parent: ResolvingMetadata
+): Promise<Metadata> => {
+    const dic = await getDictionary(params.lang)
+    const metatag = dic.metatag.blog;
+
+    return {
+        title: metatag.title,
+        description: metatag.description
+    }
+}
 
 const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropType) => {
 
@@ -33,8 +46,6 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
             default: return post.en_title;
         }
     }
-
-    console.log(lang);
 
     return (
 

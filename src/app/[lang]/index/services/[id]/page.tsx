@@ -7,9 +7,26 @@ import { GenerateClass } from "../../blog/utils";
 import { IService } from "@/app/interfaces/service.interface";
 import Link from "next/link";
 import { VazirFont } from "@/app/[lang]/utils";
+import { ResolvingMetadata, Metadata } from "next";
 
 type propsType = {
     params: { lang: string, id: string }
+}
+
+export async function generateMetadata(
+    { params }: propsType,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+    const id = params.id
+
+    // fetch data
+    const service = await getService(id);
+
+    return {
+        title: service[`${params.lang}_metatag_title`],
+        description: service[`${params.lang}_metatag_description`]
+    }
 }
 
 const URL = process.env.NEXT_PUBLIC_SERVER_URI;

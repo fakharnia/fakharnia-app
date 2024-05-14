@@ -5,9 +5,26 @@ import { getProject, getProjects } from "@/lib/portfolio.lib";
 import { Logo } from "../../components/logo";
 import { IProject } from "@/app/interfaces/project.interface";
 import { GenerateClass, GenosFont, VazirFont } from "@/app/[lang]/utils";
+import { ResolvingMetadata, Metadata } from "next";
 
 type propType = {
     params: { lang: string, id: string }, searchParams: {}
+}
+
+export async function generateMetadata(
+    { params }: propType,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+    const id = params.id
+
+    // fetch data
+    const project = await getProject(id);
+
+    return {
+        title: project[`${params.lang}_metatag_title`],
+        description: project[`${params.lang}_metatag_description`]
+    }
 }
 
 const Page = async (props: propType) => {

@@ -5,9 +5,23 @@ import { getProjects } from "@/lib/portfolio.lib";
 import { Logo } from "../components/logo";
 import { IProject } from "@/app/interfaces/project.interface";
 import { VazirFont } from "@/app/[lang]/utils";
+import { ResolvingMetadata, Metadata } from "next";
 
 type propType = {
     params: { lang: any }
+}
+
+export const generateMetadata = async (
+    { params, searchParams }: ssrPropType,
+    parent: ResolvingMetadata
+): Promise<Metadata> => {
+    const dic = await getDictionary(params.lang)
+    const metatag = dic.metatag.projects;
+
+    return {
+        title: metatag.title,
+        description: metatag.description
+    }
 }
 
 type portfolioDicType = {

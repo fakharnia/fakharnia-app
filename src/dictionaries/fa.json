@@ -75,5 +75,41 @@
         "counter":"مقاله",
         "read": "مطالعه"
     },
-    "panel":"پنل مشتریان"
+    "panel":"پنل مشتریان",
+    "metatag": {
+        "welcome": {
+            "title":"فخارنیا | توسعه دهنده فول استک متخصص .NET, Angular, React, و Node.js",
+            "description": "محمد مهدی فخارنیا، طراح و توسعه دهنده فول استک وب اپلیکیشن مسلط به زبان های C#، JS و TypeScript دارای تجربه کار با فریم ورک های معروف Angular، .NET Core، React، Next.js، Node.js و تجربه طراحی دیتابیس SQL Server، PostgreSQL  و MongoDB."
+        },
+        "home": {
+            "title":"فخارنیا | توسعه دهنده فول استک متخصص .NET, Angular, React, و Node.js",
+            "description": "محمد مهدی فخارنیا، طراح و توسعه دهنده فول استک وب اپلیکیشن مسلط به زبان های C#، JS و TypeScript دارای تجربه کار با فریم ورک های معروف Angular، .NET Core، React، Next.js، Node.js و تجربه طراحی دیتابیس SQL Server، PostgreSQL  و MongoDB."
+        },
+        "blog": {
+            "title":"بلاگ محمد مهدی فخارنیا | مقالات طراحی و برنامه نویسی",
+            "description": "بررسی و مطلاعه عمیق مفاهیم دنیای برنامه نویسی و طراحی در بلاگ محمد مهدی فخارنیا. مطالعه بروز مقالات حوزه Angular, .NET, React, طراحی UI/UX و زمینه های دیگر برنامه نویسی."
+        },
+
+        "services": {
+            "title":"طراحی و توسعه نرم افزار | طراحی و توسعه اختصاصی توسط محمد مهدی فخارنیا",
+            "description": "طراحی و توسعه اختصاصی نرم افزار با مزایایی همچون مالکیت تمام، منعطف بودن، مزیت های رقابتی، مقیاس پذیری، کاهش هزینه در بلند مدت و همچنین بهترین تجربه کاربری"
+        },
+        "portfolio": {
+            "title":"فخارنیا | توسعه دهنده فول استک متخصص .NET, Angular, React, و Node.js",
+            "description": ""
+        },
+        "projects": {
+            "title":"فخارنیا | توسعه دهنده فول استک متخصص .NET, Angular, React, و Node.js",
+            "description": "محمد مهدی فخارنیا، طراح و توسعه دهنده فول استک وب اپلیکیشن مسلط به زبان های C#، JS و TypeScript دارای تجربه کار با فریم ورک های معروف Angular، .NET Core، React، Next.js، Node.js و تجربه طراحی دیتابیس SQL Server، PostgreSQL  و MongoDB."
+        },
+        "designs": {
+            "title":"فخارنیا | توسعه دهنده فول استک متخصص .NET, Angular, React, و Node.js",
+            "description": "محمد مهدی فخارنیا، طراح و توسعه دهنده فول استک وب اپلیکیشن مسلط به زبان های C#، JS و TypeScript دارای تجربه کار با فریم ورک های معروف Angular، .NET Core، React، Next.js، Node.js و تجربه طراحی دیتابیس SQL Server، PostgreSQL  و MongoDB."
+        },
+        "resume": {
+            "title":"فخارنیا | توسعه دهنده فول استک متخصص .NET, Angular, React, و Node.js",
+            "description": "محمد مهدی فخارنیا، طراح و توسعه دهنده فول استک وب اپلیکیشن مسلط به زبان های C#، JS و TypeScript دارای تجربه کار با فریم ورک های معروف Angular، .NET Core، React، Next.js، Node.js و تجربه طراحی دیتابیس SQL Server، PostgreSQL  و MongoDB."
+        }
+
+    }
 }

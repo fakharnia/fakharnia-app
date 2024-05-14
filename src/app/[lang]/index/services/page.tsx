@@ -1,14 +1,28 @@
+import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
-import ReactMarkdown from 'react-markdown';
 import { getServices } from "@/lib/service.lib";
 import styles from "./page.module.css";
 import { GenerateClass } from "../blog/utils";
 import { IService } from "@/app/interfaces/service.interface";
 import Link from "next/link";
 import { VazirFont } from "../../utils";
+import { getDictionary } from "@/dictionary";
 
 type propType = {
     params: { lang: any }
+}
+
+export const generateMetadata = async (
+    { params, searchParams }: ssrPropType,
+    parent: ResolvingMetadata
+): Promise<Metadata> => {
+    const dic = await getDictionary(params.lang)
+    const metatag = dic.metatag.services;
+
+    return {
+        title: metatag.title,
+        description: metatag.description
+    }
 }
 
 const Services = async (prop: propType) => {

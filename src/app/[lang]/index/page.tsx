@@ -1,3 +1,4 @@
+import { Metadata, ResolvingMetadata } from "next";
 import { getDictionary } from "@/dictionary";
 import { Widget } from "../components/widget";
 import { Logo } from "./components/logo";
@@ -13,6 +14,19 @@ import { GenerateClass, VazirFont } from "../utils";
 
 type propType = {
     params: { lang: any }
+}
+
+export const generateMetadata = async (
+    { params, searchParams }: ssrPropType,
+    parent: ResolvingMetadata
+): Promise<Metadata> => {
+    const dic = await getDictionary(params.lang)
+    const metatag = dic.metatag.home;
+
+    return {
+        title: metatag.title,
+        description: metatag.description
+    }
 }
 
 

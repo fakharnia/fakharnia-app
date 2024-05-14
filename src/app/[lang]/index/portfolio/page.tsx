@@ -8,6 +8,7 @@ import { IDesign } from "@/app/interfaces/design.interface";
 import { IProject } from "@/app/interfaces/project.interface";
 import { IResume } from "@/app/interfaces/resume.interface";
 import { VazirFont } from "../../utils";
+import { ResolvingMetadata, Metadata } from "next";
 
 type propType = {
     params: { lang: any }
@@ -19,6 +20,19 @@ type portfolioDicType = {
     designTitle: string,
     moreButton: string,
     downloadText: string
+}
+
+export const generateMetadata = async (
+    { params, searchParams }: ssrPropType,
+    parent: ResolvingMetadata
+): Promise<Metadata> => {
+    const dic = await getDictionary(params.lang)
+    const metatag = dic.metatag.portfolio;
+
+    return {
+        title: metatag.title,
+        description: metatag.description
+    }
 }
 
 

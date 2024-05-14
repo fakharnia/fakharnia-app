@@ -5,9 +5,23 @@ import { getDictionary } from "@/dictionary";
 import { getResume } from "@/lib/portfolio.lib";
 import { IResume, ISkill } from "@/app/interfaces/resume.interface";
 import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
+import { ResolvingMetadata, Metadata } from "next";
 
 type propType = {
     params: { lang: any }
+}
+
+export const generateMetadata = async (
+    { params, searchParams }: ssrPropType,
+    parent: ResolvingMetadata
+): Promise<Metadata> => {
+    const dic = await getDictionary(params.lang)
+    const metatag = dic.metatag.resume;
+
+    return {
+        title: metatag.title,
+        description: metatag.description
+    }
 }
 
 const Resume = async ({ params: { lang } }: propType) => {

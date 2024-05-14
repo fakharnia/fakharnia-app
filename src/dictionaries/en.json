@@ -74,5 +74,41 @@
         "counter":"Posts",
         "read": "Read"
     },
-    "panel":"Client Panel"
+    "panel":"Client Panel",
+    "metatag": {
+        "welcome": {
+            "title":"Mohammad Mahdi Fakharnia | Full-Stack Developer Expert in .NET, Angular, React, and Node.js",
+            "description": "Discover full-stack web development services by Mohammad Mahdi Fakharnia, a seasoned developer specializing in C#, JavaScript, TypeScript, Angular, .NET Core, React, Next.js, Node.js, and database management with SQL Server, PostgreSQL, and MongoDB. Delivering robust and scalable solutions tailored to your business needs."
+        },
+        "home": {
+            "title":"Mohammad Mahdi Fakharnia | Full-Stack Developer Expert in .NET, Angular, React, and Node.js",
+            "description": "Discover full-stack web development services by Mohammad Mahdi Fakharnia, a seasoned developer specializing in C#, JavaScript, TypeScript, Angular, .NET Core, React, Next.js, Node.js, and database management with SQL Server, PostgreSQL, and MongoDB. Delivering robust and scalable solutions tailored to your business needs."
+        },
+        "blog": {
+            "title":"Mohammad Mahdi Fakharnia's Blog | Insights on Full-Stack Development and Design",
+            "description": "Dive into the world of full-stack development and design with Mohammad Mahdi Fakharnia's blog. Explore expert articles on Angular, .NET, React, UI/UX design, and more, all crafted to enhance your digital knowledge."
+        },
+
+        "services": {
+            "title":"Web Application Development and UI/UX Designer | Custom Software Development by Mohammad Mahdi Fakharnia",
+            "description": "Custom software design and development with benefits such as full ownership, flexibility, competitive advantages, scalability, long-term cost reduction, and the best user experience"
+        },
+        "portfolio": {
+            "title":"Mohammad Mahdi Fakharnia | Full-Stack Developer Expert in .NET, Angular, React, and Node.js",
+            "description": "Discover full-stack web development portfolio by Mohammad Mahdi Fakharnia, a seasoned developer specializing in C#, JavaScript, TypeScript, Angular, .NET Core, React, Next.js, Node.js, and database management with SQL Server, PostgreSQL, and MongoDB. Delivering robust and scalable solutions tailored to your business needs."
+        },
+        "projects": {
+            "title":"Mohammad Mahdi Fakharnia | Full-Stack Developer - C#, JavaScript, TypeScript Expert",
+            "description": "Discover the innovative portfolio of Mohammad Mahdi Fakharnia, a seasoned Full-Stack Developer specializing in C#, JavaScript, and TypeScript. Explore expertly crafted projects utilizing Angular, .NET Core, React, Next.js, and Node.js, backed by robust databases like SQL Server, PostgreSQL, and MongoDB."
+        },
+        "designs": {
+            "title":"Mohammad Mahdi Fakharnia | Full-Stack Developer - C#, JavaScript, TypeScript, UI/US Designer Expert",
+            "description": "Discover the innovative portfolio of Mohammad Mahdi Fakharnia, a seasoned Full-Stack Developer specializing in C#, JavaScript, and TypeScript. Explore expertly crafted projects utilizing Angular, .NET Core, React, Next.js, and Node.js, backed by robust databases like SQL Server, PostgreSQL, and MongoDB."
+        },
+        "resume": {
+            "title":"Mohammad Mahdi Fakharnia | Full-Stack Developer Expert in .NET, Angular, React, and Node.js",
+            "description": "Discover full-stack web development services by Mohammad Mahdi Fakharnia, a seasoned developer specializing in C#, JavaScript, TypeScript, Angular, .NET Core, React, Next.js, Node.js, and database management with SQL Server, PostgreSQL, and MongoDB. Delivering robust and scalable solutions tailored to your business needs."
+        }
+
+    }
 }

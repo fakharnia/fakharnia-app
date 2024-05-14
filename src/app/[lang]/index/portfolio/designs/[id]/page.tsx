@@ -4,9 +4,26 @@ import { SlideShow } from "./slideshow";
 import { getDesign, getDesigns } from "@/lib/portfolio.lib";
 import { IDesign } from "@/app/interfaces/design.interface";
 import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
+import { ResolvingMetadata, Metadata } from "next";
 
 type propType = {
     params: { lang: string, id: string }, searchParams: {}
+}
+
+export async function generateMetadata(
+    { params }: propType,
+    parent: ResolvingMetadata
+): Promise<Metadata> {
+    // read route params
+    const id = params.id
+
+    // fetch data
+    const design = await getDesign(id);
+
+    return {
+        title: design[`${params.lang}_metatag_title`],
+        description: design[`${params.lang}_metatag_description`]
+    }
 }
 
 const DesignDetail = async (props: propType) => {
