@@ -1,5 +1,4 @@
-const API_URL = process.env.API_URL
-const CLIENT_API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || process.env.API_URL
 const SERVER_URL = process.env.SERVER_URI;
 
 export const getTags = async () => {
@@ -20,7 +19,7 @@ export const getPosts = async (page: number = 1, perPage: number = 5, search: st
 
         let parameters = `page=${page}&perPage=${perPage}&search=${search}&tags=${tags}&sort=${sort}&sortFlow=${sortFlow}`;
 
-        const response = await fetch(`${CLIENT_API_URL}/posts?${parameters}`, { cache: "no-store" });
+        const response = await fetch(`${API_URL}/posts?${parameters}`, { cache: "no-store" });
 
         if (response.status === 200) {
             return response.json();
@@ -33,7 +32,7 @@ export const getPosts = async (page: number = 1, perPage: number = 5, search: st
 
 export const getPost = async (id: string) => {
     try {
-        const response = await fetch(`${CLIENT_API_URL}/posts/${id}`, { cache: "no-store" });
+        const response = await fetch(`${API_URL}/posts/${id}`, { cache: "no-store" });
 
         if (response.status === 200) {
             return response.json();
@@ -58,7 +57,7 @@ export const getPostContent = async (id: string, fileUrl: string) => {
 
 export const postView = async (id: string) => {
     try {
-        const response = await fetch(`${CLIENT_API_URL}/view/${id}`, {
+        const response = await fetch(`${API_URL}/view/${id}`, {
             method: 'POST',
         });
 

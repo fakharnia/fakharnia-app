@@ -22,8 +22,8 @@ export async function generateMetadata(
     const post = await getPost(id);
 
     return {
-        title: post[`${params.lang}_title`],
-        description: post[`${params.lang}_title`]
+        title: post[`${params.lang}_metatag_title`],
+        description: post[`${params.lang}_metatag_title`]
     }
 }
 
