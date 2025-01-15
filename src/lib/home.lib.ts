@@ -10,6 +10,7 @@ export const getStatus = async () => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -27,6 +28,7 @@ export const getBlogRecent = async () => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
