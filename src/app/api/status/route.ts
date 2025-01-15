@@ -5,6 +5,8 @@ import { IStatus } from "@/app/interfaces/status.interface";
 export async function GET(request: NextRequest) {
     try {
         const status: IStatus[] = await db.collection('status').find().toArray();
+        console.log("Log from Status Server Server: ", request);
+        console.log("Log from Status Server result: ", status);
         if (status && status.length > 0) {
             return Response.json(status[0]);
         }
