@@ -40,8 +40,6 @@ const IndexPage = async (prop: propType) => {
     const status = await getStatus();
 
     const resume = await getResume();
-    console.log("Log from index component:Resume: ", resume);
-    console.log("Log from index component:Status: ", status);
 
     const getClasses = GenerateClass(lang, styles);
 

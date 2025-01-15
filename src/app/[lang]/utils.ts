@@ -55,7 +55,7 @@ const getRelativeFormatDate = (value: number, type: string, language: string): s
                 case "en": return "Just Now";
                 case "fa": return "چند لحظه قبل";
                 case "deu": return "Jetzt";
-                default: console.log(language); return "Just Now";
+                default: return "Just Now";
             }
         case "minute":
             switch (language) {
@@ -95,5 +95,4 @@ export const VazirFont = localFont({ src: "../fonts/vazir.woff2" });
 export const GenosFont = Genos({
     subsets: ["latin"],
     variable: "--font-genos"
-  });
-  
+});

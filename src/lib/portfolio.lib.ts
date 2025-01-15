@@ -9,6 +9,7 @@ export const getProjects = async () => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -22,6 +23,7 @@ export const getProject = async (id: string) => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -35,6 +37,7 @@ export const getDesigns = async () => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -48,6 +51,7 @@ export const getDesign = async (id: string) => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -61,6 +65,7 @@ export const getResume = async () => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }

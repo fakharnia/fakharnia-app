@@ -51,6 +51,7 @@ export const getPostContent = async (id: string, fileUrl: string) => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -66,6 +67,7 @@ export const postView = async (id: string) => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }

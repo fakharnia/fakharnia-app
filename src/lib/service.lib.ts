@@ -9,6 +9,7 @@ export const getServices = async () => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -22,6 +23,7 @@ export const getService = async (id: string) => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }
@@ -36,6 +38,7 @@ export const getServicesWithPriority = async (priority: number) => {
         }
         return undefined;
     } catch (error) {
+        console.error(error);
         return undefined;
     }
 }

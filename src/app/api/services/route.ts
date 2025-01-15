@@ -29,11 +29,11 @@ export async function GET(request: NextRequest) {
             }
             return Response.json({ "DB": "What the hell?!" });
         } else {
-            console.log("I don't have the Service!");
             return Response.json({});
         }
 
     } catch (error: any) {
+        console.error(error);
         return Response.json({ "DB": error });
     }
 }
@@ -46,6 +46,7 @@ const getMarkdownContent = async (id: string) => {
         });
         return fileContents.text();
     } catch (error) {
+        console.error(error);
         return '';
     }
 }
