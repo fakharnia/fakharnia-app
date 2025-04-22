@@ -3,6 +3,7 @@ import { i18n } from '../../i18n.config'
 import { Providers } from "./contexts/themeProvider"
 import './globals.css'
 import { GenosFont } from "./utils"
+import { ThemeScript } from "./components/themeScript"
 
 
 
@@ -27,6 +28,7 @@ const RootLayout = ({ children, params }: propType) => {
       <body>
         <Providers>
           {children}
+          <ThemeScript />
         </Providers>
       </body>
     </html>

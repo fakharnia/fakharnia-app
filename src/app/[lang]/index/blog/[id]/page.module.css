@@ -68,6 +68,10 @@
 
 }
 
+.markdownFa pre {
+    direction: ltr;
+}
+
 .markdown h1,
 .markdown h2,
 .markdown h3,
@@ -161,6 +165,27 @@
     font-size: 22px;
 }
 
+.markdown table {
+    border-collapse: collapse;
+    width          : 100%;
+    margin         : 1rem 0;
+}
+
+.markdown th,
+.markdown td {
+    border    : 1px solid var(--textColor);
+    padding   : 8px;
+    text-align: center;
+}
+
+.markdown th {
+    background-color: var(--bgColorC);
+}
+
+.markdown tr:nth-child(even) {
+    background-color: var(--bgColorB);
+}
+
 
 @media (max-width: 700px) or (max-height: 700px) {
     .container {
@@ -173,4 +198,8 @@
         margin-top: 10px;
     }
 
+}
+
+.container code {
+    direction: ltr;
 }

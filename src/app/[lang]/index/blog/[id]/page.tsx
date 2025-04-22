@@ -11,12 +11,22 @@ import { GenerateClass, RelativeFormatDate } from "../utils";
 import { env } from "process";
 import { GenosFont, VazirFont } from "@/app/[lang]/utils";
 
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { materialLight, oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import type { SyntaxHighlighterProps } from 'react-syntax-highlighter';
+import remarkGfm from "remark-gfm";
+
+const light = materialLight as { [key: string]: React.CSSProperties };
+const dark = oneDark as { [key: string]: React.CSSProperties };
+import { cookies } from 'next/headers';
+
 export async function generateMetadata(
     { params, searchParams }: ssrPropType,
     parent: ResolvingMetadata
 ): Promise<Metadata> {
     // read route params
     const id = params.id
+
 
     // fetch data
     const post = await getPost(id);
@@ -29,6 +39,9 @@ export async function generateMetadata(
 
 const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPropType) => {
 
+    const cookieStore = cookies();
+    const theme = cookieStore.get('theme')?.value || 'light';
+    
     const URL = env.SERVER_URI;
 
     const dic = await getDictionary(lang);
@@ -86,7 +99,33 @@ const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPro
                 <Image className={styles.cover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={600} height={337.50} />
                 <h1 className={getClasses("title")}>{getTitle()}</h1>
                 <p className={getClasses("info")}>{getDate(post)} / {post.Views?.length ?? 0} {blog.view} / {post.estimateTimeInMinutes} {blog.time}</p>
-                <ReactMarkdown className={getClasses("markdown")}>{getContent || undefined}</ReactMarkdown>
+                <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    className={getClasses("markdown")}
+                    components={{
+                        code({ node, className, children, ...props }) {
+                            const match = /language-(\w+)/.exec(className || '');
+                            const isInline = !className?.includes('language-');
+
+                            return isInline ? (
+                                <code className={className} {...props}>
+                                    {children}
+                                </code>
+                            ) : (
+                                <SyntaxHighlighter
+                                    style={theme === "dark" ? dark : light}  // Use the typed style here
+                                    language={match?.[1] || 'text'}
+                                    PreTag="div"
+                                    {...props as SyntaxHighlighterProps}
+                                >
+                                    {String(children).replace(/\n$/, '')}
+                                </SyntaxHighlighter>
+                            );
+                        }
+                    }}
+                >
+                    {getContent || ''}
+                </ReactMarkdown>
                 <ul className={styles.tagList}>
                     {
                         post.tags.map((tag: string, index: number) => (

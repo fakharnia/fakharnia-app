@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import { Genos } from "next/font/google";
+import moment from 'jalali-moment';
 
 export const GenerateClass = (lang: string, styles: { [key: string]: string }) => (...cssClasses: string[]) => {
     let classes = ``;
@@ -43,7 +44,16 @@ export const RelativeFormatDate = (date: Date, language: string): string => {
         return getRelativeFormatDate(weeks, "week", language);
     } else {
         const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
-        return theDate.toLocaleDateString(undefined, options);
+        switch (language) {
+            case "en":
+                return theDate.toLocaleDateString(undefined, options);
+            case "fa":
+                return convertToPersianDateOfficial(theDate);
+            case "deu":
+                return "";
+            default:
+                return theDate.toLocaleDateString(undefined, options);
+        }
     }
     return "";
 }
@@ -96,3 +106,51 @@ export const GenosFont = Genos({
     subsets: ["latin"],
     variable: "--font-genos"
 });
+
+
+export const convertToPersianDate = (date: Date | string): { date: string; time: string } => {
+    if (date) {
+        try {
+            const jalaliDate = moment(date).locale('fa'); // Set locale to Persian
+
+            // Format parts
+            const weekDay = jalaliDate.format('dddd'); // Persian weekday
+            const day = jalaliDate.format('D'); // Day of the month
+            const month = jalaliDate.format('MMMM'); // Persian month name
+            const year = jalaliDate.format('YYYY'); // Persian year
+            const time = jalaliDate.format('HH:mm'); // Time in 24-hour format
+
+            return {
+                date: `${weekDay} ${day} ${month} ${year}`,
+                time: `ساعت ${time}`,
+            };
+        } catch (error) {
+            console.error(error);
+            return { date: "", time: "" }
+        }
+    } else {
+        return {
+            date: "", time: "null"
+        }
+    }
+}
+
+export const convertToPersianDateOfficial = (date: Date | string): string => {
+    if (date) {
+        try {
+            const jalaliDate = moment(date).locale('fa'); // Set locale to Persian
+
+            // Format parts with zero-padding
+            const year = jalaliDate.format('YYYY'); // Persian year
+            const month = jalaliDate.format('MM'); // Persian month (zero-padded)
+            const day = jalaliDate.format('DD'); // Day of the month (zero-padded)
+
+            return `${year}/${month}/${day}`;
+        } catch (error) {
+            console.error(error);
+            return "";
+        }
+    } else {
+        return "";
+    }
+};
