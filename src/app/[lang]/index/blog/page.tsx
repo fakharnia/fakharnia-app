@@ -59,7 +59,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
 
                             postsData.data?.map((post: IPost, index: number) => (
                                 <div className={styles.post} key={index}>
-                                    <Image className={styles.postCover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={300} height={180} />
+                                    <Image className={styles.postCover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={1200} height={675} />
                                     <div className={styles.postDetail}>
                                         <h5 className={getClasses("postTitle")}>{getTitle(post)}</h5>
                                         <div className={styles.postTags}>

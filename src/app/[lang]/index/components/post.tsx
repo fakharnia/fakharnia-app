@@ -48,7 +48,7 @@ export const Post = (props: propType) => {
 
                     posts?.map((post: IPost, index: number) => (
                         <div className={`${styles.post} ${language === "fa" ? VazirFont.className : ""}`} key={index}>
-                            <Image className={styles.postCover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={300} height={180} />
+                            <Image className={styles.postCover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={1200} height={675} />
                             <div className={styles.postDetail}>
                                 <h5 className={genClass("postTitle")}>{getTitle(post)}</h5>
                                 <div className={styles.postTags}>

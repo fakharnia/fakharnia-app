@@ -102,6 +102,11 @@
     font-size: 26px;
 }
 
+.markdown h5 {
+    font-size: 22px;
+}
+
+
 .markdown p {
     font-size  : 22px;
     line-height: 35px;
@@ -113,8 +118,16 @@
 }
 
 .markdown ul li {
-    margin: 15px 0;
+    margin         : 15px 0;
+    list-style-type: square;
 
+    line-height: 40px;
+    font-size  : 18px;
+    font-weight: bold;
+}
+
+.markdownFa ul li {
+    font-size: 16px;
 }
 
 .markdownFa h1 {
