@@ -426,7 +426,7 @@ input:checked~.tagItemCheckboxTitle {
     .content {
         width  : 100%;
         height : calc(100vh - 135px);
-        padding:0 15px;
+        padding: 0 15px;
     }
 
 
@@ -439,7 +439,8 @@ input:checked~.tagItemCheckboxTitle {
     }
 
     .postCover {
-        width: 100%;
+        width : 100%;
+        height: auto;
     }
 
     .postDetail {

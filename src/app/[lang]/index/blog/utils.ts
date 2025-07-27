@@ -39,7 +39,7 @@ export const RelativeFormatDate = (date: Date, language: string): string => {
     } else if (weeks < 4) {
         return getRelativeFormatDate(weeks, "week", language);
     } else {
-        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
+        const options: Intl.DateTimeFormatOptions = { year: '2-digit', month: 'short', day: '2-digit' };
         return theDate.toLocaleDateString(undefined, options);
     }
     return "";

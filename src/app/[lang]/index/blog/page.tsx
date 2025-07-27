@@ -47,6 +47,15 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
         }
     }
 
+    const getDate = (post: IPost) => {
+        switch (lang) {
+            case "fa": return RelativeFormatDate(post.createdAt, lang);
+            case "en": return RelativeFormatDate(post.createdAt, lang);
+            case "deu": return RelativeFormatDate(post.createdAt, lang);
+            default: return RelativeFormatDate(post.createdAt, lang);
+        }
+    }
+
     return (
 
         <>
@@ -71,7 +80,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
                                         </div>
                                     </div>
                                     <div className={styles.postOptions}>
-                                        <p className={getClasses("postInfo")}>{RelativeFormatDate(post.createdAt, lang)} / {post.Views?.length ?? 0} {blog.view} / {post.estimateTimeInMinutes} {blog.time}</p>
+                                        <p className={getClasses("postInfo")}>{getDate(post)} / {post.Views?.length ?? 0} {blog.view} / {post.estimateTimeInMinutes} {blog.time}</p>
                                         <ReadButton lang={lang} post={post} cssClasses={`${getClasses("postReadButton")} ${lang === "fa" ? VazirFont.className : ""} `} searchParams={searchParams} text={blog.read} />
                                     </div>
                                 </div>
