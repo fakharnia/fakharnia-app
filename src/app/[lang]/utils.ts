@@ -22,18 +22,18 @@ export const GenerateClass = (lang: string, styles: { [key: string]: string }) =
     return classes;
 };
 
-export const RelativeFormatDate = (date: Date, language: string): string => {
-    const now = new Date();
-    const theDate = new Date(date);
-    const diff = now.getTime() - theDate.getTime();
-    const seconds = Math.floor(diff / 1000);
-    const minutes = Math.floor(seconds / 60);
-    const hours = Math.floor(minutes / 60);
-    const days = Math.floor(hours / 24);
-    const weeks = Math.floor(days / 7);
+export const RelativeFormatDate = (date: Date | string, language: string): string => {
+    const now = moment(); // Use jalali-moment instead of native Date
+    const theDate = moment(date);
 
-    if (seconds < 60) {
-        return getRelativeFormatDate(seconds, "now", language);
+    const diff = now.diff(theDate, 'seconds');
+    const minutes = Math.floor(diff / 60);
+    const hours = Math.floor(diff / 3600);
+    const days = Math.floor(diff / 86400);
+    const weeks = Math.floor(diff / 604800);
+
+    if (diff < 60) {
+        return getRelativeFormatDate(diff, "now", language);
     } else if (minutes < 60) {
         return getRelativeFormatDate(minutes, "minute", language);
     } else if (hours < 24) {
@@ -43,19 +43,17 @@ export const RelativeFormatDate = (date: Date, language: string): string => {
     } else if (weeks < 4) {
         return getRelativeFormatDate(weeks, "week", language);
     } else {
-        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'numeric', day: 'numeric' };
         switch (language) {
-            case "en":
-                return theDate.toLocaleDateString(undefined, options);
             case "fa":
                 return convertToPersianDateOfficial(theDate);
+            case "en":
+                return theDate.locale("en").format("YYYY/MM/DD");
             case "deu":
-                return "";
+                return theDate.locale("de").format("DD.MM.YYYY");
             default:
-                return theDate.toLocaleDateString(undefined, options);
+                return theDate.format("YYYY/MM/DD");
         }
     }
-    return "";
 }
 
 const getRelativeFormatDate = (value: number, type: string, language: string): string => {
@@ -135,22 +133,13 @@ export const convertToPersianDate = (date: Date | string): { date: string; time:
     }
 }
 
-export const convertToPersianDateOfficial = (date: Date | string): string => {
-    if (date) {
-        try {
-            const jalaliDate = moment(date).locale('fa'); // Set locale to Persian
+export const convertToPersianDateOfficial = (date: Date | string | moment.Moment): string => {
+    try {
+        const jalaliDate = moment.isMoment(date) ? date.clone().locale('fa') : moment(date).locale('fa');
 
-            // Format parts with zero-padding
-            const year = jalaliDate.format('YYYY'); // Persian year
-            const month = jalaliDate.format('MM'); // Persian month (zero-padded)
-            const day = jalaliDate.format('DD'); // Day of the month (zero-padded)
-
-            return `${year}/${month}/${day}`;
-        } catch (error) {
-            console.error(error);
-            return "";
-        }
-    } else {
+        return jalaliDate.format('YYYY/MM/DD'); // Official format with zero padding
+    } catch (error) {
+        console.error('Persian date conversion failed:', error);
         return "";
     }
 };
