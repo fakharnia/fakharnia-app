@@ -14,8 +14,6 @@ export const Options = (prop: readButtonPropType) => {
     
     const blog: IBlogDictionary = dic["blog"];
 
-
-
     const getCurrentLink = (): string => {
         let filters = [
             `page=${searchParams.page}`,
@@ -40,7 +38,6 @@ export const Options = (prop: readButtonPropType) => {
         router.push(`/${lang}/index/blog/${post._id}?${getCurrentLink()}`);
     }
 
-
     const getDate = (post: IPost) => {
         switch (lang) {
             case "fa": return RelativeFormatDate(post.createdAt, lang);
@@ -49,9 +46,6 @@ export const Options = (prop: readButtonPropType) => {
             default: return RelativeFormatDate(post.createdAt, lang);
         }
     }
-
-    console.log("Language on Options: ", RelativeFormatDate(post.createdAt, lang));
-
 
     return (
         <>

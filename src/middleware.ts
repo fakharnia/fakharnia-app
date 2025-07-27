@@ -42,8 +42,6 @@ async function detectPreferredLocale(request: NextRequest): Promise<string> {
 
   const ip = getClientIP(request)
   const country = ip ? await fetchCountryFromIP(ip) : null
-  console.log("IP: ", ip);
-  console.log("Country: ", country);
   if (country === 'IR') return 'fa'
 
   return getBrowserLocale(request)
