@@ -7,9 +7,8 @@ import { getPost, getPostContent, postView } from "@/lib/blog.lib";
 import { getDictionary } from "@/dictionary";
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import { IPost } from "@/app/interfaces/post.interface";
-import { GenerateClass, RelativeFormatDate } from "../utils";
 import { env } from "process";
-import { GenosFont, VazirFont } from "@/app/[lang]/utils";
+import { GenerateClass, GenosFont, RelativeFormatDate, VazirFont } from "@/app/[lang]/utils";
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { materialLight, oneDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
