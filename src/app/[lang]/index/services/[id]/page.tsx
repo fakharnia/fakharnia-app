@@ -3,10 +3,9 @@ import styles from "../page.module.css";
 import ReactMarkdown from 'react-markdown';
 import { getService, getServices } from "@/lib/service.lib";
 import { Footer } from "../components/footer";
-import { GenerateClass } from "../../blog/utils";
 import { IService } from "@/app/interfaces/service.interface";
 import Link from "next/link";
-import { VazirFont } from "@/app/[lang]/utils";
+import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
 import { ResolvingMetadata, Metadata } from "next";
 
 type propsType = {

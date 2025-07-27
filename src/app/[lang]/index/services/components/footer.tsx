@@ -4,8 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../page.module.css";
 import { IService } from "@/app/interfaces/service.interface";
-import { GenerateClass } from "../../blog/utils";
-import { VazirFont } from "@/app/[lang]/utils";
+import { GenerateClass, VazirFont } from "@/app/[lang]/utils";
 
 type propType = {
     language: string,

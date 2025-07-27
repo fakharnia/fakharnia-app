@@ -2,10 +2,9 @@ import { Metadata, ResolvingMetadata } from "next";
 import Image from "next/image";
 import { getServices } from "@/lib/service.lib";
 import styles from "./page.module.css";
-import { GenerateClass } from "../blog/utils";
 import { IService } from "@/app/interfaces/service.interface";
 import Link from "next/link";
-import { VazirFont } from "../../utils";
+import { GenerateClass, VazirFont } from "../../utils";
 import { getDictionary } from "@/dictionary";
 
 type propType = {
