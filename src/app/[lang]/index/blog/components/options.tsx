@@ -1,9 +1,9 @@
 "use client"
 import { IPost } from "@/app/interfaces/post.interface";
 import { useRouter } from 'next/navigation';
-import { GenerateClass, RelativeFormatDate } from "../utils";
 import styles from "../page.module.css"
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
+import { GenerateClass, RelativeFormatDate } from "@/app/[lang]/utils";
 
 export const Options = (prop: readButtonPropType) => {
     const { cssClasses, lang, post, searchParams, text, dic } = prop;
@@ -49,6 +49,8 @@ export const Options = (prop: readButtonPropType) => {
             default: return RelativeFormatDate(post.createdAt, lang);
         }
     }
+
+    console.log("Language on Options: ", RelativeFormatDate(post.createdAt, lang));
 
 
     return (

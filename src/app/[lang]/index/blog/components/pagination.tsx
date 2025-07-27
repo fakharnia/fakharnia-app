@@ -2,7 +2,7 @@
 import { MouseEvent } from "react";
 import { useRouter } from "next/navigation";
 import styles from "../page.module.css"
-import { GenerateClass } from "../utils";
+import { GenerateClass } from "@/app/[lang]/utils";
 
 export const Pagination = (props: paginationPropType) => {
 

@@ -23,7 +23,7 @@ export const GenerateClass = (lang: string, styles: { [key: string]: string }) =
 };
 
 export const RelativeFormatDate = (date: Date | string, language: string): string => {
-    const now = moment(); // Use jalali-moment instead of native Date
+    const now = moment(); 
     const theDate = moment(date);
 
     const diff = now.diff(theDate, 'seconds');
@@ -44,14 +44,16 @@ export const RelativeFormatDate = (date: Date | string, language: string): strin
         return getRelativeFormatDate(weeks, "week", language);
     } else {
         switch (language) {
-            case "fa":
-                return convertToPersianDateOfficial(theDate);
+            case "fa": {
+                const jDate = theDate.locale("fa").format("jDD jMMMM jYYYY"); // e.g. 04 اسفند 1404
+                return jDate;
+            }
             case "en":
-                return theDate.locale("en").format("YYYY/MM/DD");
+                return theDate.locale("en").format("MMM D, YYYY");
             case "deu":
-                return theDate.locale("de").format("DD.MM.YYYY");
+                return theDate.locale("de").format("D. MMM YYYY");
             default:
-                return theDate.format("YYYY/MM/DD");
+                return theDate.format("MMM D, YYYY");
         }
     }
 }

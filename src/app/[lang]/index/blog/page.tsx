@@ -6,11 +6,10 @@ import { getDictionary } from "@/dictionary";
 import { getPosts, getTags } from "@/lib/blog.lib";
 import { IBlogDictionary } from "@/app/interfaces/dictionary.interface";
 import { IPost } from "@/app/interfaces/post.interface";
-import { GenerateClass, RelativeFormatDate } from "./utils";
 import { Wrapper } from "./components/wrapper";
 import { Pagination } from "./components/pagination";
 import { Options } from "./components/options";
-import { GenosFont, VazirFont } from "../../utils";
+import { GenerateClass, GenosFont, VazirFont } from "../../utils";
 
 export const generateMetadata = async (
     { params, searchParams }: ssrPropType,

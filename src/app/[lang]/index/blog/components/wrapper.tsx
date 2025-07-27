@@ -1,9 +1,8 @@
 "use client"
 import { ChangeEvent, FormEvent, MouseEvent, useEffect, useRef, useState } from "react";
-import { GenerateClass } from "../utils";
 import styles from "../page.module.css"
 import { useRouter } from "next/navigation";
-import { GenosFont } from "@/app/[lang]/utils";
+import { GenerateClass, GenosFont } from "@/app/[lang]/utils";
 
 export const Wrapper = (props: wrapperPropType) => {
 
