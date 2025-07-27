@@ -8,6 +8,26 @@ const nextConfig = {
                 port: '5000',
                 pathname: '**',
             },
+            {
+                protocol: 'https',
+                hostname: 'api.fakharnia.com',
+                pathname: '**',
+            },
+            {
+                protocol: 'https',
+                hostname: 'api.fakharnia.ir',
+                pathname: '**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'fakharnia.ir',
+                pathname: '**'
+            },
+            {
+                protocol: 'https',
+                hostname: 'fakharnia.com',
+                pathname: '**'
+            }
         ],
     }
 }
