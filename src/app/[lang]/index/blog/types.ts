@@ -32,6 +32,7 @@ type readButtonPropType = {
     post: any;
     searchParams: filterType;
     text: string;
+    dic: any;
 }
 
 type filterType = {

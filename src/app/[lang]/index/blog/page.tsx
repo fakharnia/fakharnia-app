@@ -9,7 +9,7 @@ import { IPost } from "@/app/interfaces/post.interface";
 import { GenerateClass, RelativeFormatDate } from "./utils";
 import { Wrapper } from "./components/wrapper";
 import { Pagination } from "./components/pagination";
-import { ReadButton } from "./components/readButton";
+import { Options } from "./components/options";
 import { GenosFont, VazirFont } from "../../utils";
 
 export const generateMetadata = async (
@@ -47,14 +47,6 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
         }
     }
 
-    const getDate = (post: IPost) => {
-        switch (lang) {
-            case "fa": return RelativeFormatDate(post.createdAt, lang);
-            case "en": return RelativeFormatDate(post.createdAt, lang);
-            case "deu": return RelativeFormatDate(post.createdAt, lang);
-            default: return RelativeFormatDate(post.createdAt, lang);
-        }
-    }
 
     return (
 
@@ -80,8 +72,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
                                         </div>
                                     </div>
                                     <div className={styles.postOptions}>
-                                        <p className={getClasses("postInfo")}>{getDate(post)} / {post.Views?.length ?? 0} {blog.view} / {post.estimateTimeInMinutes} {blog.time}</p>
-                                        <ReadButton lang={lang} post={post} cssClasses={`${getClasses("postReadButton")} ${lang === "fa" ? VazirFont.className : ""} `} searchParams={searchParams} text={blog.read} />
+                                        <Options lang={lang} post={post} dic={dic} cssClasses={`${getClasses("postReadButton")} ${lang === "fa" ? VazirFont.className : ""} `} searchParams={searchParams} text={blog.read} />
                                     </div>
                                 </div>
 
