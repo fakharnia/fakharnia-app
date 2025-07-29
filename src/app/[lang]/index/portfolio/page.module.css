@@ -58,12 +58,12 @@
     align-items    : center;
     justify-content: space-around;
 
-    background     : var(--bgColorC);
-    width          : 100px;
-    min-height         : 100px;
-    margin         : 10px;
-    border-radius  : var(--boxRadius);
-    box-shadow     : var(--shadowB);
+    background   : var(--bgColorC);
+    width        : 100px;
+    min-height   : 100px;
+    margin       : 10px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadowB);
 }
 
 .squareItemIn {
@@ -76,12 +76,14 @@
     padding    : 0 10px;
     color      : var(--textColor);
     font-size  : 20px;
-    line-height: 40px;
-    line-break:anywhere;
+    font-weight: 600;
+    line-height: 30px;
+    line-break : anywhere;
 }
 
 .squareItemInTitleFa {
     font-size: 16px;
+    line-break : auto;
 }
 
 .squareImage {
@@ -289,7 +291,7 @@ a.farsiIconButton {
 
     .squareItemIn,
     .rectangleItemIn {
-        width: 100%;
+        width : 100%;
         margin: 10px 0;
     }
 

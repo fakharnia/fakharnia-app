@@ -31,7 +31,7 @@
         "statusButton":"Text Me",
         "readButton": "Read",
         "contact": "Contacts",
-        "blog": "Recent Post on Blog"
+        "blog": "Latest Post on Blog"
     },
     "portfolio":{
         "title":"Portfolio",

@@ -22,6 +22,7 @@
     height       : 150px;
     margin       : 0 10px;
     border-radius: var(--boxRadius);
+    object-fit   : cover;
 }
 
 .content {
@@ -38,7 +39,8 @@
 }
 
 .headParagraph {
-    width      : 100%;
+    width: 100%;
+
     text-align : justify;
     line-height: 25px;
     font-size  : 20px;
@@ -184,6 +186,10 @@
     .content {
         width     : 100%;
         margin-top: 20px;
+    }
+
+    .headParagraph {
+        margin-top: 10px;
     }
 
     .skillItem {
