@@ -20,27 +20,52 @@ const dark = oneDark as { [key: string]: React.CSSProperties };
 import { cookies } from 'next/headers';
 
 export async function generateMetadata(
-    { params, searchParams }: ssrPropType,
-    parent: ResolvingMetadata
+    { params }: ssrPropType,
 ): Promise<Metadata> {
-    // read route params
-    const id = params.id
-
-
-    // fetch data
+    const id = params.id;
     const post = await getPost(id);
 
+    const lang = params.lang;
+    const title = post[`${lang}_metatag_title`];
+    const description = post[`${lang}_metatag_description`];
+    const image = `${process.env.SERVER_URI}/post/${post._id}/${post.coverUrl}`;
+    const url = `https://fakharnia.com/${lang}/index/blog/${id}`;
+
     return {
-        title: post[`${params.lang}_metatag_title`],
-        description: post[`${params.lang}_metatag_title`]
-    }
+        title,
+        description,
+        openGraph: {
+            title,
+            description,
+            url,
+            type: "article",
+            images: [
+                {
+                    url: image,
+                    width: 1200,
+                    height: 675,
+                    alt: title,
+                },
+            ],
+        },
+        twitter: {
+            card: "summary_large_image",
+            title,
+            description,
+            images: [image],
+        },
+        robots: {
+            index: true,
+            follow: true,
+        }
+    };
 }
 
 const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPropType) => {
 
     const cookieStore = cookies();
     const theme = cookieStore.get('theme')?.value || 'light';
-    
+
     const URL = env.SERVER_URI;
 
     const dic = await getDictionary(lang);
@@ -93,7 +118,6 @@ const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPro
 
     return (
         <>
-            <title>Fakharnia Dev | Post</title>
             <div className={`${getClasses("container")} ${lang === "fa" ? VazirFont.className : ""}`}>
                 <Image className={styles.cover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={1200} height={675} />
                 <h1 className={getClasses("title")}>{getTitle()}</h1>

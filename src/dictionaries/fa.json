@@ -35,8 +35,8 @@
     },
     "portfolio":{
         "title":"درباره من",
-        "projectTitle": "پروژه های من",
-        "designTitle": "طراحی های من",
+        "projectTitle": "پروژه ها",
+        "designTitle": "طراحی ها",
         "moreButton":"نمایش همه",
         "downloadText":"درباره من",
         "project":"پروژه ها",
