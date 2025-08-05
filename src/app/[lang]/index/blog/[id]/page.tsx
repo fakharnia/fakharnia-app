@@ -94,7 +94,7 @@ const Post = async ({ params: { lang, id }, searchParams: searchParams }: ssrPro
 
     const post = await getPost(id);
 
-    const getContent = await getPostContent(id, post[`${lang}_fileUrl`]);
+    const getContent = await getPostContent(post._id, post[`${lang}_fileUrl`]);
 
     const getClasses = GenerateClass(lang, styles);
 
