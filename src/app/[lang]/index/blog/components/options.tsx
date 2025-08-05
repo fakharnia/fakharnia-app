@@ -35,7 +35,7 @@ export const Options = (prop: readButtonPropType) => {
     }
 
     const onNavigateToPostDetail = (post: IPost) => {
-        router.push(`/${lang}/index/blog/${post._id}?${getCurrentLink()}`);
+        router.push(`/${lang}/index/blog/${post.key}?${getCurrentLink()}`);
     }
 
     const getDate = (post: IPost) => {

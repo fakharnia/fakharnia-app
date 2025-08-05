@@ -1,5 +1,6 @@
 export interface IPost {
     _id: string;
+    key: string;
     fa_title: string;
     en_title: string;
     deu_title: string;

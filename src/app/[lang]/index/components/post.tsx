@@ -61,7 +61,7 @@ export const Post = (props: propType) => {
                             </div>
                             <div className={styles.postOptions}>
                                 <p className={genClass("postInfo")}>{getDate(post)} / {post.Views?.length ?? 0} {blog.view} / {post.estimateTimeInMinutes} {blog.time}</p>
-                                <Link href={`/${language}/index/blog/${post._id}?page=1&perPage=5`} className={genClass("postReadButton")}>{blog.read}</Link>
+                                <Link href={`/${language}/index/blog/${post.key}?page=1&perPage=5`} className={genClass("postReadButton")}>{blog.read}</Link>
                             </div>
                         </div>
 

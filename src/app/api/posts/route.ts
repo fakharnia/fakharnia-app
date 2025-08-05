@@ -39,6 +39,7 @@ export const GET = async (request: NextRequest) => {
                 searchCriteria.push({ en_title: { $regex: search, $options: 'i' } });
                 searchCriteria.push({ fa_title: { $regex: search, $options: 'i' } });
                 searchCriteria.push({ de_title: { $regex: search, $options: 'i' } });
+                searchCriteria.push({ key: { $regex: search, $options: 'i' } });
                 searchCriteria.push({ tags: { $regex: search, $options: 'i' } });
             }
 
