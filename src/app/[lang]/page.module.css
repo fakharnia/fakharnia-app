@@ -1,72 +1,3 @@
-.welcomeBox {
-    background     : var(--bgColorB);
-    position       : absolute;
-    top            : 50%;
-    left           : 50%;
-    display        : flex;
-    flex-flow      : row wrap;
-    width          : 700px;
-    height         : 700px;
-    margin         : -350px 0 0 -350px;
-    border-radius  : var(--boxRadius);
-    box-shadow     : var(--shadow);
-    justify-content: space-around;
-    align-items    : center;
-}
-
-.welcomeLogo {
-    width : 100%;
-    height: 100px;
-    margin: 30px 0;
-}
-
-.welcomeTextBox {
-    width     : 100%;
-    max-height: 160px;
-    display   : flex;
-    flex-flow : row wrap;
-    padding   : 0 40px;
-}
-
-.welcomeTitle {
-    width      : 100%;
-    color      : var(--textColor);
-    font-size  : 45px;
-    line-height: 40px;
-}
-
-.welcomeText {
-    margin-top : 20px;
-    color      : var(--textColor);
-    line-height: 40px;
-    text-align : justify;
-    font-size  : 22px;
-}
-
-.welcomeButton {
-    background   : var(--bgColorC);
-    width        : 150px;
-    height       : 40px;
-    color        : var(--textColor);
-    border-radius: var(--normalRadius);
-    cursor       : pointer;
-    text-align   : center;
-    line-height  : 40px;
-}
-
-.welcomeButtonFa {
-    font-size: 14px;
-}
-
-.welcomeTitleFa {
-    font-size: 30px;
-}
-
-.welcomeTextFa {
-    margin-top: 30px;
-    font-size : 16px;
-}
-
 .widgetBox {
     width          : 300px;
     display        : flex;
@@ -106,9 +37,11 @@
     height       : 35px;
     border-radius: var(--normalRadius);
     margin-left  : auto;
-    line-height  : 35px;
-    font-size    : 25px;
-    cursor       : pointer;
+
+    color      : var(--textColor);
+    line-height: 35px;
+    font-size  : 25px;
+    cursor     : pointer;
 }
 
 .loading {
@@ -121,8 +54,407 @@
 }
 
 
+
+.container {
+    background   : var(--bgColorB);
+    position     : absolute;
+    top          : 50%;
+    left         : 50%;
+    width        : 700px;
+    height       : 700px;
+    margin       : -350px 0 0 -350px;
+    box-shadow   : var(--shadow);
+    border-radius: var(--boxRadius);
+
+    display  : flex;
+    flex-flow: column wrap;
+    overflow : hidden;
+}
+
+.smartRibbon,
+.smartMenu {
+    display: none;
+}
+
+.menu {
+    position  : relative;
+    background: var(--bgColorC);
+    height    : 700px;
+    width     : 250px;
+
+    display        : flex;
+    flex-flow      : column wrap;
+    justify-content: flex-start;
+}
+
+.options {
+    height         : auto;
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-around;
+    direction      : ltr;
+}
+
+.logo {
+    width : 100%;
+    margin: 40px 0;
+
+    color     : var(--textColor);
+    font-size : 150px;
+    text-align: center;
+}
+
+.nav {
+    width      : 100%;
+    display    : flex;
+    flex-flow  : column wrap;
+    align-items: center;
+    margin-top : 25px;
+}
+
+.navItem {
+    height     : 50px;
+    margin     : 10px 0;
+    line-height: 50px;
+    font-size  : 25px;
+    color      : var(--textColor);
+    cursor     : pointer;
+}
+
+.navItem:hover {
+    font-weight: bold;
+    transition : 50ms;
+}
+
+.navItemDeactive {
+    opacity: .3;
+    cursor : help;
+}
+
+.navItemFa {
+    font-size  : 20px;
+    font-weight: normal;
+}
+
+.copyRight {
+    position   : absolute;
+    bottom     : 0;
+    left       : 0;
+    width      : 100%;
+    height     : 40px;
+    line-height: 40px;
+    text-align : center;
+    direction  : ltr;
+}
+
+.copyRightFa {
+    font-size: 12px;
+}
+
+
+.root {
+    width   : 450px;
+    height  : 700px;
+    overflow: auto;
+}
+
+.dailyText {
+    background   : var(--bgColorC);
+    margin       : 10px;
+    padding      : 10px;
+    border-radius: var(--normalRadius);
+
+    color      : var(--textColor);
+    text-align : justify;
+    font-size  : 18px;
+    line-height: 25px;
+}
+
+.dailyTextFa {
+    font-size: 14px;
+}
+
+.contactButton {
+    min-width  : 90px;
+    height     : 40px;
+    line-height: 40px;
+
+    color      : var(--textColor);
+    text-align : center;
+    font-size  : 18px;
+    font-weight: bold;
+}
+
+.contactButtonFarsi {
+    font-size  : 12px;
+    font-weight: normal;
+}
+
+.contactBox {
+    display  : flex;
+    flex-flow: row wrap;
+    margin   : 10px 0;
+}
+
+.boxTitle {
+    padding: 0 10px;
+    height : 40px;
+
+    color      : var(--textColor);
+    font-size  : 25px;
+    line-height: 40px;
+}
+
+.boxTitleFarsi {
+    font-size  : 18px;
+    font-weight: normal;
+}
+
+.contactList {
+    display  : flex;
+    flex-flow: row wrap;
+    width    : 100%;
+    margin   : 10px 0;
+    padding  : 0 10px;
+}
+
+.contactIcon {
+    background   : var(--bgColorC);
+    width        : 40px;
+    height       : 40px;
+    margin       : 0 5px;
+    box-shadow   : var(--shadowB);
+    border-radius: var(--normalRadius);
+    color        : var(--textColor);
+    text-align   : center;
+    line-height  : 40px;
+    font-size    : 25px;
+}
+
+.blogPosts {
+    display  : flex;
+    flex-flow: row wrap;
+    width    : 100%;
+}
+
+.post {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+
+    position: relative;
+    width   : 100%;
+    margin  : 10px 0;
+    padding : 0 10px;
+    color   : var(--textColor);
+}
+
+.postOptions {
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+
+    width  : 100%;
+    padding: 10px 0;
+}
+
+.postReadButton {
+    background   : var(--bgColorC);
+    width        : 100px;
+    height       : 40px;
+    margin       : 0 10px;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadow);
+    cursor       : pointer;
+
+    color      : var(--textColor);
+    line-height: 40px;
+    text-align : center;
+}
+
+.postReadButtonFa {
+    font-size: 12px;
+}
+
+.postInfo {
+    padding    : 0 10px;
+    line-height: 40px;
+    font-size  : 18px;
+}
+
+.postInfoFa {
+    font-size  : 12px;
+    font-weight: normal;
+}
+
+.postCover {
+    background   : var(--bgColorC);
+    width        : 100%;
+    height       : auto;
+    border-radius: var(--boxRadius);
+    box-shadow   : var(--shadowB);
+}
+
+.postDetail {
+    display        : flex;
+    flex-flow      : column wrap;
+    justify-content: flex-start;
+
+    width     : 100%;
+    margin-top: 10px;
+}
+
+.postTitle {
+    width        : 100%;
+    padding      : 0 10px;
+    margin-bottom: 10px;
+
+    line-height: 40px;
+    font-size  : 26px;
+}
+
+.postTitleFa {
+    font-size  : 18px;
+    font-weight: normal;
+}
+
+.postTags {
+    display  : flex;
+    flex-flow: row wrap;
+
+    width  : 100%;
+    padding: 0 5px;
+}
+
+.postTag {
+    background   : var(--bgColorC);
+    margin       : 2px;
+    padding      : 0 10px;
+    border-radius: var(--normalRadius);
+
+    color      : var(--textColor);
+    line-height: 25px;
+    text-align : center;
+}
+
+.postTagFa {
+    direction: ltr;
+}
+
+.postButton {
+    background   : var(--bgColorC);
+    width        : 90px;
+    height       : 40px;
+    box-shadow   : var(--shadowB);
+    border-radius: var(--boxRadius);
+    color        : var(--textColor);
+    line-height  : 40px;
+    text-align   : center;
+    font-size    : 16px;
+}
+
+.postButtonFarsi {
+    font-size: 12px;
+}
+
+
+.smartMenuDisplayed {
+    background   : var(--bgColorC);
+    position     : absolute;
+    top          : 70px;
+    right        : 15px;
+    width        : 210px;
+    padding      : 10px;
+    display      : flex;
+    flex-flow    : row wrap;
+    box-shadow   : var(--shadow);
+    border-radius: var(--boxRadius);
+    z-index      : 3;
+}
+
+.smartMenuDisplayedFarsi {
+    right: unset;
+    left : 10px;
+}
+
+.smartMenuDisplayed>* {
+    width: 100%;
+}
+
+.smartNav {
+    width     : 100%;
+    display   : flex;
+    flex-flow : row wrap;
+    margin-top: 10px;
+}
+
+.navLink {
+    width      : 100%;
+    height     : 40px;
+    text-align : center;
+    line-height: 40px;
+    text-align : left;
+    padding    : 0 10px;
+    color      : var(--textColor);
+    font-size  : 18px;
+}
+
+.navLinkFa {
+    font-size : 16px;
+    text-align: right;
+}
+
+
+.header {
+    position       : relative;
+    background     : var(--bgColorC);
+    width          : 100%;
+    height         : 60px;
+    display        : flex;
+    flex-flow      : row wrap;
+    justify-content: space-between;
+    z-index        : 2;
+}
+
+.headerLogo {
+    height : 60px;
+    padding: 0 10px;
+
+    text-align : center;
+    color      : var(--textColor);
+    font-size  : 35px;
+    line-height: 60px;
+}
+
+.headerTitle {
+    /* flex-grow: 1; */
+
+    height : 60px;
+    padding: 0 10px;
+
+    color        : var(--textColor);
+    font-weight  : bold;
+    line-height  : 60px;
+    font-size    : 25px;
+    text-align   : center;
+    /* text-align: left; */
+}
+
+.headerTitleFarsi {
+    font-size: 18px;
+}
+
+.headerMoreButton {
+    width : 48px;
+    margin: 6px 10px;
+    cursor: pointer;
+
+    color    : var(--textColor);
+    font-size: 30px;
+}
+
 @media (max-width: 700px) or (max-height: 700px) {
-    .welcomeBox {
+    .container {
         width        : 100vw;
         height       : 100vh;
         margin       : 0;
@@ -130,17 +462,113 @@
         left         : 0;
         box-shadow   : none;
         border-radius: 0;
-        overflow     : auto;
     }
 
-    .welcomeLogo {
-        margin-bottom: 40px;
+    .headerLogo {
+        font-size: 30px;
     }
 
-    .welcomeTextBox {
-        padding    : 0 20px;
-        line-height: 35px;
-        max-height : unset;
-        margin     : 30px 0;
+    .smartRibbon {
+        background : var(--bgColorC);
+        position   : fixed;
+        top        : 10px;
+        left       : 0;
+        display    : flex;
+        flex-flow  : row wrap;
+        align-items: center;
+
+        width          : calc(100% - 30px);
+        margin         : 0 15px;
+        height         : 60px;
+        justify-content: space-between;
+        box-shadow     : var(--shadow);
+        border-radius  : var(--boxRadius);
+        z-index        : 1;
+    }
+
+    .smartRibbon .logo {
+        width  : auto;
+        height : 40px;
+        margin : 0;
+        padding: 0 10px;
+
+
+        font-size  : 30px;
+        line-height: 40px;
+    }
+
+    .smartRibbon .logo::before {
+        content: "\e915";
+    }
+
+    .homeTitle {
+        height     : 60px;
+        padding    : 0 10px;
+        font-size  : 22px;
+        line-height: 60px;
+        text-align : left;
+    }
+
+    .homeTitleFa {
+        font-size: 16px;
+    }
+
+
+    .smartRibbon>button {
+        width : 60px;
+        height: 60px;
+
+        color      : var(--textColor);
+        line-height: 60px;
+        font-size  : 30px;
+    }
+
+
+    .smartMenuDisplayed {
+        position: fixed;
+        top     : 80px;
+
+    }
+
+    .dailyText {
+        margin: 10px 15px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .contactIcon {
+        margin: 5px;
+    }
+
+    .root {
+        width      : 100vw;
+        height     : 100vh;
+        padding-top: 80px;
+    }
+
+    .postInfo {
+        width: 100%;
+    }
+
+    .postButton {
+        margin-top: 10px;
+    }
+
+    .header {
+        align-items  : center;
+        position     : fixed;
+        background   : var(--bgColorC);
+        width        : calc(100vw - 30px);
+        height       : 60px;
+        margin       : 10px 15px;
+        border-radius: var(--boxRadius);
+        box-shadow   : var(--shadow);
+    }
+
+    .contactBox,
+    .blogBox {
+        margin: 10px 0;
     }
 }

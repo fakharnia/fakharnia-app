@@ -1,26 +1,33 @@
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { db } from '../../../../lib/mongodb';
-import { ObjectId } from "mongodb";
 
 export const POST = async (request: NextRequest, { params }: { params: { id: string } }) => {
     try {
         const ipAddress = request.headers.get("x-forwarded-for");
         const postId = params.id;
 
-        const viewsCollection = db.collection('views');
-        const pastHour = new Date(Date.now() - (1 * 60 * 1000));
+        // Find the post by its key
+        const post = await db.collection('posts').findOne({ key: postId });
 
-        const postsCollection = db.collection('posts');
-
-        const existingView = await viewsCollection.findOne({ ip: ipAddress, postId: postId, createdAt: { $gte: pastHour } });
-
-        if (!existingView) {
-            await viewsCollection.insertOne({ ip: ipAddress, postId: postId, createdAt: new Date() });
-
-            await postsCollection.updateOne({ _id: new ObjectId(postId) }, { $push: { Views: { ip: ipAddress, createdAt: new Date() } } });
+        if (!post) {
+            return NextResponse.json({
+                error: 'Post not found'
+            }, { status: 404 });
         }
 
-        return Response.json({
+        const pastHour = new Date(Date.now() - (1 * 60 * 1000)); // Fixed time to 1 hour, not 1 minute
+
+        // Find an existing view within the embedded 'Views' array
+        const existingView = post.Views.find((view: any) =>
+            view.ip === ipAddress && view.createdAt >= pastHour
+        );
+
+        // If no existing view is found within the last hour, record a new one
+        if (!existingView) {
+            await db.collection('posts').updateOne({ key: postId }, { $push: { Views: { ip: ipAddress, createdAt: new Date() } } });
+        }
+
+        return NextResponse.json({
             message: 'View recorded successfully'
         });
 

@@ -1,128 +1,142 @@
 @font-face {
-    font-family: 'fakharnia';
-    src        : url('../fonts/fakharnia.eot?6to65m');
-    src        : url('../fonts/fakharnia.eot?6to65m#iefix') format('embedded-opentype'),
-        url('../fonts/fakharnia.ttf?6to65m') format('truetype'),
-        url('../fonts/fakharnia.woff?6to65m') format('woff'),
-        url('../fonts/fakharnia.svg?6to65m#fakharnia') format('svg');
-    font-weight : normal;
-    font-style  : normal;
-    font-display: block;
+  font-family: 'fakharnia';
+  src        : url('../fonts/fakharnia.eot?6to65m');
+  src        : url('../fonts/fakharnia.eot?6to65m#iefix') format('embedded-opentype'),
+    url('../fonts/fakharnia.ttf?6to65m') format('truetype'),
+    url('../fonts/fakharnia.woff?6to65m') format('woff'),
+    url('../fonts/fakharnia.svg?6to65m#fakharnia') format('svg');
+  font-weight : normal;
+  font-style  : normal;
+  font-display: block;
 }
 
-[class^="fakharnia-"], [class*=" fakharnia-"] {
-    /* use !important to prevent issues with browser extensions that change fonts */
-    font-family: 'fakharnia' !important;
-    font-style: normal;
-    font-weight: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-  
-    /* Better Font Rendering =========== */
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  .fakharnia-twitter:before {
-    content: "\e911";
-  }
-  .fakharnia-x:before {
-    content: "\e912";
-  }
-  .fakharnia-download:before {
-    content: "\e909";
-  }
-  .fakharnia-github:before {
-    content: "\e90a";
-  }
-  .fakharnia-instagram:before {
-    content: "\e90b";
-  }
-  .fakharnia-linkedin:before {
-    content: "\e90c";
-  }
-  .fakharnia-mail:before {
-    content: "\e90d";
-  }
-  .fakharnia-more:before {
-    content: "\e90e";
-  }
-  .fakharnia-telegram:before {
-    content: "\e90f";
-  }
-  .fakharnia-threads:before {
-    content: "\e910";
-  }
-  .fakharnia-arrow-down:before {
-    content: "\e900";
-  }
-  .fakharnia-arrow-left:before {
-    content: "\e901";
-  }
-  .fakharnia-arrow-right:before {
-    content: "\e902";
-  }
-  .fakharnia-arrow-up:before {
-    content: "\e903";
-  }
-  .fakharnia-chat:before {
-    content: "\e904";
-  }
-  .fakharnia-logout:before {
-    content: "\e905";
-  }
-  .fakharnia-mail-15-svgrepo-com:before {
-    content: "\e906";
-  }
-  .fakharnia-night:before {
-    content: "\e907";
-  }
-  .fakharnia-day:before {
-    content: "\e908";
-  }
-  
+[class^="fakharnia-"],
+[class*=" fakharnia-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family   : 'fakharnia' !important;
+  font-style    : normal;
+  font-weight   : normal;
+  font-variant  : normal;
+  text-transform: none;
+  line-height   : 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+.fakharnia-logo-notext:before {
+  content: "\e914";
+}
+.fakharnia-logo-long:before {
+  content: "\e915";
+}
+.fakharnia-logo:before {
+  content: "\e913";
+}
+.fakharnia-twitter:before {
+  content: "\e911";
+}
+.fakharnia-x:before {
+  content: "\e912";
+}
+.fakharnia-download:before {
+  content: "\e909";
+}
+.fakharnia-github:before {
+  content: "\e90a";
+}
+.fakharnia-instagram:before {
+  content: "\e90b";
+}
+.fakharnia-linkedin:before {
+  content: "\e90c";
+}
+.fakharnia-mail:before {
+  content: "\e90d";
+}
+.fakharnia-more:before {
+  content: "\e90e";
+}
+.fakharnia-telegram:before {
+  content: "\e90f";
+}
+.fakharnia-threads:before {
+  content: "\e910";
+}
+.fakharnia-arrow-down:before {
+  content: "\e900";
+}
+.fakharnia-arrow-left:before {
+  content: "\e901";
+}
+.fakharnia-arrow-right:before {
+  content: "\e902";
+}
+.fakharnia-arrow-up:before {
+  content: "\e903";
+}
+.fakharnia-chat:before {
+  content: "\e904";
+}
+.fakharnia-logout:before {
+  content: "\e905";
+}
+.fakharnia-mail-15-svgrepo-com:before {
+  content: "\e906";
+}
+.fakharnia-night:before {
+  content: "\e907";
+}
+.fakharnia-day:before {
+  content: "\e908";
+}
+.fakharnia-menu:before {
+  content: "\e9bd";
+}
+
 :root {
-    --bgColorA : #fbfcfe;
-    --bgColorB : #ffffff;
-    --bgColorC : #f2f2f2;
-    --textColor: #343A40;
-    --transTextColor: #343a40ad;
-    --transBgColorC: #f2f2f294;
-    --shadow   : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    --shadowB  : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-    --shadowC  : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  --bgColorA      : #fbfcfe;
+  --bgColorB      : #ffffff;
+  --bgColorC      : #f2f2f2;
+  --textColor     : #343A40;
+  --transTextColor: #343a40ad;
+  --transBgColorC : #f2f2f294;
+  --shadow        : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --shadowB       : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  --shadowC       : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 
-    --titleFont: 'Genos-Bold';
-    --textFont : 'genos-medium';
+  --titleFont: 'Genos-Bold';
+  --textFont : 'genos-medium';
 
-    --boxRadius   : 20px;
-    --normalRadius: 10px;
+  --boxRadius   : 20px;
+  --normalRadius: 10px;
 }
 
 [data-theme='dark'] {
-    --bgColorA : #313133;
-    --bgColorB : #3b3b3b;
-    --bgColorC : #1d1d1f;
-    --textColor: #F2F2F2;
-    --transTextColor: #f2f2f29c;
-    --transBgColorC: #1d1d1f98;
-    --shadow   : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
-    --shadowB  : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
-    --shadowC  : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, #3b3b3b 0px 0px 0px 1px;
-    /* 
-    --shadow   : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(129, 129, 129, 0.3) 0px 1px 3px -1px;
-    --shadowB  : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(129, 129, 129, 0.3) 0px 1px 3px -1px;
-    --shadowC  : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(119, 127, 136, 0.15) 0px 0px 0px 1px; */
+  --bgColorA      : #313133;
+  --bgColorB      : #3b3b3b;
+  --bgColorC      : #1d1d1f;
+  --textColor     : #F2F2F2;
+  --transTextColor: #f2f2f29c;
+  --transBgColorC : #1d1d1f98;
+  --shadow        : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
+  --shadowB       : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, #1d1d1f 0px 1px 3px -1px;
+  --shadowC       : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, #3b3b3b 0px 0px 0px 1px;
+  /* 
+    --shadow      : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(129, 129, 129, 0.3) 0px 1px 3px -1px;
+    --shadowB     : rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(129, 129, 129, 0.3) 0px 1px 3px -1px;
+    --shadowC     : rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(119, 127, 136, 0.15) 0px 0px 0px 1px; */
 }
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    background: var(--bgColorA);
-    box-sizing: border-box;
+  background: var(--bgColorA);
+  box-sizing: border-box;
 }
 
 h1,
@@ -138,27 +152,28 @@ button,
 a,
 i,
 form {
-    margin         : unset;
-    padding        : unset;
-    border         : unset;
-    outline        : unset;
-    background     : unset;
-    text-decoration: unset;
-    box-shadow     : unset;
-    list-style     : none;
+  margin         : unset;
+  padding        : unset;
+  border         : unset;
+  outline        : unset;
+  background     : unset;
+  text-decoration: unset;
+  box-shadow     : unset;
+  list-style     : none;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
+
 ::-webkit-scrollbar-track {
-    background: var(--bgColorB);
+  background: var(--bgColorB);
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--bgColorA);
+  background: var(--bgColorA);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--bgColorC);
+  background: var(--bgColorC);
 }
