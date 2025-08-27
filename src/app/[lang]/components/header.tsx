@@ -50,7 +50,7 @@ export const Header = (props: propType) => {
             return (
                 <p
                     key={index}
-                    className={`${getClasses("navLink")} ${styles.navItemActive}  ${!menuItem.isActive ? styles.navItemDeactive : ""}`}
+                    className={`${getClasses("navLink")} ${getClasses("navItemActive")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}
                 >
                     {menuItem.title}
                 </p>

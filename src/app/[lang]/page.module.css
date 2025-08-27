@@ -132,14 +132,22 @@
 }
 
 .navItemActive {
-    padding:0;
-    border-left:solid 3px var(--textColor);
-    font-weight:bold;
+    padding    : 0;
+    border-left: solid 3px var(--textColor);
+    font-weight: bold;
 }
 
 .navItemFa {
     font-size  : 20px;
     font-weight: normal;
+}
+
+.navItemActiveFa {
+    padding     : 0;
+    border-left : none;
+    border-right: solid 3px var(--textColor);
+    font-weight : bold;
+
 }
 
 .copyRight {
