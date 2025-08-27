@@ -2,11 +2,10 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
-import { useTheme } from "next-themes";
 import { Widget } from "../components/widget";
 import styles from "../page.module.css";
 import { GenerateClass, VazirFont } from "../utils";
+import { usePathname } from "next/navigation";
 
 type propType = {
     language: string,
@@ -17,7 +16,7 @@ type propType = {
 export const Header = (props: propType) => {
     const wrapperRef = useRef<HTMLDivElement>(null);;
     const [mounted, setMounted] = useState(false);
-    const { resolvedTheme } = useTheme();
+    const pathname = usePathname();
 
     const { language, dictionary, title } = props;
     const [smartMenu, setSmartMenu] = useState(false);
@@ -46,19 +45,30 @@ export const Header = (props: propType) => {
     const getClasses = GenerateClass(language, styles);
 
     const getLink = (index: number, menuItem: any) => {
-        if (menuItem.isActive) {
-            return <Link key={index} href={`/${language}/${menuItem.link}`} className={`${getClasses("navLink")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}>{menuItem.title}</Link>
+        const isActive = `/${language}/${menuItem.link}`.startsWith(pathname);
+        if (isActive) {
+            return (
+                <p
+                    key={index}
+                    className={`${getClasses("navLink")} ${styles.navItemActive}  ${!menuItem.isActive ? styles.navItemDeactive : ""}`}
+                >
+                    {menuItem.title}
+                </p>
+            );
         } else {
-            return <p key={index} className={`${getClasses("navLink")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}>{menuItem.title}</p>;
+            return (
+                <Link key={index} href={`/${language}/${menuItem.link}`} className={`${getClasses("navLink")} ${!menuItem.isActive ? styles.navItemDeactive : ""}`}>
+                    {menuItem.title}
+                </Link>
+            );
         }
-    }
+    };
 
     return (
         <div className={styles.header} ref={wrapperRef} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
             <h5 className={`${styles.headerTitle} ${language === "fa" ? `${VazirFont.className} ${styles.headerTitleFarsi}` : ""}`}>{title}</h5>
 
             <Link href={`/${language}`} className={styles.headerLogo}>
-                {/* < Image className={styles.headerLogo} src={`/logo-${resolvedTheme ?? "light"}.svg`} alt="fakharnai.com-logo" width={100} height={100} /> */}
                 <i className={`fakharnia-logo-long ${styles.headerLogo}`}></i>
             </Link>
             <button className={`fakharnia-menu ${styles.headerMoreButton}`} onClick={() => { setSmartMenu(!smartMenu) }}></button>
