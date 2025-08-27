@@ -46,6 +46,25 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
         }
     }
 
+    const getCurrentLink = (): string => {
+        let filters = [
+            `page=${searchParams.page}`,
+            `perPage=${searchParams.perPage}`,
+        ];
+        if (searchParams?.tags?.length > 0) {
+            filters.push(`tags=${searchParams.tags}`);
+        }
+        if (searchParams?.search) {
+            filters.push(`search=${searchParams.search}`)
+        }
+        if (searchParams?.sort) {
+            filters.push(`sort=${searchParams.sort}`)
+        }
+        if (searchParams?.sortFlow !== "desc" && searchParams?.sortFlow) {
+            filters.push(`sortFlow=${searchParams.sortFlow}`);
+        }
+        return filters.join("&");
+    }
 
     return (
 
@@ -58,7 +77,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
                         {
 
                             postsData.data?.map((post: IPost, index: number) => (
-                                <div className={styles.post} key={index}>
+                                <Link href={`/${lang}/blog/${post.key}?${getCurrentLink()}`} className={styles.post} key={index}>
                                     <Image className={styles.postCover} src={`${URL}/post/${post._id}/${post.coverUrl}`} alt={`${URL}/post/${post.coverUrl}`} width={1200} height={675} />
                                     <div className={styles.postDetail}>
                                         <h5 className={getClasses("postTitle")}>{getTitle(post)}</h5>
@@ -73,7 +92,7 @@ const Blog = async ({ params: { lang }, searchParams: searchParams }: ssrPropTyp
                                     <div className={styles.postOptions}>
                                         <Options lang={lang} post={post} dic={dic} cssClasses={`${getClasses("postReadButton")} ${lang === "fa" ? VazirFont.className : ""} `} searchParams={searchParams} text={blog.read} />
                                     </div>
-                                </div>
+                                </Link>
 
                             ))
                         }

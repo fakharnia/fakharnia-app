@@ -16,6 +16,7 @@
     height       : auto;
     margin-bottom: 20px;
     border-radius: var(--boxRadius);
+    box-shadow:var(--shadowC);
 }
 
 .title {
@@ -183,6 +184,7 @@
     padding      : 0 10px;
     margin       : 5px;
     border-radius: var(--normalRadius);
+    box-shadow:var(--shadowC);
 
     color    : var(--textColor);
     font-size: 22px;

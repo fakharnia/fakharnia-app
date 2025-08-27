@@ -82,8 +82,8 @@
 }
 
 .squareItemInTitleFa {
-    font-size: 16px;
-    line-break : auto;
+    font-size : 16px;
+    line-break: auto;
 }
 
 .squareImage {
@@ -144,17 +144,13 @@
 }
 
 .rectangleItemInTitle {
-    background       : var(--transBgColorC);
-    /* position      : absolute;
-    bottom           : 0;
-    left             : 0; */
-    width            : 100%;
-    border-radius    : 0 0 var(--normalRadius) var(--normalRadius);
-    /* width         : calc(100% - 400px); */
-    padding          : 0 10px;
-    line-height      : 60px;
-    color            : var(--textColor);
-    font-size        : 22px;
+    background   : var(--transBgColorC);
+    width        : 100%;
+    border-radius: 0 0 var(--normalRadius) var(--normalRadius);
+    padding      : 0 10px;
+    line-height  : 60px;
+    color        : var(--textColor);
+    font-size    : 22px;
 }
 
 .rectangleItemInTitleFa {
@@ -172,7 +168,7 @@
     height       : 40px;
     margin       : 0 10px;
     border-radius: var(--boxRadius);
-    box-shadow   : var(--shadow);
+    box-shadow   : var(--shadowC);
     color        : var(--textColor);
     font-family  : var(--font-genos);
     font-size    : 16px;

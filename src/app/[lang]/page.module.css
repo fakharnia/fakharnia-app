@@ -278,7 +278,7 @@
     height       : 40px;
     margin       : 0 10px;
     border-radius: var(--boxRadius);
-    box-shadow   : var(--shadow);
+    box-shadow   : var(--shadowC);
     cursor       : pointer;
 
     color      : var(--textColor);
@@ -306,13 +306,13 @@
     width        : 100%;
     height       : auto;
     border-radius: var(--boxRadius);
-    box-shadow   : var(--shadowB);
+    box-shadow   : var(--shadowC);
 }
 
 .postDetail {
     display        : flex;
     flex-flow      : column wrap;
-    justify-content: flex-start;
+    justify-content: space-between;
 
     width     : 100%;
     margin-top: 10px;
@@ -329,7 +329,7 @@
 
 .postTitleFa {
     font-size  : 18px;
-    font-weight: normal;
+    font-weight: 500;
 }
 
 .postTags {
