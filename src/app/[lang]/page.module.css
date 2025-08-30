@@ -430,6 +430,10 @@
     z-index        : 2;
 }
 
+.headerFa {
+    direction: rtl;
+}
+
 .headerLogo {
     height : 60px;
     padding: 0 10px;
@@ -446,12 +450,11 @@
     height : 60px;
     padding: 0 10px;
 
-    color        : var(--textColor);
-    font-weight  : bold;
-    line-height  : 60px;
-    font-size    : 25px;
-    text-align   : center;
-    /* text-align: left; */
+    color      : var(--textColor);
+    font-weight: bold;
+    line-height: 60px;
+    font-size  : 25px;
+    text-align : center;
 }
 
 .headerTitleFarsi {
@@ -498,6 +501,7 @@
         box-shadow     : var(--shadow);
         border-radius  : var(--boxRadius);
         z-index        : 1;
+        direction      : ltr;
     }
 
     .smartRibbon .logo {
@@ -544,6 +548,12 @@
 
     }
 
+
+    .smartMenuDisplayedFarsi {
+        right: 15px;
+        left : unset;
+    }
+
     .dailyText {
         margin: 10px 15px;
     }
@@ -581,6 +591,10 @@
         box-shadow   : var(--shadow);
     }
 
+    .headerFa {
+        direction:ltr;
+    }
+
     .headerTitle {
         display: none;
     }
@@ -595,6 +609,6 @@
 
     .contactBox,
     .blogBox {
-        margin: 10px 0;
+        margin: 10px 5px;
     }
 }

@@ -65,7 +65,7 @@ export const Header = (props: propType) => {
     };
 
     return (
-        <div className={styles.header} ref={wrapperRef} style={{ direction: language === "fa" ? "rtl" : "ltr" }}>
+        <div className={getClasses("header")} ref={wrapperRef} >
             <h5 className={`${styles.headerTitle} ${language === "fa" ? `${VazirFont.className} ${styles.headerTitleFarsi}` : ""}`}>{title}</h5>
 
             <Link href={`/${language}`} className={styles.headerLogo}>
